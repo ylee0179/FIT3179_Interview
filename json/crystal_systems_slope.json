@@ -7,7 +7,7 @@
     "url": "data/crystal_systems.csv"
   },
   "encoding": {
-    "x": {
+    "x": { //Shows known minerals and museum specimens.
       "field": "group",
       "type": "nominal",
       "sort": [
@@ -28,7 +28,7 @@
         "labelFontWeight": 600
       }
     },
-    "y": {
+    "y": { //Displays the percentage of each crystal system.
       "field": "percent",
       "type": "quantitative",
       "title": "Percent",
@@ -86,7 +86,7 @@
           }
         }
       ],
-      "mark": {
+      "mark": { //Connects the percentages between two groups.
         "type": "line",
         "strokeWidth": 2.5,
         "point": {
@@ -95,7 +95,7 @@
         }
       },
       "encoding": {
-        "detail": {
+        "detail": { //ensure it draws a seperated line for each system
           "field": "system"
         },
         "opacity": {
@@ -127,7 +127,7 @@
     {
       "transform": [
         {
-          "filter": "datum.group == 'Museum specimens'"
+          "filter": "datum.group == 'Museum specimens'" //uses hover selection
         },
         {
           "calculate": "datum.system + '  ' + format(datum.percent,'.0f') + ' percent'",
