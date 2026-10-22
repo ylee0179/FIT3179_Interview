@@ -1,0 +1,61 @@
+locality,state,lon,lat,specimens,species_count,top_mineral,main_class,nearest_mine_km,nearest_mine,nearest_status,mining_today
+Broken Hill,New South Wales,141.47,-31.95,2329,239,Cerussite,Carbonates,2.2,Rasp Mine,Operating,Mine within 25 kilometres today
+Iron Knob and Middleback Ranges,South Australia,137.15,-32.73,900,125,Hematite,"Phosphates, arsenates and vanadates",0.8,Iron Knob,Operating,Mine within 25 kilometres today
+Wallaroo Mines and Kadina,South Australia,137.71,-33.96,736,56,Chalcopyrite,Sulfides and sulfosalts,93.7,South Middleback Ranges,Operating,No mine within 25 kilometres today
+Moonta,South Australia,137.59,-34.07,605,52,Chalcopyrite,Sulfides and sulfosalts,98.4,South Middleback Ranges,Operating,No mine within 25 kilometres today
+Olary district,South Australia,140.32,-32.28,601,137,Andalusite,Silicates,31.9,White Dam,Operating,No mine within 25 kilometres today
+Mount Painter and Arkaroola,South Australia,139.35,-30.23,380,69,Torbernite,Silicates,16.5,Four Mile,Operating,Mine within 25 kilometres today
+Burra,South Australia,138.93,-33.68,341,40,Malachite,Carbonates,75.8,Tom's,Operating,No mine within 25 kilometres today
+Kalgoorlie and Eastern Goldfields,Western Australia,121.47,-30.75,237,51,Gold,Sulfides and sulfosalts,4.6,Kalgoorlie (Super Pit),Operating,Mine within 25 kilometres today
+Harts Range,Northern Territory,134.92,-23.1,147,33,Muscovite,Silicates,382.4,Nobles Nob,Operating,No mine within 25 kilometres today
+Coober Pedy,South Australia,134.75,-29.01,137,7,Opal,Silicates,48.4,Cairn Hill,Paused (care and maintenance),No mine within 25 kilometres today
+Mount Gunson,South Australia,137.25,-31.45,136,26,Atacamite,Sulfides and sulfosalts,31.8,Carrapateena,Operating,No mine within 25 kilometres today
+Moculta,South Australia,139.12,-34.47,128,28,Apatite,"Phosphates, arsenates and vanadates",17.3,Tom's,Operating,Mine within 25 kilometres today
+Kapunda,South Australia,138.92,-34.34,125,28,Fluellite,"Phosphates, arsenates and vanadates",6.5,Tom's,Operating,Mine within 25 kilometres today
+Olympic Dam and Roxby Downs,South Australia,136.88,-30.44,123,25,Chalcopyrite,Sulfides and sulfosalts,0.9,Olympic Dam,Operating,Mine within 25 kilometres today
+Yudnamutana,South Australia,139.3,-30.17,123,33,Malachite,Carbonates,18.9,Four Mile,Operating,Mine within 25 kilometres today
+Rum Jungle,Northern Territory,131.0,-13.02,116,16,Malachite,Carbonates,11.4,Huandot,Paused (care and maintenance),Mine within 25 kilometres today
+Dundas and Zeehan,Tasmania,145.42,-41.89,107,23,Crocoite,Other classes,10.7,Renison Bell,Operating,Mine within 25 kilometres today
+Kanmantoo and Callington,South Australia,139.0,-35.08,102,37,Chalcopyrite,Sulfides and sulfosalts,1.4,Kanmantoo,Operating,Mine within 25 kilometres today
+Comet Vale,Western Australia,121.12,-29.95,81,14,Calcite,Carbonates,1.2,Comet Vale,Paused (care and maintenance),Mine within 25 kilometres today
+Williamstown,South Australia,138.88,-34.67,80,30,Beryl,Silicates,35.8,Tom's,Operating,No mine within 25 kilometres today
+Mount Isa,Queensland,139.49,-20.73,79,36,Pyromorphite,Silicates,1.4,Mount Isa ,Operating,Mine within 25 kilometres today
+Torrington,New South Wales,151.69,-29.32,69,17,Wolfram,Silicates,66.9,Texas,Paused (care and maintenance),No mine within 25 kilometres today
+Biggenden,Queensland,152.04,-25.51,67,9,Calcite,Carbonates,38.4,Mount Rawdon,Operating,No mine within 25 kilometres today
+Tennant Creek,Northern Territory,134.19,-19.65,67,25,Junoite,Sulfides and sulfosalts,10.3,Peko Tailings,Paused (care and maintenance),Mine within 25 kilometres today
+Mount Bischoff,Tasmania,145.53,-41.44,65,25,Cassiterite,Oxides and hydroxides,21.9,Hellyer,Paused (care and maintenance),Mine within 25 kilometres today
+Cloncurry,Queensland,140.51,-20.71,65,31,Gypsum,"Phosphates, arsenates and vanadates",1.2,Great Australia Complex,Paused (care and maintenance),Mine within 25 kilometres today
+Cowell jade field,South Australia,136.92,-33.68,64,19,Actinolite,Silicates,48.3,South Middleback Ranges,Operating,No mine within 25 kilometres today
+Andamooka,South Australia,137.17,-30.45,61,5,Opal,Silicates,26.9,Olympic Dam,Operating,No mine within 25 kilometres today
+Kingsgate,New South Wales,151.48,-29.75,60,11,Molybdenite,Sulfides and sulfosalts,103.9,Texas,Paused (care and maintenance),No mine within 25 kilometres today
+Cobar,New South Wales,145.84,-31.5,60,19,Silver,Carbonates,0.2,Great Cobar,Operating,Mine within 25 kilometres today
+Emmaville,New South Wales,151.6,-29.44,58,12,Cassiterite,Oxides and hydroxides,74.1,Texas,Paused (care and maintenance),No mine within 25 kilometres today
+Girilambone,New South Wales,146.9,-31.25,54,9,Copper,Native elements,2.8,Murrawombie,Operating,Mine within 25 kilometres today
+Agate Creek,Queensland,143.65,-18.55,53,1,Quartz,Silicates,50.5,Agate Creek,Operating,No mine within 25 kilometres today
+Radium Hill,South Australia,140.65,-32.38,53,20,Carnotite,Silicates,32.3,White Dam,Operating,No mine within 25 kilometres today
+Whim Creek,Western Australia,117.83,-20.84,51,6,Wulfenite,Other classes,95.4,Wodgina,Operating,No mine within 25 kilometres today
+Kangaroo Island,South Australia,137.25,-35.8,49,15,Elbaite,Silicates,162.6,Angas,Paused (care and maintenance),No mine within 25 kilometres today
+Hillgrove,New South Wales,151.9,-30.57,45,8,Stibnite,Sulfides and sulfosalts,165.0,Vickery,Operating,No mine within 25 kilometres today
+Leigh Creek,South Australia,138.4,-30.59,43,17,Malachite,Carbonates,5.1,Mountain of Light,Paused (care and maintenance),Mine within 25 kilometres today
+Gunnedah,New South Wales,150.25,-30.98,41,8,Stilbite,Silicates,23.1,Vickery,Operating,Mine within 25 kilometres today
+Glen Innes,New South Wales,151.74,-29.74,41,20,Molybdenite,Oxides and hydroxides,110.1,Texas,Paused (care and maintenance),No mine within 25 kilometres today
+Pine Creek,Northern Territory,131.84,-13.82,41,15,Aurichalcite,Carbonates,12.9,Union Reefs,Paused (care and maintenance),Mine within 25 kilometres today
+Tarcoola,South Australia,134.57,-30.7,40,10,Gold,Native elements,3.8,Tarcoola,Paused (care and maintenance),Mine within 25 kilometres today
+Blinman,South Australia,138.68,-31.1,39,18,Barite,Oxides and hydroxides,61.9,Mountain of Light,Paused (care and maintenance),No mine within 25 kilometres today
+Tingha,New South Wales,151.21,-29.95,38,9,Cassiterite,Oxides and hydroxides,123.9,Boggabri,Operating,No mine within 25 kilometres today
+Ashburton Downs,Western Australia,117.07,-23.38,37,26,Metazeunerite,"Phosphates, arsenates and vanadates",53.0,Western Range,Operating,No mine within 25 kilometres today
+Bundoora,Victoria,145.06,-37.7,35,10,Calcite,Carbonates,54.5,Maddingley,Operating,No mine within 25 kilometres today
+White Rock Quarry,South Australia,138.7,-34.93,35,1,Quartz,Silicates,33.1,Kanmantoo,Operating,No mine within 25 kilometres today
+White Cliffs,New South Wales,143.09,-30.85,34,2,Opal,Silicates,198.6,Rasp Mine,Operating,No mine within 25 kilometres today
+Nundle,New South Wales,151.13,-31.47,34,16,Quartz,Silicates,84.5,Dartbrook,Paused (care and maintenance),No mine within 25 kilometres today
+Greenbushes,Western Australia,116.06,-33.85,33,13,Cassiterite,Oxides and hydroxides,0.9,Greenbushes,Operating,Mine within 25 kilometres today
+Norseman,Western Australia,121.78,-32.2,33,9,Gold,Silicates,2.1,OK,Operating,Mine within 25 kilometres today
+Mintabie,South Australia,133.3,-27.31,31,1,Opal,Silicates,284.2,Cairn Hill,Paused (care and maintenance),No mine within 25 kilometres today
+Mount Lyell,Tasmania,145.55,-42.08,31,11,Bornite,Sulfides and sulfosalts,3.6,Mount Lyell,Paused (care and maintenance),Mine within 25 kilometres today
+Westonia,Western Australia,118.69,-31.3,29,8,Gold,Native elements,1.4,Edna May,Paused (care and maintenance),Mine within 25 kilometres today
+Kambalda,Western Australia,121.66,-31.2,29,14,Gaspeite,Carbonates,3.5,Northern Operations,Paused (care and maintenance),Mine within 25 kilometres today
+Chillagoe,Queensland,144.52,-17.15,29,13,Malachite,Carbonates,15.7,Mungana,Paused (care and maintenance),Mine within 25 kilometres today
+Renison Bell,Tasmania,145.43,-41.8,28,14,Fluorite,Sulfides and sulfosalts,1.1,Renison Bell,Operating,Mine within 25 kilometres today
+Poona,Western Australia,117.45,-27.15,27,14,Beryl,Silicates,27.7,Big Bell,Operating,No mine within 25 kilometres today
+Ballarat,Victoria,143.85,-37.56,12,5,Gold,Native elements,3.4,Ballarat,Operating,Mine within 25 kilometres today
+Bendigo,Victoria,144.28,-36.76,6,3,Arsenopyrite,Sulfides and sulfosalts,20.5,Fosterville,Operating,Mine within 25 kilometres today

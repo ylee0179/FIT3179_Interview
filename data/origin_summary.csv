@@ -1,0 +1,4 @@
+category,count,order,percent,start,end,midpoint,label
+Australia,14993,0,61.61,0,61.60579,30.80289,Australia 61.6%
+Overseas,8191,1,33.66,61.60579,95.26236,78.43407,Overseas 33.7%
+Unassigned,1153,2,4.74,95.26236,100.0,97.63118,

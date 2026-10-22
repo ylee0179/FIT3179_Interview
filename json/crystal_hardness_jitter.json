@@ -1,0 +1,187 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Crystal system vs Mohs hardness with deterministic horizontal jitter.",
+  "width": 500,
+  "height": 380,
+  "data": {
+    "url": "data/crystal_hardness.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "hardness": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "baseline": 7
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          6,
+          4
+        ],
+        "color": "#B99052",
+        "strokeWidth": 1.8
+      },
+      "encoding": {
+        "y": {
+          "field": "baseline",
+          "type": "quantitative"
+        },
+        "x": null
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "opacity": 0.55,
+        "size": 56,
+        "stroke": "#fffefa",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "x": {
+          "field": "jitterX",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.55,
+              5.55
+            ]
+          },
+          "axis": {
+            "title": "Crystal system",
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "labelExpr": "['Cubic','Hexagonal','Tetragonal','Orthorhombic','Monoclinic','Triclinic'][datum.value]",
+            "labelAngle": -30,
+            "labelFontSize": 12,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "hardness",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              1,
+              10
+            ]
+          },
+          "axis": {
+            "title": "Mohs hardness (1 = softest, 10 = hardest)",
+            "tickMinStep": 1
+          }
+        },
+        "color": {
+          "field": "system",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Cubic",
+              "Hexagonal",
+              "Tetragonal",
+              "Orthorhombic",
+              "Monoclinic",
+              "Triclinic"
+            ],
+            "range": [
+              "#5D9DA6",
+              "#C8A35F",
+              "#8C9BC1",
+              "#A48CBC",
+              "#8EADA2",
+              "#7A8F9D"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "value": 0.62
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "title": "Mineral"
+          },
+          {
+            "field": "system",
+            "title": "Crystal system"
+          },
+          {
+            "field": "hardness",
+            "title": "Mohs hardness",
+            "type": "quantitative",
+            "format": ".2f"
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "system_focus == 'All' || datum.system == system_focus"
+        },
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "row"
+            }
+          ]
+        },
+        {
+          "calculate": "((datum.row*0.6180339887)%1-0.5)*0.60",
+          "as": "jitter"
+        },
+        {
+          "calculate": "indexof(['Cubic','Hexagonal','Tetragonal','Orthorhombic','Monoclinic','Triclinic'],datum.system) + datum.jitter",
+          "as": "jitterX"
+        }
+      ]
+    }
+  ],
+  "params": [
+    {
+      "name": "system_focus",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "Cubic",
+          "Hexagonal",
+          "Tetragonal",
+          "Orthorhombic",
+          "Monoclinic",
+          "Triclinic"
+        ],
+        "name": "Crystal system: "
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "gridColor": "#E7E9DF",
+      "labelColor": "#425452",
+      "titleColor": "#264D51",
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "background": "transparent"
+  }
+}

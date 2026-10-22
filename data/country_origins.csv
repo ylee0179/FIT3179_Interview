@@ -1,0 +1,92 @@
+country,specimens,species_count,top_mineral,area_km2,lon,lat,per_million_km2,share_percent
+Australia,14993,709,Quartz,7702302,134.314,-25.763,1946.6,61.61
+United States of America,1921,536,Calcite,9494324,-98.6,39.8,202.3,7.89
+Germany,942,341,Quartz,356101,10.27,51.077,2645.3,3.87
+United Kingdom,711,147,Fluorite,248938,-2.76,53.809,2856.1,2.92
+Canada,476,178,Apatite,9984362,-106.0,58.0,47.7,1.96
+Mexico,339,97,Wulfenite,1973933,-102.223,23.913,171.7,1.39
+Brazil,299,77,Quartz,8540767,-53.173,-10.655,35.0,1.23
+Russia,274,188,Phenakite,16924438,95.0,61.0,16.2,1.13
+Italy,255,116,Sulphur,314540,12.269,42.671,810.7,1.05
+Namibia,219,66,Descloizite,827108,17.142,-22.04,264.8,0.9
+Sweden,195,125,Cobaltite,447840,16.109,62.419,435.4,0.8
+Czechia,184,119,Aragonite,80964,15.343,49.78,2272.6,0.76
+Switzerland,175,67,Quartz,46048,8.116,46.793,3800.4,0.72
+India,163,32,Apophyllite,3150403,79.54,22.819,51.7,0.67
+Norway,160,89,Anatase,395406,9.0,61.5,404.6,0.66
+Austria,139,76,Kyanite,84845,14.06,47.621,1638.3,0.57
+Spain,124,53,Aragonite,501719,-3.624,40.321,247.2,0.51
+Peru,123,35,Pyrite,1315164,-74.431,-9.147,93.5,0.51
+South Africa,118,61,Quartz,1218037,25.158,-28.923,96.9,0.48
+New Zealand,90,43,Actinolite,277224,172.5,-41.5,324.6,0.37
+Greenland,82,48,Cryolite,2189757,-41.965,73.151,37.4,0.34
+France,75,48,Pyromorphite,643818,2.4,46.6,116.5,0.31
+Morocco,74,15,Vanadinite,592381,-8.694,29.815,124.9,0.3
+Chile,69,43,Copper,814463,-71.0,-33.0,84.7,0.28
+Romania,68,39,Stibnite,237769,24.954,45.853,286.0,0.28
+China,63,23,Fluorite,9407917,103.453,36.683,6.7,0.26
+Sri Lanka,57,13,Graphite,65646,80.668,7.7,868.3,0.23
+Japan,55,36,Stibnite,404393,137.712,37.537,136.0,0.23
+Pakistan,49,16,Beryl,875144,69.235,29.908,56.0,0.2
+Dem. Rep. Congo,48,26,Malachite,2333678,23.577,-2.839,20.6,0.2
+Bolivia,43,27,Vivianite,1088944,-64.655,-16.704,39.5,0.18
+Poland,40,27,Quartz,309190,19.344,52.134,129.4,0.16
+Afghanistan,39,11,Spodumene,652474,66.004,33.84,59.8,0.16
+Madagascar,35,19,Elbaite,591061,46.729,-19.301,59.2,0.14
+Slovakia,32,25,Opal,46923,19.498,48.733,682.0,0.13
+New Caledonia,28,10,Garnierite,23285,165.528,-21.261,1202.5,0.12
+Papua New Guinea,28,17,Calcite,466500,145.313,-6.457,60.0,0.12
+Turkey,27,13,Orpiment,798153,35.117,39.145,33.8,0.11
+Hungary,26,22,Orpiment,92233,19.343,47.204,281.9,0.11
+Serbia,23,10,Sphalerite,76233,20.837,44.223,301.7,0.09
+Argentina,22,19,Rhodochrosite,2784442,-64.754,-34.737,7.9,0.09
+Portugal,21,10,Arsenopyrite,93318,-8.061,39.607,225.0,0.09
+Kazakhstan,20,14,Dioptase,2721779,67.236,48.406,7.3,0.08
+Finland,17,13,Topaz,339051,26.142,64.261,50.1,0.07
+Malaysia,16,10,Cassiterite,339750,109.7,3.746,47.1,0.07
+Greece,14,9,Smithsonite,131885,22.72,39.037,106.2,0.06
+Iceland,13,8,Calcite,107024,-18.765,65.08,121.5,0.05
+Zambia,13,8,Tarbuttite,754809,27.761,-13.393,17.2,0.05
+Indonesia,11,8,Cervantite,1827552,117.365,-2.272,6.0,0.05
+Ireland,10,10,Beryl,58255,-8.017,53.172,171.7,0.04
+Zimbabwe,10,8,Chrysoberyl,377474,29.789,-18.9,26.5,0.04
+Belgium,10,8,Ardennite,30017,4.588,50.653,333.1,0.04
+Egypt,9,7,Trona,998017,29.861,26.475,9.0,0.04
+Ukraine,8,4,Anapaite,570736,31.292,49.187,14.0,0.03
+Bulgaria,8,6,Galena,110041,25.188,42.756,72.7,0.03
+Tanzania,8,5,Corundum,936832,34.742,-6.251,8.5,0.03
+Nigeria,8,7,Cassiterite,908762,7.986,9.545,8.8,0.03
+Botswana,7,4,Quartz,593404,23.783,-22.082,11.8,0.03
+Sierra Leone,7,3,Hematite,76316,-11.795,8.53,91.7,0.03
+Myanmar,7,5,Jadeite,681309,96.513,20.945,10.3,0.03
+Iran,7,4,Turquoise,1618519,54.453,32.474,4.3,0.03
+Macedonia,6,3,Lorandite,25017,21.696,41.606,239.8,0.02
+Slovenia,6,4,Cinnabar,19094,14.934,46.126,314.2,0.02
+Kyrgyzstan,5,5,Actinolite,195673,74.587,41.519,25.6,0.02
+Nepal,5,1,Elbaite,150927,84.043,28.249,33.1,0.02
+South Korea,5,1,Scheelite,99048,127.82,36.419,50.5,0.02
+Fiji,5,4,Sylvanite,19348,178.569,-17.315,258.4,0.02
+Vietnam,4,2,Spinel,337129,106.333,16.556,11.9,0.02
+Thailand,4,2,Corundum,511939,101.002,14.981,7.8,0.02
+Mozambique,4,3,Davidite,813664,35.542,-17.154,4.9,0.02
+Kosovo,4,3,Sphalerite,11220,20.896,42.579,356.5,0.02
+Algeria,4,2,Senarmontite,2319400,2.612,28.085,1.7,0.02
+Colombia,3,1,Beryl,1157019,-73.073,3.916,2.6,0.01
+Denmark,2,2,Okenite,42546,9.886,56.059,47.0,0.01
+Gabon,2,1,Rhodochrosite,270696,11.687,-0.647,7.4,0.01
+Malawi,2,1,Corundum,111596,34.186,-13.159,17.9,0.01
+Panama,2,2,Quartz,75595,-80.109,8.533,26.5,0.01
+Antarctica,1,1,Cordierite,12236288,82.507,-84.969,0.1,0.0
+Azerbaijan,1,1,Akadalaite,91009,47.555,40.219,11.0,0.0
+Cuba,1,1,Chromite,115201,-78.932,21.647,8.7,0.0
+Guyana,1,1,Bauxite,210761,-58.969,4.786,4.7,0.0
+Honduras,1,1,Opal,114194,-86.593,14.825,8.8,0.0
+Luxembourg,1,1,Marcasite,2407,5.966,49.765,415.5,0.0
+Mongolia,1,1,Armstrongite,1540299,103.016,46.954,0.6,0.0
+Guinea,1,1,Villiaumite,240532,-11.055,10.45,4.2,0.0
+Somalia,1,1,Opal,486627,45.699,4.741,2.1,0.0
+Rwanda,1,1,Cassiterite,23442,29.919,-2.014,42.7,0.0
+Tunisia,1,1,Valentinite,156296,9.539,34.144,6.4,0.0
+Taiwan,1,1,Barite,34434,120.972,23.739,29.0,0.0
+Uruguay,1,1,Quartz,176982,-56.01,-32.774,5.7,0.0
+Venezuela,1,1,Diamond,912352,-66.153,7.161,1.1,0.0

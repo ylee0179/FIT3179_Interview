@@ -1,0 +1,7 @@
+axis,step,x,y
+Mohs hardness,0,0.0,-0.0
+Mohs hardness,1,0.0,-1.0
+Specific gravity,0,0.0,0.0
+Specific gravity,1,0.866025,0.5
+Refractive index,0,-0.0,0.0
+Refractive index,1,-0.866025,0.5

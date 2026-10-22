@@ -1,0 +1,387 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Box plots with jittered points: each dot is one mineral placed by its Mohs hardness and grouped by mineral family. Boxes cover the middle half of each family; the line marks the median.",
+  "width": 520,
+  "height": 380,
+  "data": {
+    "url": "data/mineral_family_hardness.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "hardness": "number",
+        "museum_specimens": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "museum_only",
+      "value": false,
+      "bind": {
+        "input": "checkbox",
+        "name": "Keep only minerals the museum holds "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum.cls == 'Native elements' ? 'Other classes' : datum.cls",
+      "as": "family"
+    },
+    {
+      "filter": {
+        "field": "family",
+        "oneOf": [
+          "Halides",
+          "Sulfates",
+          "Other classes",
+          "Carbonates",
+          "Borates",
+          "Phosphates, arsenates and vanadates",
+          "Oxides and hydroxides",
+          "Silicates"
+        ]
+      }
+    },
+    {
+      "filter": "!museum_only || datum.museum_specimens > 0"
+    },
+    {
+      "window": [
+        {
+          "op": "row_number",
+          "as": "row"
+        }
+      ]
+    },
+    {
+      "calculate": "((datum.row * 0.6180339887) % 1) - 0.5",
+      "as": "jitter"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "family",
+      "type": "nominal",
+      "sort": [
+        "Halides",
+        "Sulfates",
+        "Other classes",
+        "Carbonates",
+        "Borates",
+        "Phosphates, arsenates and vanadates",
+        "Oxides and hydroxides",
+        "Silicates"
+      ],
+      "title": null,
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 11,
+        "labelFontWeight": 600,
+        "labelColor": "#2F2A22",
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 10,
+        "labelExpr": "datum.label == 'Phosphates, arsenates and vanadates' ? ['Phosphates,', 'arsenates,', 'vanadates'] : datum.label == 'Oxides and hydroxides' ? ['Oxides,', 'hydroxides'] : datum.label == 'Other classes' ? ['Other', 'classes'] : datum.label"
+      }
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "y": 5.5
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          6,
+          5
+        ],
+        "color": "#B99052",
+        "strokeWidth": 1.4
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "x": null
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "y": 5.5,
+            "t": "Window glass 5.5"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "x": 6,
+        "dy": -8,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#8A6A2F"
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        },
+        "x": null
+      }
+    },
+    {
+      "mark": {
+        "type": "boxplot",
+        "extent": "min-max",
+        "size": 40,
+        "box": {
+          "fill": "#E6E3D3",
+          "stroke": "#B9B19D",
+          "strokeWidth": 1
+        },
+        "median": {
+          "color": "#2F2A22",
+          "strokeWidth": 2.5
+        },
+        "rule": {
+          "color": "#B9B19D"
+        },
+        "ticks": false
+      },
+      "encoding": {
+        "y": {
+          "field": "hardness",
+          "type": "quantitative",
+          "title": "Mohs hardness (1 is softest, 10 is hardest)",
+          "scale": {
+  "domain": [1, 10],
+  "nice": false,
+  "zero": false
+},
+          "axis": {
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "grid": true
+          }
+        }
+      }
+    },
+    {
+      "params": [
+        {
+          "name": "dot_hover",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "name"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.4,
+        "color": "#647A9A"
+      },
+      "encoding": {
+        "y": {
+          "field": "hardness",
+          "type": "quantitative"
+        },
+        "xOffset": {
+          "field": "jitter",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.75,
+              0.75
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "dot_hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.6
+        },
+        "size": {
+          "condition": {
+            "param": "dot_hover",
+            "empty": false,
+            "value": 110
+          },
+          "value": 28
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "title": "Mineral"
+          },
+          {
+            "field": "family",
+            "title": "Mineral family"
+          },
+          {
+            "field": "hardness",
+            "type": "quantitative",
+            "format": ".2~f",
+            "title": "Mohs hardness"
+          },
+          {
+            "field": "museum_specimens",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Specimens in the museum"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "name",
+            "oneOf": [
+              "Talc",
+              "Gypsum",
+              "Halite",
+              "Calcite",
+              "Fluorite",
+              "Malachite",
+              "Orthoclase",
+              "Beryl",
+              "Topaz",
+              "Corundum"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 60,
+        "fill": null,
+        "stroke": "#2F2A22",
+        "strokeWidth": 1.4
+      },
+      "encoding": {
+        "y": {
+          "field": "hardness",
+          "type": "quantitative"
+        },
+        "xOffset": {
+          "field": "jitter",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.75,
+              0.75
+            ]
+          }
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "name",
+            "oneOf": [
+              "Talc",
+              "Gypsum",
+              "Halite",
+              "Calcite",
+              "Fluorite",
+              "Malachite",
+              "Orthoclase",
+              "Beryl",
+              "Topaz",
+              "Corundum"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#2F2A22"
+      },
+      "encoding": {
+        "y": {
+          "field": "hardness",
+          "type": "quantitative"
+        },
+        "xOffset": {
+          "field": "jitter",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -0.75,
+              0.75
+            ]
+          }
+        },
+        "text": {
+          "field": "name"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  }
+}

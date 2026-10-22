@@ -1,0 +1,539 @@
+name,state,lat,lon,status,commodity
+A1,Victoria,-37.5005,146.2031,Paused (care and maintenance),Gold and silver
+Abel,New South Wales,-32.818419,151.621127,Paused (care and maintenance),Coal
+Abra,Western Australia,-24.643101,118.587279,Operating,"Copper, zinc and lead"
+Achilles,Western Australia,-31.3009,119.3908,Operating,Gold and silver
+Admiral,Western Australia,-29.2001,121.367,Operating,Gold and silver
+Agate Creek,Queensland,-18.9942,143.5486,Operating,Gold and silver
+Agnew,Western Australia,-28.00071,120.5081,Operating,Gold and silver
+Agricola,South Australia,-36.1867,139.6796,Operating,"Bauxite, fertiliser and industrial minerals"
+Airly,New South Wales,-33.112,150.0144,Operating,Coal
+Ammaroo,Northern Territory,-21.792109,135.834839,Being developed,"Bauxite, fertiliser and industrial minerals"
+Amrun,Queensland,-12.9472,141.6805667,Operating,"Bauxite, fertiliser and industrial minerals"
+Andoom,Queensland,-12.538352,141.832296,Operating,"Bauxite, fertiliser and industrial minerals"
+Andy Well,Western Australia,-26.2278,118.6766,Operating,Gold and silver
+Angas,South Australia,-35.251066,138.915917,Paused (care and maintenance),"Copper, zinc and lead"
+Angus Place,New South Wales,-33.349157,150.199019,Paused (care and maintenance),Coal
+Ant Hill,Western Australia,-22.090917,120.594976,Paused (care and maintenance),Iron ore and manganese
+Anthill,Queensland,-20.2505,139.1151,Operating,"Copper, zinc and lead"
+Appin,New South Wales,-34.2113,150.7932,Operating,Coal
+Aquila-Capcoal,Queensland,-22.9285,148.5555458,Operating,Coal
+Ardlethan,New South Wales,-34.3314,146.8515,Operating,"Tin, tungsten and uranium"
+Ardmore,Queensland,-21.6916,139.28646,Operating,"Bauxite, fertiliser and industrial minerals"
+Arrowsmith North,Western Australia,-29.5129,115.1104,Being developed,"Bauxite, fertiliser and industrial minerals"
+Ashton,New South Wales,-32.4667,151.079,Operating,Coal
+Atlas,Western Australia,-30.538165,115.248896,Operating,Mineral sands and rare earths
+Atlas-Campaspe,New South Wales,-33.9022,143.3728,Operating,Mineral sands and rare earths
+Avebury,Tasmania,-41.92011,145.24854,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Avoca Tank,New South Wales,-31.2219,146.8468,Operating,"Copper, zinc and lead"
+Avonbank,Victoria,-36.62,142.32,Being developed,Mineral sands and rare earths
+Axehandle,Western Australia,-31.3165,119.3931,Paused (care and maintenance),Gold and silver
+Baby Hope,Western Australia,-23.0165922,119.0589169,Operating,Iron ore and manganese
+Balcooma,Queensland,-18.7718,144.713,Paused (care and maintenance),"Copper, zinc and lead"
+Bald Hill,Western Australia,-31.513331,122.181148,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Ballarat,Victoria,-37.5897,143.8597,Operating,Gold and silver
+Balranald,New South Wales,-34.45993,143.461186,Being developed,Mineral sands and rare earths
+Bamboo Creek,Western Australia,-20.9307,120.2117,Paused (care and maintenance),Gold and silver
+Baneygo,Western Australia,-27.9637,122.3123,Paused (care and maintenance),Gold and silver
+Baralaba North,Queensland,-24.164856,149.803238,Operating,Coal
+Barbara,Queensland,-20.415343,139.850148,Paused (care and maintenance),"Copper, zinc and lead"
+Battler,Western Australia,-31.3464,119.3896,Paused (care and maintenance),Gold and silver
+Bauxite Hills,Queensland,-11.7984,142.0968306,Operating,"Bauxite, fertiliser and industrial minerals"
+Beatons Creek,Western Australia,-21.80833,120.4169,Paused (care and maintenance),Gold and silver
+Beebyn-W11,Western Australia,-26.8585,117.8717,Operating,Iron ore and manganese
+Bellevue,Western Australia,-27.638941,120.557701,Operating,Gold and silver
+Ben Hur ,Western Australia,-28.1647,122.3673,Operating,Gold and silver
+Bengalla,New South Wales,-32.2716,150.8234,Operating,Coal
+Beta Hunt,Western Australia,-31.24026,121.693915,Operating,Gold and silver
+Beverley,South Australia,-30.1904,139.6051,Paused (care and maintenance),"Tin, tungsten and uranium"
+Beyondie,Western Australia,-24.77,120.32,Paused (care and maintenance),"Bauxite, fertiliser and industrial minerals"
+Big Bell,Western Australia,-27.3209,117.6542,Operating,Gold and silver
+Black Swan,Western Australia,-30.3934,121.652,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Blackjack,Queensland,-20.147037,146.22125,Operating,Gold and silver
+Blackwater,Tasmania,-41.1101,144.9469,Operating,"Bauxite, fertiliser and industrial minerals"
+Blackwater,Queensland,-23.685585,148.807361,Operating,Coal
+Blair Athol,Queensland,-22.6905,147.527,Operating,Coal
+Bloomfield,New South Wales,-32.8073,151.5614,Operating,Coal
+Blue Bar ,Western Australia,-21.399,119.704201,Paused (care and maintenance),Gold and silver
+Blue Hills,Western Australia,-29.1412,116.862,Paused (care and maintenance),Iron ore and manganese
+Bluebird-South Junction,Western Australia,-26.7162,118.4251,Operating,Gold and silver
+Bluff,Queensland,-23.520513,149.063875,Paused (care and maintenance),Coal
+Boddington,Western Australia,-32.7509,116.3581,Operating,"Copper, zinc and lead"
+Boggabri,New South Wales,-30.6001,150.162,Operating,Coal
+Boonanarring,Western Australia,-31.2237,115.8346,Paused (care and maintenance),Mineral sands and rare earths
+Boorara,Western Australia,-30.8057,121.6402,Operating,Gold and silver
+Bootu Creek,Northern Territory,-18.699756,134.125836,Paused (care and maintenance),Iron ore and manganese
+Boundary Hill,Queensland,-24.1994,150.4941,Operating,Coal
+British King,Western Australia,-27.9404,121.2437,Paused (care and maintenance),Gold and silver
+Broadlea,Queensland,-21.9,148.1643553,Operating,Coal
+Broadmeadow East,Queensland,-21.8076,148.1524,Paused (care and maintenance),Coal
+Broadmedow,Queensland,-21.8214,148.1583692,Operating,Coal
+Brockman 2,Western Australia,-22.4411,117.369301,Operating,Iron ore and manganese
+Brockman 4,Western Australia,-22.598301,117.220398,Operating,Iron ore and manganese
+Broken Hill,New South Wales,-31.9863,141.4458,Operating,"Copper, zinc and lead"
+Bronzewing,Western Australia,-27.419227,120.939005,Operating,Gold and silver
+Browns Range,Western Australia,-18.859476,128.939813,Being developed,Mineral sands and rare earths
+Bulga,New South Wales,-32.68684,151.109984,Operating,Coal
+Bungarra,Western Australia,-27.3971,121.4661,Paused (care and maintenance),Gold and silver
+Burra,New South Wales,-32.575,147.384375,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Burton Complex,Queensland,-21.5886,148.1726,Operating,Coal
+Butcherbird-Yanneri,Western Australia,-24.367,119.683,Being developed,Iron ore and manganese
+Buzzard,South Australia,-29.995743,135.152727,Operating,Iron ore and manganese
+Byerwen,Queensland,-21.35,147.81,Operating,Coal
+Cadia East,New South Wales,-33.465,149.0123,Operating,"Copper, zinc and lead"
+Cadoux,Western Australia,-30.6772,117.193,Being developed,"Bauxite, fertiliser and industrial minerals"
+Cairn Hill,South Australia,-29.2987022,135.1234485,Paused (care and maintenance),Iron ore and manganese
+Callide,Queensland,-24.310921,150.622173,Operating,Coal
+Cameby Downs,Queensland,-26.6248,150.3570924,Operating,Coal
+Cannington,Queensland,-21.8658,140.9199,Operating,"Copper, zinc and lead"
+Cannon,Western Australia,-30.8161,121.7629,Being developed,Gold and silver
+Cape Flattery,Queensland,-14.985,145.2722,Operating,"Bauxite, fertiliser and industrial minerals"
+Cape Flattery,Queensland,-14.96,145.33,Being developed,"Bauxite, fertiliser and industrial minerals"
+Capricorn Copper,Queensland,-19.694925,139.363156,Paused (care and maintenance),"Copper, zinc and lead"
+Carborough Downs,Queensland,-21.9502,148.2094,Operating,Coal
+Carina,Western Australia,-30.45635,119.998703,Operating,Iron ore and manganese
+Carmichael,Queensland,-22.0369,146.3694763,Operating,Coal
+Carosue Dam,Western Australia,-30.1594,122.359741,Operating,Gold and silver
+Carrapateena,South Australia,-31.2484,137.487,Operating,"Copper, zinc and lead"
+Cassini ,Western Australia,-31.700939,121.621101,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Castle Hill,Western Australia,-30.638232,121.033696,Operating,Gold and silver
+Cataby,Western Australia,-30.7351,115.5387,Operating,Mineral sands and rare earths
+Catford's Cut,South Australia,-32.9588,138.56246,Operating,"Bauxite, fertiliser and industrial minerals"
+Caval Ridge,Queensland,-22.221466,148.17199,Operating,Coal
+Cawse,Western Australia,-30.368888,121.148544,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Centurion,Queensland,-21.64755,147.976615,Operating,Coal
+Century,Queensland,-18.7253,138.6018278,Operating,"Copper, zinc and lead"
+Chain Valley,New South Wales,-33.163056,151.550004,Operating,Coal
+Challenger,South Australia,-29.8782,133.5889,Paused (care and maintenance),Gold and silver
+Channar,Western Australia,-23.29938,117.788592,Operating,Iron ore and manganese
+Charters Towers,Queensland,-20.0757,146.2666,Paused (care and maintenance),Gold and silver
+Christmas Creek,Western Australia,-22.376169,119.758987,Operating,Iron ore and manganese
+Clarence,New South Wales,-33.4637,150.2467,Operating,Coal
+Clermont,Queensland,-22.7257,147.6383411,Operating,Coal
+Cliffs,Western Australia,-27.310489,120.552825,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Cloudbreak,Western Australia,-22.3338,119.387644,Operating,Iron ore and manganese
+Cobar,New South Wales,-31.40802,145.798597,Operating,"Copper, zinc and lead"
+Coburn,Western Australia,-26.70377,114.126953,Paused (care and maintenance),Mineral sands and rare earths
+Cockatoo Island,Western Australia,-16.094966,123.607113,Paused (care and maintenance),Iron ore and manganese
+Cock-eyed Bob,Western Australia,-31.0895,122.1761,Paused (care and maintenance),Gold and silver
+Collie-Ewington,Western Australia,-33.3624,116.25,Operating,Coal
+Collinsville,Queensland,-20.5394,147.7848765,Operating,Coal
+Comet,Western Australia,-27.5401,118.0436,Paused (care and maintenance),Gold and silver
+Comet Vale,Western Australia,-29.954928,121.131043,Paused (care and maintenance),Gold and silver
+Commodore,Queensland,-27.930269,151.279051,Operating,Coal
+Cook,Queensland,-23.7157,148.8996922,Paused (care and maintenance),Coal
+Cooks North,South Australia,-33.1650563,137.1307166,Paused (care and maintenance),Iron ore and manganese
+Cooljarloo,Western Australia,-30.593306,115.360681,Operating,Mineral sands and rare earths
+Coppabella,Queensland,-21.844554,148.427187,Operating,Coal
+Corinna,Tasmania,-41.6224,145.112,Operating,"Bauxite, fertiliser and industrial minerals"
+Cork Tree Well,Western Australia,-28.3386,122.4044,Being developed,Gold and silver
+Cornwall,Tasmania,-41.55,148.133333,Operating,Coal
+Cosmo Deeps,Northern Territory,-13.5369,131.3761,Paused (care and maintenance),Gold and silver
+Cosmos,Western Australia,-27.600285,120.576324,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Costerfield,Victoria,-36.887,144.7915,Operating,Gold and silver
+Cowal,New South Wales,-33.6369,147.4067,Operating,Gold and silver
+Coyote,Western Australia,-19.8989,128.8319,Paused (care and maintenance),Gold and silver
+Cracow,Queensland,-25.28928,150.2703,Operating,Gold and silver
+Cue,Western Australia,-27.6973,117.8318,Operating,Gold and silver
+Cullen Valley,New South Wales,-33.269288,150.016163,Paused (care and maintenance),Coal
+Cullenswood,Tasmania,-41.6145,148.1342,Operating,Coal
+Curragh,Queensland,-23.466218,148.854144,Operating,Coal
+Cyclone,Western Australia,-28.817064,128.732174,Being developed,Mineral sands and rare earths
+Daisy Complex,Western Australia,-31.0133,121.9224,Operating,Gold and silver
+Dalgaranga,Western Australia,-27.84617,117.265297,Being developed,Gold and silver
+Darlot,Western Australia,-27.8875,121.2689,Operating,Gold and silver
+Dartbrook,New South Wales,-32.1937,150.8586,Paused (care and maintenance),Coal
+Daunia,Queensland,-22.043993,148.288546,Operating,Coal
+Dawson,Queensland,-24.616826,150.059238,Operating,Coal
+Deflector,Western Australia,-28.6691,116.3796,Operating,"Copper, zinc and lead"
+DeGrussa,Western Australia,-25.5406,119.3281,Paused (care and maintenance),"Copper, zinc and lead"
+Dendrobium,New South Wales,-34.4321,150.8091,Operating,Coal
+Devon,Western Australia,-29.2847,122.4482,Operating,Gold and silver
+Dhupuma,Northern Territory,-12.38,136.82,Operating,"Bauxite, fertiliser and industrial minerals"
+Dogbolter-Coopers,Western Australia,-27.7208,122.3421,Paused (care and maintenance),Gold and silver
+Dolphin,Tasmania,-40.05334,144.05868,Operating,"Tin, tungsten and uranium"
+Donald,Victoria,-36.49918,142.78148,Being developed,Mineral sands and rare earths
+Drake,Queensland,-20.708,147.816,Operating,Coal
+Dubbo,New South Wales,-32.4453,148.6182,Being developed,Mineral sands and rare earths
+Dugald River,Queensland,-20.2545,140.1558,Operating,"Copper, zinc and lead"
+East Weipa,Queensland,-12.6637,141.8732,Operating,"Bauxite, fertiliser and industrial minerals"
+Eastern Range,Western Australia,-23.253071,117.682198,Operating,Iron ore and manganese
+Edjudina,Western Australia,-29.764968,122.476896,Operating,Gold and silver
+Edna May,Western Australia,-31.2912,118.6998,Paused (care and maintenance),Gold and silver
+Eliwana,Western Australia,-22.4937,116.830554,Operating,Iron ore and manganese
+Eloise,Queensland,-20.9533,140.9805694,Operating,"Copper, zinc and lead"
+Endeavor,New South Wales,-31.162921,145.653796,Operating,"Copper, zinc and lead"
+Eneabba,Western Australia,-29.88897336,115.30321492,Being developed,Mineral sands and rare earths
+Ensham,Queensland,-23.454464,148.497455,Operating,Coal
+Enterprise,Western Australia,-30.3719,121.089,Operating,Gold and silver
+Ernest Henry,Queensland,-20.439829,140.70281,Operating,"Copper, zinc and lead"
+Eva,Queensland,-20.1455,140.1453,Being developed,"Copper, zinc and lead"
+Federation ,New South Wales,-32.2018,146.303,Operating,"Copper, zinc and lead"
+Fender,Western Australia,-27.3442,117.63454,Operating,Gold and silver
+Fingals ,Western Australia,-30.9684,121.8956,Operating,Gold and silver
+Finniss,Northern Territory,-12.695,130.791,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Firetail,Western Australia,-22.1177,117.925752,Operating,Iron ore and manganese
+Fish,Western Australia,-29.0995,123.117,Operating,Gold and silver
+Flying Fox,Western Australia,-32.4185,119.689,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Fosterville,Victoria,-36.7163,144.5036,Operating,Gold and silver
+Four Mile,South Australia,-30.1516,139.4956072,Operating,"Tin, tungsten and uranium"
+Foxleigh,Queensland,-22.947467,148.759,Operating,Coal
+Frances Creek,Northern Territory,-13.564163,131.850016,Paused (care and maintenance),Iron ore and manganese
+Frasers,Western Australia,-31.237,119.3312,Paused (care and maintenance),Gold and silver
+Gabanintha,Western Australia,-26.967612,118.646257,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Garden Well,Western Australia,-27.9064,122.356,Operating,Gold and silver
+Geko,Western Australia,-30.8641,120.9,Operating,Gold and silver
+George Fisher,Queensland,-20.5711,139.472,Operating,"Copper, zinc and lead"
+Ginkgo-Crayfish-Snapper,New South Wales,-33.3644,142.226,Paused (care and maintenance),Mineral sands and rare earths
+Glendell,New South Wales,-32.451192,151.077551,Operating,Coal
+Gloster,Western Australia,-27.5645,122.0749,Operating,Gold and silver
+Golden Age-Wiluna,Western Australia,-26.6018,120.246,Paused (care and maintenance),Gold and silver
+Golden Cities,Western Australia,-30.407235,121.396748,Operating,Gold and silver
+Golden Dragon,Western Australia,-28.9841,116.9578,Paused (care and maintenance),Gold and silver
+Golden Grove,Western Australia,-28.7446,116.945103,Operating,"Copper, zinc and lead"
+Goonyella,Queensland,-21.792321,147.962045,Operating,Coal
+Goschen,Victoria,-35.5598696,143.5315807,Being developed,Mineral sands and rare earths
+Gove,Northern Territory,-12.261117,136.837017,Operating,"Bauxite, fertiliser and industrial minerals"
+Granny Smith,Western Australia,-28.8112,122.4149,Operating,Gold and silver
+Great Australia Complex,Queensland,-20.7206,140.5105,Paused (care and maintenance),"Copper, zinc and lead"
+Great Cobar,New South Wales,-31.5001031,145.8422023,Operating,"Copper, zinc and lead"
+Great Fingall,Western Australia,-27.4606,117.8582,Operating,Gold and silver
+Greenbushes,Western Australia,-33.855846,116.06683,Operating,"Battery metals (nickel, lithium, vanadium)"
+Gregory Crinum,Queensland,-23.172246,148.356348,Operating,Coal
+Groote Eylandt,Northern Territory,-13.992158,136.445547,Operating,Iron ore and manganese
+Grosvenor,Queensland,-21.873168,147.992728,Paused (care and maintenance),Coal
+Gruyere,Western Australia,-27.98443,123.845213,Operating,Gold and silver
+Gudai-Darri,Western Australia,-22.5338,119.038123,Operating,Iron ore and manganese
+Gwalia,Western Australia,-28.9185,121.334,Operating,Gold and silver
+Hail Creek,Queensland,-21.505383,148.406805,Operating,Coal
+Halls Creek,Western Australia,-18.4096,127.3567,Paused (care and maintenance),Gold and silver
+Hamlet North,Western Australia,-31.4001,121.8122,Operating,Gold and silver
+Havieron,Western Australia,-21.7204,122.66929,Being developed,"Copper, zinc and lead"
+Hawkes Creek,Tasmania,-41.096,144.8844,Operating,"Bauxite, fertiliser and industrial minerals"
+HBJ,Western Australia,-31.0276,121.6031,Operating,Gold and silver
+Hellyer,Tasmania,-41.5746,145.7221,Paused (care and maintenance),"Copper, zinc and lead"
+Hemi,Western Australia,-20.8634,118.4277,Being developed,Gold and silver
+Henty,Tasmania,-41.8664,145.5574,Operating,Gold and silver
+Hera,New South Wales,-32.1107,146.3259,Paused (care and maintenance),"Copper, zinc and lead"
+Hillgrove,New South Wales,-30.5745,151.9008722,Being developed,Gold and silver
+Hillside,South Australia,-34.5375,137.8722,Being developed,"Copper, zinc and lead"
+Homestead,Western Australia,-30.5421,121.2283,Paused (care and maintenance),Gold and silver
+Honeymoon,South Australia,-31.74095,140.662365,Operating,"Tin, tungsten and uranium"
+Hope Downs 1,Western Australia,-22.94691,119.122931,Operating,Iron ore and manganese
+Hope Downs 2,Western Australia,-23.037833,119.096294,Being developed,Iron ore and manganese
+Hope Downs 4,Western Australia,-23.1459,119.5788,Operating,Iron ore and manganese
+Huandot,Northern Territory,-13.00292,131.10359,Paused (care and maintenance),"Bauxite, fertiliser and industrial minerals"
+Hub,Western Australia,-28.4628687,121.563415,Operating,Gold and silver
+Hunter Valley Operations,New South Wales,-32.526,150.9988,Operating,Coal
+Huntly,Western Australia,-32.555795,116.166496,Operating,"Bauxite, fertiliser and industrial minerals"
+Invincible,New South Wales,-33.326854,150.030003,Operating,Coal
+Iron Baron,South Australia,-32.998,137.156,Operating,Iron ore and manganese
+Iron Bridge,Western Australia,-21.25194,119.05583,Operating,Iron ore and manganese
+Iron Knob,South Australia,-32.7345743,137.1434666,Operating,Iron ore and manganese
+Iron Ridge,Western Australia,-26.9455,117.6818,Operating,Iron ore and manganese
+Iron Valley,Western Australia,-22.7201,119.3171,Operating,Iron ore and manganese
+Ironbark No 1,Queensland,-21.7367,148.1599172,Operating,Coal
+Isaac Plains Complex,Queensland,-21.9565,148.1088,Operating,Coal
+Jacinth-Ambrosia,South Australia,-30.9035,132.216,Operating,Mineral sands and rare earths
+Jack Hills,Western Australia,-26.05232,117.2414,Paused (care and maintenance),Iron ore and manganese
+Jaguar,Western Australia,-28.4446,121.1551,Paused (care and maintenance),"Copper, zinc and lead"
+Janet Ivy,Western Australia,-30.7745,121.3834,Operating,Gold and silver
+Jax,Queensland,-20.7048,147.8669934,Operating,Coal
+Jellinbah East,Queensland,-23.406874,148.950644,Operating,Coal
+Jericho,Queensland,-20.98,140.985,Being developed,"Copper, zinc and lead"
+Jervois,Northern Territory,-22.6594,136.267,Being developed,"Copper, zinc and lead"
+Jimblebar,Western Australia,-23.379259,120.139061,Operating,Iron ore and manganese
+Jundee,Western Australia,-26.3725,120.6041,Operating,Gold and silver
+Jupiter,Western Australia,-28.8072,122.2192,Operating,Gold and silver
+JWD,Western Australia,-26.791821,119.954639,Operating,Iron ore and manganese
+Kalgoorlie (Super Pit),Western Australia,-30.7781,121.505,Operating,Gold and silver
+Kanmantoo,South Australia,-35.0919,139.0054,Operating,"Copper, zinc and lead"
+Kanowna Belle,Western Australia,-30.6101,121.5761,Operating,Gold and silver
+Kara,Tasmania,-41.309996,145.772011,Operating,Iron ore and manganese
+Karara,Western Australia,-29.187544,116.774427,Operating,Iron ore and manganese
+Karlawinda,Western Australia,-23.7646,120.0997,Operating,Gold and silver
+Katanning ,Western Australia,-33.549,117.9065,Being developed,Gold and silver
+Kathleen Valley,Western Australia,-27.4694,120.5581,Operating,"Battery metals (nickel, lithium, vanadium)"
+Kestrel,Queensland,-23.241972,148.370306,Operating,Coal
+Keysbrook,Western Australia,-32.46423,115.938797,Operating,Mineral sands and rare earths
+King of Creation ,Western Australia,-28.1541896,122.3949877,Operating,Gold and silver
+King of the Hills,Western Australia,-28.6715,121.163,Operating,Gold and silver
+King Vol,Queensland,-16.9363,144.2496,Paused (care and maintenance),"Copper, zinc and lead"
+Kings Valley,Western Australia,-22.1595,117.869826,Operating,Iron ore and manganese
+Kirkalocka,Western Australia,-28.675,117.762,Paused (care and maintenance),Gold and silver
+Kogan Creek,Queensland,-26.939,150.7906406,Operating,Coal
+Koolan Island,Western Australia,-16.127535,123.740184,Operating,Iron ore and manganese
+Koolyanobbing,Western Australia,-30.8336,119.538,Operating,Iron ore and manganese
+Kundana,Western Australia,-30.711143,121.231141,Operating,Gold and silver
+Kundip,Western Australia,-33.6729,120.2016,Being developed,Gold and silver
+Kunwarara,Queensland,-22.8814,150.1869,Operating,"Bauxite, fertiliser and industrial minerals"
+Lady Loretta,Queensland,-19.768589,139.070193,Operating,"Copper, zinc and lead"
+Lake Cowan,Western Australia,-31.6683,121.8973,Operating,Gold and silver
+Lake Vermont,Queensland,-22.4457,148.4289845,Operating,Coal
+Lamb Creek,Western Australia,-22.8131,118.8736,Being developed,Iron ore and manganese
+Lanfranchi,Western Australia,-31.50546,121.8429,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Leinster,Western Australia,-27.788893,120.697235,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Liddell,New South Wales,-32.3916,150.9999,Paused (care and maintenance),Coal
+Lighthouse,Queensland,-18.3944,144.1733,Paused (care and maintenance),"Bauxite, fertiliser and industrial minerals"
+Lindsay's Find,Western Australia,-30.3275,121.6917,Paused (care and maintenance),Gold and silver
+Lord Byron,Western Australia,-29.1312,123.0439,Being developed,Gold and silver
+Lorena,Queensland,-20.7187,140.6487,Paused (care and maintenance),Gold and silver
+Loy Yang,Victoria,-38.2347,146.564,Operating,Coal
+Lucky Bay,Western Australia,-28.02938,114.183055,Operating,Mineral sands and rare earths
+MacPherson's Reward,Western Australia,-30.996009,121.198518,Operating,Gold and silver
+Maddingley,Victoria,-37.704289,144.440161,Operating,Coal
+Maggie Hays,Western Australia,-32.222472,120.516998,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Majestic ,Western Australia,-30.896376,121.939017,Operating,Gold and silver
+Maldon,Victoria,-36.9849,144.0731,Paused (care and maintenance),Gold and silver
+Mandalong,New South Wales,-33.1177,151.4622,Operating,Coal
+Mangoola,New South Wales,-32.296844,150.669987,Operating,Coal
+Manna,Western Australia,-30.871,122.5373,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Mannering,New South Wales,-33.164218,151.532511,Paused (care and maintenance),Coal
+Maralla Road ,Western Australia,-31.7388,115.9704,Operating,"Bauxite, fertiliser and industrial minerals"
+Marandoo,Western Australia,-22.638099,118.138562,Operating,Iron ore and manganese
+Marda,Western Australia,-30.2,119.26,Paused (care and maintenance),Gold and silver
+Mardie,Western Australia,-21.2507,115.8847,Being developed,"Bauxite, fertiliser and industrial minerals"
+Marvel Loch-Jaccoletti,Western Australia,-31.464569,119.492599,Operating,Gold and silver
+Matilda,Western Australia,-26.7575,120.2149,Paused (care and maintenance),Gold and silver
+Maules Creek,New South Wales,-30.5643,150.1319,Operating,Coal
+Maxwell,New South Wales,-32.3414,150.9274,Operating,Coal
+Maxwells,Western Australia,-31.0809,122.1989,Paused (care and maintenance),Gold and silver
+McArthur River,Northern Territory,-16.436,136.0985,Operating,"Copper, zinc and lead"
+Meandu,Queensland,-26.813543,151.911523,Operating,Coal
+Menzies,Western Australia,-29.7034,121.028,Being developed,Gold and silver
+Merlin,Queensland,-21.653303,140.493067,Paused (care and maintenance),"Copper, zinc and lead"
+Metropolitan,New South Wales,-34.1877,150.9924,Operating,Coal
+Middlemount,Queensland,-22.8449,148.650226,Operating,Coal
+Millennium,Queensland,-22.025,148.213,Paused (care and maintenance),Coal
+Mindarie,South Australia,-34.7984,140.2225,Operating,Mineral sands and rare earths
+Mindijup,Western Australia,-34.7689,118.0768,Operating,"Bauxite, fertiliser and industrial minerals"
+Mineral Hill,New South Wales,-32.5755,146.9871,Operating,"Copper, zinc and lead"
+Mining Area C,Western Australia,-22.92817,118.96431,Operating,Iron ore and manganese
+Miralga Creek ,Western Australia,-20.9725,119.4314,Operating,Iron ore and manganese
+Moolarben,New South Wales,-32.3051,149.791,Operating,Coal
+Moolart Well,Western Australia,-27.6112,122.3479,Paused (care and maintenance),Gold and silver
+Moora,Western Australia,-30.515323,116.03445,Operating,"Bauxite, fertiliser and industrial minerals"
+Moorvale,Queensland,-21.9735,148.3678048,Operating,Coal
+Moranbah North,Queensland,-21.871331,147.956742,Operating,Coal
+Morningstar,Victoria,-37.5686,146.2456,Paused (care and maintenance),Gold and silver
+Mount Arthur,New South Wales,-32.3432,150.8599,Operating,Coal
+Mount Boppy,New South Wales,-31.5618,146.3161,Paused (care and maintenance),Gold and silver
+Mount Bundy,Northern Territory,-12.917,131.4984,Being developed,Gold and silver
+Mount Carbine,Queensland,-16.5213,145.1319,Operating,"Tin, tungsten and uranium"
+Mount Carlton,Queensland,-20.2716,147.5619,Paused (care and maintenance),"Copper, zinc and lead"
+Mount Cattlin,Western Australia,-33.56241,120.038002,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Mount Celia,Western Australia,-29.4596,122.4979,Paused (care and maintenance),Gold and silver
+Mount Colin,Queensland,-20.7759,140.0445,Paused (care and maintenance),"Copper, zinc and lead"
+Mount Garnet,Queensland,-17.6849,145.1126,Paused (care and maintenance),"Copper, zinc and lead"
+Mount Holland,Western Australia,-32.087573,119.74847,Operating,"Battery metals (nickel, lithium, vanadium)"
+Mount Ida,Western Australia,-29.1881,120.4591,Operating,Gold and silver
+Mount Isa ,Queensland,-20.7247,139.4780222,Operating,"Copper, zinc and lead"
+Mount Keith,Western Australia,-27.229599,120.54174,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Mount Lyell,Tasmania,-42.061,145.5855,Paused (care and maintenance),"Copper, zinc and lead"
+Mount Magnet,Western Australia,-28.0602,117.7834,Operating,Gold and silver
+Mount Marion,Western Australia,-31.0738,121.4611,Operating,"Battery metals (nickel, lithium, vanadium)"
+Mount Moss,Queensland,-19.085818,145.84711,Paused (care and maintenance),Iron ore and manganese
+Mount Owen,New South Wales,-32.38684,151.099981,Operating,Coal
+Mount Pleasant,New South Wales,-32.2465,150.8509,Operating,Coal
+Mount Rawdon,Queensland,-25.2713,151.7641,Operating,Gold and silver
+Mount Thorley,New South Wales,-32.6463,151.0619,Operating,Coal
+Mount Todd,Northern Territory,-14.1387,132.102,Being developed,Gold and silver
+Mount Tom Price,Western Australia,-22.76352,117.771357,Operating,Iron ore and manganese
+Mount Webber,Western Australia,-21.537,119.289,Operating,Iron ore and manganese
+Mount Weld,Western Australia,-28.859949,122.547523,Operating,Mineral sands and rare earths
+Mount Windarra,Western Australia,-28.4852,122.233,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Mountain of Light,South Australia,-30.578933,138.451284,Paused (care and maintenance),"Copper, zinc and lead"
+Mourilyan,Queensland,-17.727639,146.077237,Operating,"Bauxite, fertiliser and industrial minerals"
+Mulga Rock,Western Australia,-29.904345,123.592004,Being developed,"Tin, tungsten and uranium"
+Munda,Western Australia,-31.5029,121.5309,Operating,Gold and silver
+Mungana,Queensland,-17.0991,144.3825,Paused (care and maintenance),"Copper, zinc and lead"
+Murrawombie,New South Wales,-31.2586,146.8719,Operating,"Copper, zinc and lead"
+Murrin Murrin,Western Australia,-28.7668,121.893,Operating,"Battery metals (nickel, lithium, vanadium)"
+Myhree-Boundary,Western Australia,-30.729,121.7753,Operating,Gold and silver
+Myrtle Springs,South Australia,-30.4168,138.2258,Operating,"Bauxite, fertiliser and industrial minerals"
+Myuna,New South Wales,-33.0635,151.5674,Operating,Coal
+Nammuldi,Western Australia,-22.4211,117.413002,Operating,Iron ore and manganese
+Naracoopa,Tasmania,-39.907344,144.105895,Operating,Mineral sands and rare earths
+Narrabri,New South Wales,-30.5169,149.8949,Operating,Coal
+Nebo-Babel,Western Australia,-26.0954,127.7274,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Nelson Bay River,Tasmania,-41.17,144.74,Paused (care and maintenance),Iron ore and manganese
+New Acland,Queensland,-27.274,151.700932,Operating,Coal
+Newlands,Queensland,-21.2544,147.901,Paused (care and maintenance),Coal
+Newman East,Western Australia,-23.3283,119.787,Operating,Iron ore and manganese
+Newman West,Western Australia,-23.355737,119.677787,Operating,Iron ore and manganese
+Newstan,New South Wales,-32.975814,151.57689,Paused (care and maintenance),Coal
+Nicholas Downs,Western Australia,-22.773894,120.894281,Paused (care and maintenance),Iron ore and manganese
+Nifty,Western Australia,-21.654853,121.570871,Being developed,"Copper, zinc and lead"
+Nimbus,Western Australia,-30.7887,121.6479,Paused (care and maintenance),"Copper, zinc and lead"
+NiWest,Western Australia,-29.0405,121.8072,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Nobles Nob,Northern Territory,-19.711476,134.290138,Operating,Gold and silver
+Nolans Bore,Northern Territory,-22.59385,133.238557,Being developed,Mineral sands and rare earths
+Northern Operations,Western Australia,-31.16898,121.6514,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Northparkes,New South Wales,-32.9135,148.0498,Operating,"Copper, zinc and lead"
+Nova-Bollinger,Western Australia,-31.819886,123.192413,Operating,"Battery metals (nickel, lithium, vanadium)"
+Oaky Creek,Queensland,-23.0686,148.4884472,Operating,Coal
+OK,Western Australia,-32.2186,121.7849,Operating,Gold and silver
+Olive Downs,Queensland,-22.2091,148.369,Operating,Coal
+Olympic Dam,South Australia,-30.437444,136.889293,Operating,"Copper, zinc and lead"
+Onslow,Western Australia,-22.0759995,116.2218082,Operating,Iron ore and manganese
+Orion Downs,Queensland,-24.4251,148.3608482,Operating,Coal
+Osborne,Queensland,-22.0939,140.5736,Paused (care and maintenance),"Copper, zinc and lead"
+Otto Bore,Western Australia,-28.111005,121.015082,Operating,Gold and silver
+Paddy's Flat,Western Australia,-26.6181,118.5022,Paused (care and maintenance),Gold and silver
+Pajingo,Queensland,-20.548,146.4634,Operating,Gold and silver
+Pakastani-Vintage Corp,Western Australia,-31.55298,119.571999,Operating,Gold and silver
+Paraburdoo,Western Australia,-23.2292,117.579,Operating,Iron ore and manganese
+Paradigm,Western Australia,-30.4749,120.9383,Operating,Gold and silver
+Paradise South,Queensland,-19.757052,139.112015,Operating,"Bauxite, fertiliser and industrial minerals"
+Parker Range,Western Australia,-31.6261,119.551693,Operating,Iron ore and manganese
+Paroo Station,Western Australia,-26.517944,119.941926,Paused (care and maintenance),"Copper, zinc and lead"
+Paulsens,Western Australia,-22.5794,116.2426,Operating,Gold and silver
+Peak Downs,Queensland,-22.219914,148.173066,Operating,Coal
+Peak Mines,New South Wales,-31.553942,145.869127,Operating,"Copper, zinc and lead"
+Peculiar Knob,South Australia,-29.586813,135.382648,Operating,Iron ore and manganese
+Peko Tailings,Northern Territory,-19.67536,134.28501,Paused (care and maintenance),Iron ore and manganese
+Penny,Western Australia,-28.852443,118.80643,Operating,Gold and silver
+Penny's Find,Western Australia,-30.53256,121.8745,Paused (care and maintenance),Gold and silver
+Philips Find,Western Australia,-30.6129,120.966,Operating,Gold and silver
+Phosphate Hill,Queensland,-21.874555,139.968205,Operating,"Bauxite, fertiliser and industrial minerals"
+Pilgangoora,Western Australia,-21.0723,118.8953,Operating,"Battery metals (nickel, lithium, vanadium)"
+Pine Dale,New South Wales,-33.297,150.065,Paused (care and maintenance),Coal
+Pinnacles,New South Wales,-32.052,141.329,Being developed,"Copper, zinc and lead"
+Plutonic,Western Australia,-25.3171,119.4437,Operating,Gold and silver
+Poitrel,Queensland,-22.041216,148.234381,Operating,Coal
+Porphyry ,Western Australia,-29.7809,122.285,Operating,Gold and silver
+Portia,South Australia,-31.433894,140.451072,Paused (care and maintenance),"Copper, zinc and lead"
+Premier,Western Australia,-33.4052,116.308515,Operating,Coal
+Princess Royal,Western Australia,-32.1326,121.8087,Operating,Gold and silver
+Prominent Hill,South Australia,-29.72004,135.5749,Operating,"Copper, zinc and lead"
+Queens Valley,Western Australia,-22.128667,117.769485,Operating,Iron ore and manganese
+Radio Hill,Western Australia,-20.982542,116.864841,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Ramone,Western Australia,-26.559088,120.846986,Operating,Gold and silver
+Rasp Mine,New South Wales,-31.9661,141.4562,Operating,"Copper, zinc and lead"
+Ravensthorpe,Western Australia,-33.64212,120.396308,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Ravenswood,Queensland,-20.1051,146.887475,Operating,Gold and silver
+Ravensworth,New South Wales,-32.44,150.997,Operating,Coal
+Ravensworth East,New South Wales,-32.4136,151.1153,Operating,Coal
+Rebecca-Roe,Western Australia,-30.347,122.922,Being developed,Gold and silver
+Red October,Western Australia,-29.2166,122.4141,Paused (care and maintenance),Gold and silver
+Renison Bell,Tasmania,-41.7955,145.4415,Operating,"Tin, tungsten and uranium"
+RHP,Western Australia,-30.7436,121.2602,Operating,Gold and silver
+Richmond,Queensland,-20.45,142.787,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Ridges,Western Australia,-16.6242,128.259361,Operating,Iron ore and manganese
+Ridgeway,New South Wales,-33.4353,148.9759,Paused (care and maintenance),"Copper, zinc and lead"
+Riley Creek,Tasmania,-41.74475,145.4114,Paused (care and maintenance),Iron ore and manganese
+Riverina,Western Australia,-29.7445,120.5645,Operating,Gold and silver
+Rix's Creek,New South Wales,-32.52684,151.129982,Operating,Coal
+Rix's Creek North,New South Wales,-32.468839,151.134981,Operating,Coal
+Robe River-Mesa A,Western Australia,-21.66316,115.830597,Operating,Iron ore and manganese
+Robe River-Mesa J,Western Australia,-21.747484,116.242201,Operating,Iron ore and manganese
+Rocklands,Queensland,-20.67809,140.363019,Paused (care and maintenance),"Copper, zinc and lead"
+Rolleston,Queensland,-24.4896,148.4149435,Operating,Coal
+Roper Bar,Northern Territory,-15.1487,135.0907087,Operating,Iron ore and manganese
+Roper River,Northern Territory,-14.93715489,134.035746,Operating,Mineral sands and rare earths
+Rosebery,Tasmania,-41.7723,145.5431,Operating,"Copper, zinc and lead"
+Rosemont,Western Australia,-27.8397,122.2753,Operating,Gold and silver
+Rothsay,Western Australia,-29.2821,116.8659,Operating,Gold and silver
+Rover 1,Northern Territory,-20.002125,133.656741,Being developed,"Copper, zinc and lead"
+Roy Hill,Western Australia,-22.562194,120.057771,Operating,Iron ore and manganese
+Russell Vale,New South Wales,-34.3595,150.8894,Operating,Coal
+Saint Elmo,Queensland,-20.555,141.875,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Sand King,Western Australia,-30.2111,120.9624,Operating,Gold and silver
+Sanjiv Ridge,Western Australia,-21.473998,119.664944,Operating,Iron ore and manganese
+Santa Complex,Western Australia,-31.0406,122.209736,Operating,Gold and silver
+Saraji,Queensland,-22.369379,148.291051,Operating,Coal
+Savage River,Tasmania,-41.487982,145.204429,Operating,Iron ore and manganese
+Savannah,Western Australia,-17.347206,128.023493,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Sconi,Queensland,-19.026873,144.954374,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Scotia,Western Australia,-32.4679,121.7923,Operating,Gold and silver
+Second Fortune,Western Australia,-29.3761,122.4358,Operating,Gold and silver
+Shine,Western Australia,-28.8484,116.9358,Operating,Iron ore and manganese
+Silvergrass,Western Australia,-22.3178,117.3035,Operating,Iron ore and manganese
+Sino Iron,Western Australia,-21.079589,116.147352,Operating,Iron ore and manganese
+Siviour,South Australia,-33.918009,136.428284,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Sonoma,Queensland,-20.62,147.86,Operating,Coal
+Sorby Hills ,Western Australia,-15.4494,128.9827,Being developed,"Copper, zinc and lead"
+Sorrel,Northern Territory,-17.193231,137.743503,Paused (care and maintenance),"Copper, zinc and lead"
+South Emu-Triton,Western Australia,-27.138,118.2669,Paused (care and maintenance),Gold and silver
+South Flank,Western Australia,-22.998671,118.923302,Operating,Iron ore and manganese
+South Kambalda,Western Australia,-31.627845,121.661257,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+South Middleback Ranges,South Australia,-33.2778123,137.1164116,Operating,Iron ore and manganese
+South Walker Creek,Queensland,-21.770942,148.442713,Operating,Coal
+Spargos Reward,Western Australia,-31.2362,121.4687,Being developed,Gold and silver
+Spinifex Ridge,Western Australia,-20.8875,120.1118,Paused (care and maintenance),"Copper, zinc and lead"
+Spotted Quoll,Western Australia,-32.47818,119.677803,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Springvale,New South Wales,-33.4035,150.1066,Operating,Coal
+St Anne's,Western Australia,-26.35806,118.77903,Operating,Gold and silver
+St Ives,Western Australia,-31.2951,121.6761,Operating,Gold and silver
+Starlight-Fortnum,Western Australia,-25.33,118.36,Operating,Gold and silver
+Stawell,Victoria,-37.0589,142.8002,Operating,Gold and silver
+Stratford Duralie,New South Wales,-32.11766,151.973597,Operating,Coal
+Sulphur Springs,Western Australia,-21.147005,119.205477,Being developed,"Copper, zinc and lead"
+Sunrise,New South Wales,-32.756687,147.419586,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Sunrise Dam,Western Australia,-29.0775,122.4245,Operating,Gold and silver
+Symes,Western Australia,-31.834268,119.065103,Paused (care and maintenance),Gold and silver
+Tahmoor,New South Wales,-34.2508,150.5795,Operating,Coal
+Tampia,Western Australia,-32.1624,118.4517,Paused (care and maintenance),Gold and silver
+Tanami ,Northern Territory,-20.5256,129.9336,Operating,Gold and silver
+Tank South,Western Australia,-31.063,122.5802,Paused (care and maintenance),Gold and silver
+Tarcoola,South Australia,-30.697135,134.529982,Paused (care and maintenance),Gold and silver
+Tarrawonga,New South Wales,-30.6384,150.169,Operating,Coal
+Telfer,Western Australia,-21.7224,122.2109,Operating,"Copper, zinc and lead"
+Texas,Queensland,-28.83055,151.29045,Paused (care and maintenance),"Copper, zinc and lead"
+Thuddungra,New South Wales,-34.173315,148.049644,Operating,"Bauxite, fertiliser and industrial minerals"
+Thunderbird,Western Australia,-17.431715,122.967879,Operating,Mineral sands and rare earths
+Thunderbox,Western Australia,-28.192,121.0054,Operating,Gold and silver
+Tomingley,New South Wales,-32.5848,148.2067,Operating,Gold and silver
+Tom's,South Australia,-34.36004,138.98696,Operating,"Bauxite, fertiliser and industrial minerals"
+Trident,Western Australia,-25.1691,119.6363,Operating,Gold and silver
+Tritton,New South Wales,-31.3956,146.7216,Operating,"Copper, zinc and lead"
+Tropicana,Western Australia,-29.26,124.55,Operating,Gold and silver
+Turnberry,Western Australia,-26.32551,118.78575,Operating,Gold and silver
+Two Boys,Western Australia,-31.7404,121.725,Operating,Gold and silver
+Ulan,New South Wales,-32.246863,149.749983,Operating,Coal
+Uley 2,South Australia,-34.799274,135.703459,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Ulysses,Western Australia,-29.1838,121.3236,Operating,Gold and silver
+Union Reefs,Northern Territory,-13.714,131.7905,Paused (care and maintenance),Gold and silver
+United-Wambo,New South Wales,-32.558422,151.008851,Operating,Coal
+Venus,Western Australia,-27.815,120.704,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Vickery,New South Wales,-30.7784,150.1916,Operating,Coal
+Victoria,Western Australia,-31.345262,119.416703,Paused (care and maintenance),Gold and silver
+Vivien,Western Australia,-27.9751,120.5695,Paused (care and maintenance),Gold and silver
+Vulcan,Queensland,-22.287,148.188,Operating,Coal
+Wallace North ,Queensland,-20.836205,140.75395,Paused (care and maintenance),"Copper, zinc and lead"
+Wambo,New South Wales,-32.566,150.9608,Operating,Coal
+Warkworth,New South Wales,-32.6127,151.0512,Operating,Coal
+Warrawoona,Western Australia,-21.33548,119.892303,Paused (care and maintenance),Gold and silver
+Warrego,Northern Territory,-19.4448,133.8237,Paused (care and maintenance),Iron ore and manganese
+West Angelas,Western Australia,-23.18855,118.78829,Operating,Iron ore and manganese
+Western Cell ,Western Australia,-26.64,120.25,Operating,Gold and silver
+Western Range,Western Australia,-23.225,117.561,Operating,Iron ore and manganese
+Western Turner Syncline,Western Australia,-22.66221,117.586304,Operating,Iron ore and manganese
+Whim Creek,Western Australia,-20.84373,117.830583,Being developed,"Copper, zinc and lead"
+White Dam,South Australia,-32.0955,140.5793,Operating,Gold and silver
+Widgiemooltha,Western Australia,-31.494669,121.564082,Paused (care and maintenance),Gold and silver
+Willowdale,Western Australia,-32.845099,116.061824,Operating,"Bauxite, fertiliser and industrial minerals"
+Wilpinjong,New South Wales,-32.332,149.885,Operating,Coal
+Wilton-Fairhill,Queensland,-23.323,148.551,Operating,Coal
+Wiluna West-C4,Western Australia,-26.68036,119.9373,Operating,Iron ore and manganese
+Windarling,Western Australia,-30.0122,119.2645,Operating,Iron ore and manganese
+Windimurra,Western Australia,-28.291621,118.529959,Being developed,"Battery metals (nickel, lithium, vanadium)"
+Wodgina,Western Australia,-21.174613,118.676381,Operating,"Battery metals (nickel, lithium, vanadium)"
+Wolfram Camp,Queensland,-17.084464,144.969389,Paused (care and maintenance),"Tin, tungsten and uranium"
+Wonarah,Northern Territory,-19.897087,136.330009,Being developed,"Bauxite, fertiliser and industrial minerals"
+Wonawinta,New South Wales,-32.2181,145.7322,Paused (care and maintenance),Gold and silver
+Wongawilli,New South Wales,-34.474921,150.735664,Paused (care and maintenance),Coal
+Wonmunna,Western Australia,-23.12290261,119.04973019,Operating,Iron ore and manganese
+Wonnerup,Western Australia,-33.651,115.434848,Operating,Mineral sands and rare earths
+Woodie Woodie,Western Australia,-21.638771,121.235468,Operating,Iron ore and manganese
+Woodlawn,New South Wales,-35.061317,149.571681,Operating,"Copper, zinc and lead"
+Worsley,Western Australia,-32.929208,116.455911,Operating,"Bauxite, fertiliser and industrial minerals"
+Yaamba,Queensland,-23.0844,150.3122,Operating,"Bauxite, fertiliser and industrial minerals"
+Yakabindie,Western Australia,-27.4555,120.5775,Paused (care and maintenance),"Battery metals (nickel, lithium, vanadium)"
+Yallourn,Victoria,-38.1863,146.3832,Operating,Coal
+Yalyalup,Western Australia,-33.689709,115.472298,Operating,Mineral sands and rare earths
+Yandi,Western Australia,-22.7326,119.023697,Operating,Iron ore and manganese
+Yandicoogina,Western Australia,-22.762345,119.211129,Operating,Iron ore and manganese
+Yangibana,Western Australia,-23.891614,116.195835,Being developed,Mineral sands and rare earths
+Yarrabee,Queensland,-23.317678,149.026371,Operating,Coal
+Yendon,Victoria,-37.6572,143.98,Paused (care and maintenance),"Bauxite, fertiliser and industrial minerals"

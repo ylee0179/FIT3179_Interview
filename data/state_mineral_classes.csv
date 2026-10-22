@@ -1,0 +1,68 @@
+state,cls,specimens,percent_of_state
+Australian Capital Territory,Carbonates,1,20.0
+Australian Capital Territory,Other classes,1,20.0
+Australian Capital Territory,Sulfates,3,60.0
+New South Wales,Carbonates,768,20.7
+New South Wales,Halides,236,6.4
+New South Wales,Native elements,296,8.0
+New South Wales,Other classes,121,3.3
+New South Wales,Oxides and hydroxides,380,10.3
+New South Wales,"Phosphates, arsenates and vanadates",336,9.1
+New South Wales,Silicates,835,22.5
+New South Wales,Sulfates,213,5.8
+New South Wales,Sulfides and sulfosalts,436,11.8
+Northern Territory,Carbonates,132,19.7
+Northern Territory,Halides,7,1.0
+Northern Territory,Native elements,59,8.8
+Northern Territory,Other classes,15,2.2
+Northern Territory,Oxides and hydroxides,83,12.4
+Northern Territory,"Phosphates, arsenates and vanadates",92,13.7
+Northern Territory,Silicates,218,32.5
+Northern Territory,Sulfates,9,1.3
+Northern Territory,Sulfides and sulfosalts,47,7.0
+Queensland,Carbonates,100,15.2
+Queensland,Halides,4,0.6
+Queensland,Native elements,40,6.1
+Queensland,Other classes,24,3.6
+Queensland,Oxides and hydroxides,70,10.6
+Queensland,"Phosphates, arsenates and vanadates",68,10.3
+Queensland,Silicates,226,34.3
+Queensland,Sulfates,53,8.0
+Queensland,Sulfides and sulfosalts,63,9.6
+South Australia,Borates,5,0.1
+South Australia,Carbonates,1054,13.5
+South Australia,Halides,289,3.7
+South Australia,Native elements,402,5.1
+South Australia,Other classes,71,0.9
+South Australia,Oxides and hydroxides,1060,13.5
+South Australia,"Phosphates, arsenates and vanadates",1123,14.3
+South Australia,Silicates,1877,24.0
+South Australia,Sulfates,735,9.4
+South Australia,Sulfides and sulfosalts,1065,13.6
+Tasmania,Carbonates,66,14.8
+Tasmania,Halides,16,3.6
+Tasmania,Native elements,4,0.9
+Tasmania,Other classes,54,12.1
+Tasmania,Oxides and hydroxides,89,19.9
+Tasmania,"Phosphates, arsenates and vanadates",11,2.5
+Tasmania,Silicates,87,19.5
+Tasmania,Sulfates,2,0.4
+Tasmania,Sulfides and sulfosalts,105,23.5
+Victoria,Carbonates,75,16.1
+Victoria,Halides,1,0.2
+Victoria,Native elements,33,7.1
+Victoria,Other classes,6,1.3
+Victoria,Oxides and hydroxides,13,2.8
+Victoria,"Phosphates, arsenates and vanadates",74,15.8
+Victoria,Silicates,196,42.0
+Victoria,Sulfates,21,4.5
+Victoria,Sulfides and sulfosalts,19,4.1
+Western Australia,Carbonates,121,10.7
+Western Australia,Halides,35,3.1
+Western Australia,Native elements,189,16.7
+Western Australia,Other classes,63,5.6
+Western Australia,Oxides and hydroxides,157,13.8
+Western Australia,"Phosphates, arsenates and vanadates",50,4.4
+Western Australia,Silicates,259,22.8
+Western Australia,Sulfates,44,3.9
+Western Australia,Sulfides and sulfosalts,184,16.2

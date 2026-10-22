@@ -1,0 +1,472 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Layered map comparing the museum's collecting places (rings) with mines recorded in 2025 (dots, coloured by commodity). A dark ring means a mine still operates within 25 kilometres.",
+  "width": 640,
+  "height": 500,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -134,
+      0
+    ],
+    "center": [
+      0,
+      -27
+    ],
+    "scale": 690,
+    "translate": [
+      320,
+      250
+    ]
+  },
+  "params": [
+    {
+      "name": "commodity_pick",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Gold and silver",
+          "Coal",
+          "Iron ore and manganese",
+          "Copper, zinc and lead",
+          "Battery metals (nickel, lithium, vanadium)",
+          "Other commodities"
+        ],
+        "labels": [
+          "Every commodity",
+          "Gold and silver",
+          "Coal",
+          "Iron ore",
+          "Copper, zinc and lead",
+          "Battery metals",
+          "Other commodities"
+        ],
+        "name": "Show mines for: "
+      }
+    },
+    {
+      "name": "status_pick",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Operating",
+          "Paused (care and maintenance)",
+          "Being developed"
+        ],
+        "labels": [
+          "Every status",
+          "Operating",
+          "Paused (care and maintenance)",
+          "Being developed"
+        ],
+        "name": "Mine status: "
+      }
+    },
+    {
+      "name": "show_museum",
+      "value": true,
+      "bind": {
+        "input": "checkbox",
+        "name": "Show museum collecting places "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#D3E1DE",
+        "stroke": null,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            10,
+            10
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#F5F7F1",
+        "strokeWidth": 0.8,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E9E4D3",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/operating_mines_2025.csv"
+      },
+      "transform": [
+        {
+          "calculate": "indexof([\"Mineral sands and rare earths\", \"Bauxite, fertiliser and industrial minerals\", \"Tin, tungsten and uranium\"], datum.commodity) >= 0 ? 'Other commodities' : datum.commodity",
+          "as": "commodity_group"
+        },
+        {
+          "filter": "(commodity_pick == null || datum.commodity_group == commodity_pick) && (status_pick == null || datum.status == status_pick)"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 28,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.5,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "commodity_group",
+          "type": "nominal",
+          "title": "Mines in 2025, by commodity",
+          "scale": {
+            "domain": [
+              "Gold and silver",
+              "Coal",
+              "Iron ore and manganese",
+              "Copper, zinc and lead",
+              "Battery metals (nickel, lithium, vanadium)",
+              "Other commodities"
+            ],
+            "range": [
+              "#C9A227",
+              "#3B3630",
+              "#B5603E",
+              "#3E7FA0",
+              "#5FB3A3",
+              "#B8B2A5"
+            ]
+          },
+          "legend": {
+            "orient": "bottom-left",
+            "direction": "vertical",
+            "columns": 2,
+            "symbolSize": 80,
+            "labelLimit": 160,
+            "labelFontSize": 10.5,
+            "rowPadding": 2,
+            "offset": 8,
+            "fillColor": "#FFFEFA",
+            "strokeColor": "#D9D6C8",
+            "padding": 10,
+            "cornerRadius": 6,
+            "labelExpr": "datum.label == 'Gold and silver' ? 'Gold and silver' : datum.label == 'Coal' ? 'Coal' : datum.label == 'Iron ore and manganese' ? 'Iron ore' : datum.label == 'Copper, zinc and lead' ? 'Copper, zinc and lead' : datum.label == 'Battery metals (nickel, lithium, vanadium)' ? 'Battery metals' : datum.label == 'Other commodities' ? 'Other commodities' : datum.label",
+            "columnPadding": 10
+          }
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "title": "Mine"
+          },
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "commodity",
+            "title": "Commodity"
+          },
+          {
+            "field": "status",
+            "title": "Status in 2025"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/australian_localities.csv"
+      },
+      "transform": [
+        {
+          "filter": "show_museum"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "filled": false,
+        "size": 260,
+        "strokeWidth": 2.2
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "stroke": {
+          "field": "mining_today",
+          "type": "nominal",
+          "title": "Museum collecting places",
+          "scale": {
+            "domain": [
+              "Mine within 25 kilometres today",
+              "No mine within 25 kilometres today"
+            ],
+            "range": [
+              "#2F2A22",
+              "#A9A08A"
+            ]
+          },
+          "legend": {
+            "orient": "top-right",
+            "symbolType": "circle",
+            "symbolFillColor": "transparent",
+            "symbolStrokeWidth": 2.2,
+            "symbolSize": 160,
+            "labelLimit": 240,
+            "labelExpr": "datum.label == 'Mine within 25 kilometres today' ? 'Still mined: a mine within 25 kilometres' : 'No longer mined nearby'",
+            "offset": 8,
+            "fillColor": "#FFFEFA",
+            "strokeColor": "#D9D6C8",
+            "padding": 7,
+            "cornerRadius": 6
+          }
+        },
+        "tooltip": [
+          {
+            "field": "locality",
+            "title": "Museum collecting place"
+          },
+          {
+            "field": "specimens",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Museum specimens"
+          },
+          {
+            "field": "nearest_mine",
+            "title": "Nearest mine in 2025"
+          },
+          {
+            "field": "nearest_mine_km",
+            "type": "quantitative",
+            "format": ".0f",
+            "title": "Distance in kilometres"
+          },
+          {
+            "field": "nearest_status",
+            "title": "Its status"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 141.47,
+            "lat": -31.95,
+            "lon2": 152.5,
+            "lat2": -35.5
+          },
+          {
+            "lon": 121.47,
+            "lat": -30.75,
+            "lon2": 119.5,
+            "lat2": -35.2
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "show_museum"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#2F2A22",
+        "strokeWidth": 0.9
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "lon2"
+        },
+        "latitude2": {
+          "field": "lat2"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 152.5,
+            "lat": -35.5,
+            "t": [
+              "Broken Hill:",
+              "still mined today"
+            ],
+            "a": "left",
+            "dx": 4,
+            "dy": 8
+          },
+          {
+            "lon": 119.5,
+            "lat": -35.2,
+            "t": [
+              "Kalgoorlie:",
+              "still mined today"
+            ],
+            "a": "center",
+            "dx": 0,
+            "dy": 12
+          },
+          {
+            "lon": 137.6,
+            "lat": -34.0,
+            "t": [
+              "Moonta and Wallaroo:",
+              "copper mines closed"
+            ],
+            "a": "right",
+            "dx": -14,
+            "dy": 26
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "show_museum"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "lineHeight": 13,
+        "color": "#2F2A22",
+        "align": {
+          "expr": "datum.a"
+        },
+        "dx": {
+          "expr": "datum.dx"
+        },
+        "dy": {
+          "expr": "datum.dy"
+        }
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "legend": {
+      "color": "independent",
+      "stroke": "independent"
+    }
+  },
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelColor": "#394f47",
+      "titleColor": "#263b33",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#1c352e",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#66766e",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  }
+}

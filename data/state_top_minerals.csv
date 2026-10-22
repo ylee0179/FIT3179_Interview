@@ -1,0 +1,60 @@
+state,species,specimens,rank,cls
+Australian Capital Territory,Cerussite,1,2.0,Carbonates
+Australian Capital Territory,Linarite,3,1.0,Sulfates
+Australian Capital Territory,Raspite,1,3.0,Other classes
+New South Wales,Calcite,140,3.0,Carbonates
+New South Wales,Cassiterite,126,5.0,Oxides and hydroxides
+New South Wales,Cerussite,189,1.0,Carbonates
+New South Wales,Chlorargyrite,107,8.0,Halides
+New South Wales,Copper,111,7.0,Native elements
+New South Wales,Quartz,138,4.0,Silicates
+New South Wales,Silver,112,6.0,Native elements
+New South Wales,Smithsonite,154,2.0,Carbonates
+Northern Territory,Cassiterite,20,7.0,Oxides and hydroxides
+Northern Territory,Cerussite,29,5.0,Carbonates
+Northern Territory,Gold,41,2.0,Native elements
+Northern Territory,Malachite,47,1.0,Carbonates
+Northern Territory,Mimetite,18,8.0,"Phosphates, arsenates and vanadates"
+Northern Territory,Muscovite,34,3.0,Silicates
+Northern Territory,Pyromorphite,30,4.0,"Phosphates, arsenates and vanadates"
+Northern Territory,Quartz,23,6.0,Silicates
+Queensland,Calcite,62,2.0,Carbonates
+Queensland,Cassiterite,15,7.0,Oxides and hydroxides
+Queensland,Copper,17,5.0,Native elements
+Queensland,Corundum,13,8.0,Oxides and hydroxides
+Queensland,Cuprite,16,6.0,Oxides and hydroxides
+Queensland,Gypsum,23,4.0,Sulfates
+Queensland,Opal,28,3.0,Silicates
+Queensland,Quartz,123,1.0,Silicates
+South Australia,Azurite,188,8.0,Carbonates
+South Australia,Barite,255,5.0,Sulfates
+South Australia,Chalcopyrite,305,3.0,Sulfides and sulfosalts
+South Australia,Gypsum,277,4.0,Sulfates
+South Australia,Hematite,242,7.0,Oxides and hydroxides
+South Australia,Malachite,345,2.0,Carbonates
+South Australia,Opal,253,6.0,Silicates
+South Australia,Quartz,569,1.0,Silicates
+Tasmania,Axinite,16,4.0,Silicates
+Tasmania,Bornite,12,7.0,Sulfides and sulfosalts
+Tasmania,Cassiterite,63,1.0,Oxides and hydroxides
+Tasmania,Cerussite,16,5.0,Carbonates
+Tasmania,Chabazite,10,8.0,Silicates
+Tasmania,Crocoite,48,2.0,Other classes
+Tasmania,Fluorite,16,6.0,Halides
+Tasmania,Galena,17,3.0,Sulfides and sulfosalts
+Victoria,Analcime,19,7.0,Silicates
+Victoria,Aragonite,27,4.0,Carbonates
+Victoria,Calcite,26,6.0,Carbonates
+Victoria,Chabazite,31,2.0,Silicates
+Victoria,Gmelinite,16,8.0,Silicates
+Victoria,Gold,33,1.0,Native elements
+Victoria,Natrolite,27,5.0,Silicates
+Victoria,Quartz,31,3.0,Silicates
+Western Australia,Beryl,26,5.0,Silicates
+Western Australia,Calaverite,32,4.0,Sulfides and sulfosalts
+Western Australia,Calcite,43,3.0,Carbonates
+Western Australia,Galena,23,7.0,Sulfides and sulfosalts
+Western Australia,Gold,154,1.0,Native elements
+Western Australia,Hematite,24,6.0,Oxides and hydroxides
+Western Australia,Lepidolite,23,8.0,Silicates
+Western Australia,Quartz,52,2.0,Silicates

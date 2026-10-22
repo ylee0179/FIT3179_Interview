@@ -1,0 +1,245 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Acquisition-method rank by decade. A method only appears in decades where recorded. Dot size shows how many dated records the decade has.",
+  "width": 860,
+  "height": 320,
+  "padding": {
+    "top": 28,
+    "left": 5,
+    "right": 12,
+    "bottom": 5
+  },
+  "data": {
+    "url": "data/acquisition_rankings.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "rank": "number",
+        "count": "number",
+        "total": "number"
+      }
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          1900,
+          2000
+        ]
+      },
+      "axis": {
+        "title": "Decade",
+        "values": [
+          1900,
+          1910,
+          1920,
+          1930,
+          1940,
+          1950,
+          1960,
+          1970,
+          1980,
+          1990,
+          2000
+        ],
+        "format": "d",
+        "labelExpr": "datum.label + 's'",
+        "grid": true
+      }
+    },
+    "y": {
+      "field": "rank",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          4,
+          1
+        ]
+      },
+      "axis": {
+        "title": "Rank within the decade",
+        "values": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "format": "d",
+        "labelExpr": "['', 'First', 'Second', 'Third', 'Fourth'][datum.value]"
+      }
+    },
+    "color": {
+      "field": "method",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Donated",
+          "Purchased",
+          "Exchanged",
+          "Collected"
+        ],
+        "range": [
+          "#367F8C",
+          "#C26E5A",
+          "#8C7AB0",
+          "#8EAA9F"
+        ]
+      },
+      "legend": {
+        "title": "Acquisition method",
+        "orient": "bottom",
+        "direction": "horizontal"
+      }
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "impute": "rank",
+          "key": "year",
+          "groupby": [
+            "method"
+          ],
+          "keyvals": {
+            "start": 1900,
+            "stop": 2001,
+            "step": 10
+          },
+          "value": null
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3.2,
+        "invalid": "break-paths-filter-domains"
+      },
+      "encoding": {
+        "detail": {
+          "field": "method"
+        },
+        "tooltip": null
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum.rank)"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 1,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "size": {
+          "value": 95
+        },
+        "tooltip": [
+          {
+            "field": "decade",
+            "title": "Decade"
+          },
+          {
+            "field": "method",
+            "title": "Method"
+          },
+          {
+            "field": "rank",
+            "title": "Rank",
+            "format": "d"
+          },
+          {
+            "field": "count",
+            "title": "Dated acquisitions",
+            "format": ",d"
+          },
+          {
+            "field": "total",
+            "title": "All dated records in the decade",
+            "format": ",d"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 1990,
+            "rank": 1,
+            "note": "1996 accounts for 2,019 purchase records"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -18,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#9C4F3D"
+      },
+      "encoding": {
+        "text": {
+          "field": "note"
+        },
+        "color": null,
+        "tooltip": null
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": 1915,
+            "rank": 2.5,
+            "note": "No Exchanged data for 1910 and 1920"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": 14,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#6F5E94"
+      },
+      "encoding": {
+        "text": {
+          "field": "note"
+        },
+        "color": null,
+        "tooltip": null
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "gridColor": "#E8EAE3",
+      "labelColor": "#415457",
+      "titleColor": "#355865",
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "background": "transparent"
+  }
+}

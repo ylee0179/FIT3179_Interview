@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Stone Stories | An interactive atlas of Australian minerals</title>
+<meta content="Stone Stories: interactive maps and charts uncovering mineral science, Australian collecting places and museum specimen origins." name="description"/>
+<meta content="Lee Ying Yik" name="author"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;💎&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<link href="style.css" rel="stylesheet"/>
+<!-- Vega, Vega-Lite and Vega-Embed, pinned versions -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.33.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.23.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.29.0"></script>
+</head>
+<body><a class="skip-link" href="#origins">Skip to the data story</a>
+
+<!-- =============================== HERO =============================== -->
+<header class="hero">
+<div class="wrap hero-text">
+<div class="hero-copy">
+<h1>Stone Stories</h1>
+<p class="hero-sub">Where Australia's museum minerals come from, and how they compare</p>
+<p class="hero-lede">Explore 24,337 mineral specimens in the South Australian Museum, with recorded origins in 91 countries. Dig through the collection layer by layer, from where each stone was found to what makes a gem hard, heavy or brilliant.</p>
+</div>
+</div>
+<nav aria-label="Chapters" class="strata"><a class="stratum s1" href="#origins"><span class="num">1</span><span class="name">Origins</span><span class="question">Where in the world do the specimens come from?</span></a><a class="stratum s2" href="#ground"><span class="num">2</span><span class="name">Australian ground</span><span class="question">Which places fill the museum drawers?</span></a><a class="stratum s3" href="#chemistry"><span class="num">3</span><span class="name">Chemistry</span><span class="question">What are the specimens made of?</span></a><a class="stratum s4" href="#crystals"><span class="num">4</span><span class="name">Crystal shapes</span><span class="question">Which crystal shapes do collectors keep?</span></a><a class="stratum s5" href="#gems"><span class="num">5</span><span class="name">Gemstones</span><span class="question">How do precious stones compare with each other?</span></a></nav>
+</header>
+
+<main>
+
+<!-- =============================== FIELD GUIDE =============================== -->
+<section class="primer wrap mineral-guide" aria-labelledby="primer-title">
+  <div class="mineral-guide-heading">
+    <span class="guide-kicker">A QUICK FIELD GUIDE</span>
+    <h2 id="primer-title">Five things to know before exploring</h2>
+    <p>A few useful terms to guide you through the collection.</p>
+  </div>
+  <div class="mineral-guide-grid">
+    <div class="guide-item"><span class="guide-num">01</span><h3>Specimen</h3><p>One catalogued rock or crystal kept in the museum.</p></div>
+    <div class="guide-item"><span class="guide-num">02</span><h3>Mineral species</h3><p>A mineral defined by its chemistry and crystal structure.</p></div>
+    <div class="guide-item"><span class="guide-num">03</span><h3>Mineral family</h3><p>A group of minerals sorted by chemistry, such as carbonates or silicates.</p></div>
+    <div class="guide-item"><span class="guide-num">04</span><h3>Crystal system</h3><p>The shape of the tiny repeating building block inside a crystal.</p></div>
+    <div class="guide-item"><span class="guide-num">05</span><h3>Mohs hardness</h3><p>A scratch test from 1 (softest) to 10 (hardest).</p></div>
+  </div>
+</section>
+
+<!-- =============================== 1 ORIGINS =============================== -->
+<section aria-labelledby="origins-title" class="chapter wrap" id="origins">
+  <div class="chapter-head">
+    <div aria-hidden="true" class="chapter-mark">01</div>
+    <div>
+      <p class="chapter-kicker">Chapter 1: Where the collection comes from</p>
+      <h2 id="origins-title">From around the world to Australia</h2>
+      <p class="lede">Most specimens were found in Australia; the rest come from 90 other countries.</p>
+    </div>
+  </div>
+
+  <figure class="panel">
+    <div class="split">
+      <div>
+        <div class="fig-head">
+          <h3>Where did the museum's minerals come from?</h3>
+          <p>Australia dominates, but the United States, Germany and the United Kingdom lead overseas.</p>
+        </div>
+        <div class="chart" id="vis-waffle"></div>
+      </div>
+      <div class="notes">
+        <div class="origin-side-notes">
+          <div class="origin-note-card">
+            <span class="origin-label">AUSTRALIAN DOMINANCE</span>
+            <h3>61.6%</h3>
+            <p>Nearly two-thirds of specimens have an Australian origin (14,993 specimens).</p>
+          </div>
+          <div class="origin-note-card">
+            <span class="origin-label">LEADING OVERSEAS SOURCES</span>
+            <h3>43.6%</h3>
+            <p>Three countries supply 3,574 of the 8,191 overseas specimens.</p>
+          </div>
+          <div class="origin-note-card">
+            <span class="origin-label">INCOMPLETE LOCATION RECORDS</span>
+            <h3>4.7%</h3>
+            <p>1,153 records have no country, so they cannot be mapped.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <p class="bridge">Those countries, drawn on a map:</p>
+  <figure class="panel">
+    <div class="fig-head">
+      <h3>Recorded origins converge on Adelaide</h3>
+      <p>Each line joins a source country to the museum; thicker lines mean more specimens.</p>
+      <span class="how">Drag the slider to show smaller sources. Hover a line for its count.</span>
+    </div>
+    <div class="chart" id="vis-flow-original"></div>
+    <div class="notes row two">
+      <div class="note"><span class="figure-num">Europe</span><p>has the most lines: many small countries, each sending specimens.</p></div>
+      <div class="note"><span class="figure-num">90 countries</span><p>appear when you lower the slider to 1, including Malaysia.</p></div>
+    </div>
+    <p class="source">Lines start at each country's centre and show origin, not the route travelled.</p>
+  </figure>
+
+  <p class="bridge">But big countries naturally send more. Dividing by land area tells a different story:</p>
+  <figure class="panel">
+    <div class="fig-head">
+      <h3>Size changes the ranking</h3>
+      <p>Specimens per million square kilometres of land: how densely each country was collected.</p>
+      <span class="how">Hover a country for its numbers. Use the menu to zoom to a region.</span>
+    </div>
+    <div class="chart" id="vis-world"></div>
+    <div class="notes row">
+      <div class="note"><p><strong>Raw counts mislead.</strong> The United States sent 1,921 specimens, but only 202 per million square kilometres.</p></div>
+      <div class="note"><p><strong>Switzerland leads</strong> with 3,800, ahead of the United Kingdom (2,856) and Germany (2,645).</p></div>
+      <div class="note"><p><strong>Malaysia appears too:</strong> 16 specimens, mostly cassiterite, the tin ore it once led the world in.</p></div>
+    </div>
+    <p class="source">Beige countries have no recorded specimens.</p>
+  </figure>
+
+  <p class="bridge">Where specimens came from is half the story. How they arrived changed over time:</p>
+  <figure class="panel preferred-chart" id="bump-figure">
+    <div class="fig-head">
+      <h3>Did acquisition methods change their ranking?</h3>
+      <p>The rank of donations, purchases, exchanges and field collecting in each decade.</p>
+      <span class="how">Hover a dot for its method, decade, rank and number of dated records.</span>
+    </div>
+    <div class="chart" id="vis-bump"></div>
+    <div class="bump-annotations">
+      <div class="bump-note">
+        <span class="bump-label">KEY SHIFT</span>
+        <h4>One 1996 batch put purchases on top</h4>
+        <p>2,019 of the 2,046 purchases in the 1990s are dated 1996.</p>
+      </div>
+      <div class="bump-note">
+        <span class="bump-label">CHANGING PATTERNS</span>
+        <h4>No permanent leader</h4>
+        <p>The most common method changed from decade to decade.</p>
+      </div>
+      <div class="bump-note">
+        <span class="bump-label">DATA LIMITATION</span>
+        <h4>Missing does not mean zero</h4>
+        <p>A gap means too few dated records to rank, not that nothing arrived.</p>
+      </div>
+    </div>
+    <p class="insight-line"><strong>How to read:</strong> "First" is the most common method in that decade. Only dated records are ranked.</p>
+  </figure>
+</section>
+
+<!-- =============================== 2 GROUND =============================== -->
+<section aria-labelledby="ground-title" class="chapter wrap" id="ground">
+  <div class="chapter-head">
+    <div aria-hidden="true" class="chapter-mark">02</div>
+    <div>
+      <p class="chapter-kicker">Chapter 2: A closer look at Australian ground</p>
+      <h2 id="ground-title">The Australian landscape behind the labels</h2>
+      <p class="lede">Compare where the museum collected with where Australia mines today.</p>
+    </div>
+  </div>
+
+  <figure class="panel">
+    <div class="fig-head">
+      <h3>South Australia collected closest to home</h3>
+      <p>Specimens per 100,000 square kilometres; the bar chart lists each state's top minerals.</p>
+      <span class="how">Click a state or territory to compare its most collected minerals.</span>
+    </div>
+    <div class="chart" id="vis-states"></div>
+    <div class="notes row">
+      <div class="note"><span class="figure-num">796</span><p>per 100,000 square kilometres in South Australia, the densest collecting ground.</p></div>
+      <div class="note"><span class="figure-num">657</span><p>in Tasmania, a small island packed with tin and lead mines.</p></div>
+      <div class="note"><span class="figure-num">45</span><p>in Western Australia: many specimens, spread over a vast area.</p></div>
+    </div>
+  </figure>
+
+  <p class="bridge">Within those states, a few towns supplied most of the collection. Are they still mined today?</p>
+  <div class="pair">
+    <figure class="panel">
+      <div class="fig-head">
+        <h3>Mining towns are the real treasure chests</h3>
+        <p>Bigger circles mean more specimens; colour shows the leading mineral family.</p>
+        <span class="how">Use the menu to highlight a family. Hover a circle for details.</span>
+      </div>
+      <div class="chart" id="vis-localities"></div>
+      <div class="notes">
+        <div class="note"><span class="figure-num">2,329</span><p>specimens from <strong>Broken Hill</strong> alone, more than Western Australia and Queensland combined.</p></div>
+        <div class="note"><span class="figure-num">23 of 60</span><p>mapped places are in <strong>South Australia</strong>, holding 53 percent of mapped specimens.</p></div>
+      </div>
+    </figure>
+    <figure class="panel">
+      <div class="fig-head">
+        <h3>Collecting followed old mines; today's mines moved west</h3>
+        <p>Dark rings have a 2025 mine within 25 kilometres; pale rings do not.</p>
+        <span class="how">Filter mines by commodity or status. Untick the box to hide museum places.</span>
+      </div>
+      <div class="chart" id="vis-thennow"></div>
+      <div class="notes">
+        <div class="note"><span class="figure-num">31 of 60</span><p>collecting places still have a mine within 25 kilometres.</p></div>
+        <div class="note"><p><strong>Moonta, Wallaroo and Burra</strong> are heritage towns now; museum specimens are their lasting record.</p></div>
+      </div>
+    </figure>
+  </div>
+  <p class="source pair-source">Circles sit at the nearest town, not the exact mine. Grey mines combine smaller commodities. Mines: Geoscience Australia, 2025.</p>
+
+  <p class="bridge">Each famous mineral has its own territory:</p>
+  <figure class="panel">
+    <div class="fig-head">
+      <h3>Six signature minerals, six different maps</h3>
+      <p>The same map for each mineral, with one shared circle size scale.</p>
+      <span class="how">Hover a circle to see the place and its number of specimens.</span>
+    </div>
+    <div class="chart chart-center" id="vis-signature"></div>
+    <div class="notes row">
+      <div class="note"><p><strong>Gold</strong> comes from Kalgoorlie and South Australia; <strong>opal</strong> from the dry inland.</p></div>
+      <div class="note"><p><strong>Cassiterite</strong> (tin ore) sits in Tasmania and New England, like Malaysia's Kinta Valley.</p></div>
+      <div class="note"><p><strong>Quartz</strong> turns up nearly everywhere, so it is the most collected mineral.</p></div>
+    </div>
+  </figure>
+
+  <p class="bridge">Put into numbers, the museum's map and today's mining map look very different:</p>
+  <figure class="panel">
+    <div class="split">
+      <div>
+        <div class="fig-head">
+          <h3>Where the museum collected, against where Australia mines</h3>
+          <p>Left: share of museum specimens. Right: share of 2025 mine sites.</p>
+          <span class="how">Hover a bar to highlight that state's two values.</span>
+        </div>
+        <div class="chart" id="vis-butterfly"></div>
+      </div>
+      <div class="notes">
+        <div class="note"><span class="figure-num">49 percent</span><p>of 2025 mine sites are in Western Australia, but only 8 percent of specimens.</p></div>
+        <div class="note"><span class="figure-num">53 percent</span><p>of specimens came from South Australia, home to 5 percent of mine sites.</p></div>
+        <div class="note"><p>A museum's drawers mirror its own state's history more than today's mining.</p></div>
+      </div>
+    </div>
+  </figure>
+</section>
+
+<!-- =============================== 3 CHEMISTRY =============================== -->
+<section aria-labelledby="chemistry-title" class="chapter wrap" id="chemistry">
+  <div class="chapter-head">
+    <div aria-hidden="true" class="chapter-mark">03</div>
+    <div>
+      <p class="chapter-kicker">Chapter 3: The chemistry of collecting</p>
+      <h2 id="chemistry-title">Chemistry makes every mineral different</h2>
+      <p class="lede">Each state's specimens have their own chemical mix, shaped by local geology.</p>
+    </div>
+  </div>
+
+  <figure class="panel">
+    <div class="fig-head">
+      <h3>Every state has its own mineral-family mix</h3>
+      <p>Darker blue means a larger share of that state's specimens.</p>
+      <span class="how">Hover a cell to highlight its row.</span>
+    </div>
+    <div class="chart" id="vis-heatmap"></div>
+    <div class="notes row">
+      <div class="note"><p><strong>Western Australia</strong> has the most native elements, 17 percent, mostly gold.</p></div>
+      <div class="note"><p><strong>Tasmania</strong> leans on sulfides, 24 percent, from its tin, lead and zinc mines.</p></div>
+      <div class="note"><p><strong>Victoria</strong> is 42 percent silicates, the family that includes quartz.</p></div>
+    </div>
+  </figure>
+
+  <figure class="panel">
+    <div class="split">
+      <div>
+        <div class="fig-head">
+          <h3>The twelve favourites are mostly home-grown</h3>
+          <p>Each bar shows the share of a mineral found in Australia and overseas.</p>
+          <span class="how">Click the legend to isolate Australian or overseas specimens.</span>
+        </div>
+        <div class="chart" id="vis-topspecies"></div>
+      </div>
+      <div class="notes">
+        <div class="note"><p><strong>Malachite, gold and opal</strong> are over 90 percent Australian.</p></div>
+        <div class="note"><p><strong>Calcite</strong> is the most international: one in three came from overseas.</p></div>
+        <div class="note"><p>Copper minerals fill four of the twelve places.</p></div>
+      </div>
+    </div>
+  </figure>
+</section>
+
+<!-- =============================== 4 CRYSTALS =============================== -->
+<section aria-labelledby="crystals-title" class="chapter wrap" id="crystals">
+  <div class="chapter-head">
+    <div aria-hidden="true" class="chapter-mark">04</div>
+    <div>
+      <p class="chapter-kicker">Chapter 4: Crystal shapes</p>
+      <h2 id="crystals-title">Collectors prefer neat, symmetrical crystals</h2>
+      <p class="lede">Science knows about 6,000 minerals. The museum keeps more of the showy shapes.</p>
+    </div>
+  </div>
+
+  <div aria-label="The six crystal systems" class="glyphs">
+    <div class="glyph"><svg aria-hidden="true" viewBox="0 0 64 64"><path d="M14 22 L32 13 L50 22 L50 44 L32 53 L14 44 Z" fill="#E5C2B8" stroke="#2F2A22" stroke-linejoin="round" stroke-width="1.6"></path><path d="M14 22 L32 31 L50 22 M32 31 L32 53" fill="none" stroke="#2F2A22" stroke-width="1.6"></path></svg><b>Cubic</b><span>All sides equal, like salt or pyrite</span></div>
+    <div class="glyph"><svg aria-hidden="true" viewBox="0 0 64 64"><path d="M20 12 L32 7 L44 12 L44 50 L32 56 L20 50 Z" fill="#E9D2B4" stroke="#2F2A22" stroke-linejoin="round" stroke-width="1.6"></path><path d="M20 12 L32 17 L44 12 M32 17 L32 56" fill="none" stroke="#2F2A22" stroke-width="1.6"></path></svg><b>Tetragonal</b><span>A stretched cube, like zircon</span></div>
+    <div class="glyph"><svg aria-hidden="true" viewBox="0 0 64 64"><path d="M18 16 L26 10 L38 10 L46 16 L46 48 L38 54 L26 54 L18 48 Z" fill="#9DCCD9" stroke="#2F2A22" stroke-linejoin="round" stroke-width="1.6"></path><path d="M18 16 L26 22 L38 22 L46 16 M26 22 L26 54 M38 22 L38 54" fill="none" stroke="#2F2A22" stroke-width="1.6"></path></svg><b>Hexagonal</b><span>Six-sided prisms, like quartz</span></div>
+    <div class="glyph"><svg aria-hidden="true" viewBox="0 0 64 64"><path d="M8 26 L30 17 L56 24 L56 42 L34 51 L8 44 Z" fill="#CADBC2" stroke="#2F2A22" stroke-linejoin="round" stroke-width="1.6"></path><path d="M8 26 L34 33 L56 24 M34 33 L34 51" fill="none" stroke="#2F2A22" stroke-width="1.6"></path></svg><b>Orthorhombic</b><span>A brick with three unequal sides</span></div>
+    <div class="glyph"><svg aria-hidden="true" viewBox="0 0 64 64"><path d="M12 20 L34 14 L52 22 L46 46 L24 52 L6 44 Z" fill="#BFD1D1" stroke="#2F2A22" stroke-linejoin="round" stroke-width="1.6"></path><path d="M12 20 L30 28 L52 22 M30 28 L24 52" fill="none" stroke="#2F2A22" stroke-width="1.6"></path></svg><b>Monoclinic</b><span>A brick leaning one way, like gypsum</span></div>
+    <div class="glyph"><svg aria-hidden="true" viewBox="0 0 64 64"><path d="M14 18 L36 12 L54 24 L48 46 L22 54 L8 40 Z" fill="#D7CBE0" stroke="#2F2A22" stroke-linejoin="round" stroke-width="1.6"></path><path d="M14 18 L32 30 L54 24 M32 30 L22 54" fill="none" stroke="#2F2A22" stroke-width="1.6"></path></svg><b>Triclinic</b><span>Leaning every way, like turquoise</span></div>
+  </div>
+
+  <figure class="panel preferred-chart" id="crystal-figure">
+    <div class="fig-head">
+      <h3>Most minerals crystallise as monoclinic</h3>
+      <p>Rectangle area shows the number of known mineral species in each crystal system.</p>
+      <span class="how">Hover a rectangle for exact numbers. Click one to highlight it.</span>
+    </div>
+    <div class="chart" id="vis-crystal-treemap"></div>
+    <p class="source">Hexagonal includes trigonal minerals, as in the International Mineralogical Association list. Percentages are rounded.</p>
+  </figure>
+
+  <p class="bridge">The treemap shows what science knows. Does the museum keep the same mix?</p>
+  <figure class="panel">
+    <div class="split">
+      <div>
+        <div class="fig-head">
+          <h3>Which shapes gain, which shapes lose</h3>
+          <p>Lines rising to the right are over-represented in the museum.</p>
+          <span class="how">Hover a line to follow one crystal system.</span>
+        </div>
+        <div class="chart" id="vis-slope"></div>
+      </div>
+      <div class="notes">
+        <div class="note"><p><strong>Monoclinic</strong> falls from 35 to 22 percent: common in science, but often rare, tiny or dull.</p></div>
+        <div class="note"><p><strong>Cubic</strong> doubles from 9 to 18 percent: galena and fluorite grow showy cubes.</p></div>
+        <div class="note"><p><strong>Hexagonal</strong> rises from 19 to 31 percent, carried by quartz and calcite.</p></div>
+      </div>
+    </div>
+  </figure>
+</section>
+
+<!-- =============================== 5 GEMS =============================== -->
+<section aria-labelledby="gems-title" class="chapter wrap" id="gems">
+  <div class="chapter-head">
+    <div aria-hidden="true" class="chapter-mark">05</div>
+    <div>
+      <p class="chapter-kicker">Chapter 5: The physical character of gemstones</p>
+      <h2 id="gems-title">Hardness and brilliance: the life of a crystal</h2>
+      <p class="lede">Chemistry and shape decide how hard a mineral is, and how a gem sparkles.</p>
+    </div>
+  </div>
+
+  <div class="pair">
+    <figure class="panel preferred-chart" id="hardness-figure">
+      <div class="fig-head">
+        <h3>Hardness by crystal shape</h3>
+        <p>Each dot is a mineral, grouped by crystal system.</p>
+        <span class="how">Use the menu to select a system; hover a dot for its name.</span>
+      </div>
+      <div class="chart" id="vis-hardness-preferred"></div>
+      <p class="insight-line"><strong>Notice:</strong> every crystal shape spans soft and hard minerals.</p>
+    </figure>
+    <figure class="panel preferred-chart" id="family-hardness-figure">
+      <div class="fig-head">
+        <h3>Hardness by mineral family</h3>
+        <p>Boxes cover the middle half of each family; the line marks the median.</p>
+        <span class="how">Hover a dot for its name. Tick the box to keep museum minerals.</span>
+      </div>
+      <div class="chart" id="vis-family-hardness"></div>
+      <p class="insight-line"><strong>Notice:</strong> silicates and oxides sit higher; chemistry matters more than shape.</p>
+    </figure>
+  </div>
+  <p class="source pair-source">Mohs hardness ranks scratch resistance from 1 to 10. Window glass is about 5.5.</p>
+
+  <figure class="panel preferred-chart" id="gem-figure">
+    
+<div class="fig-head">
+  <h3>Are harder gemstones also denser?</h3>
+
+  <p>
+    Compare Mohs hardness and specific gravity
+    across 60 gemstone entries.
+    Each dot represents one gemstone variety.
+  </p>
+
+<span class="how">
+  Select a gemstone to highlight it.
+  Hover over dots for exact values.
+  The dashed line shows the overall trend.
+</span>
+</div>
+
+<div class="chart gem-radar-chart" id="gem-radar"></div>
+
+<p class="insight-line">
+  <strong>Key insight:</strong>
+  Hardness measures scratch resistance,
+  while specific gravity measures relative density.
+  A harder gemstone is not necessarily denser.
+</p>
+</section>
+
+<!-- =============================== CLOSING =============================== -->
+<section aria-labelledby="close-title" class="closing wrap closing-editorial">
+  <div class="closing-intro">
+    <p class="closing-kicker">THE FINAL LAYER: WHAT THE DATA REVEALS</p>
+    <h2 id="close-title">A mineral collection tells us as much about people as it does about rocks.</h2>
+    <p class="closing-lede">Nature shapes minerals. People decide which ones end up in a museum.</p>
+  </div>
+  <div class="closing-evidence">
+    <div class="closing-stat">
+      <span class="closing-value">61.6%</span>
+      <h3>Australian origins</h3>
+      <p>Nearly two-thirds of specimens have a recorded Australian origin.</p>
+    </div>
+    <div class="closing-stat">
+      <span class="closing-value">4.7%</span>
+      <h3>Unassigned origins</h3>
+      <p>Some records have no country: museum data is not always complete.</p>
+    </div>
+  </div>
+  <div class="closing-lessons">
+    <div class="closing-lesson">
+      <span class="closing-index">01</span>
+      <div><h3>Chemistry explains differences</h3><p>Hardness, shape and sparkle separate mineral species, but not which ones museums keep.</p></div>
+    </div>
+    <div class="closing-lesson">
+      <span class="closing-index">02</span>
+      <div><h3>Collecting history shapes the patterns</h3><p>South Australian places stand out because this is a South Australian museum.</p></div>
+    </div>
+  </div>
+  <div class="closing-final">
+    <span>THE TAKEAWAY</span>
+    <p>These records show what people collected, not everything that lies underground.</p>
+  </div>
+  <a href="#origins" class="closing-return">Explore the story again ↑</a>
+</section>
+</main>
+
+<!-- =============================== METADATA =============================== -->
+<footer>
+<div class="wrap">
+<h2>About this visualisation</h2>
+<div class="meta">
+<div>
+<h3>Data sources</h3>
+<ol class="references">
+  <li>Australian Bureau of Statistics. (2026, October 14). <em>Australian statistical geography standard (ASGS).</em> <a href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs" target="_blank" rel="noopener noreferrer">View source</a></li>
+  <li>Erebaur. (2026, September 19). <em>The stones.</em> Erebaur. <a href="https://erebaur.com/chapters/stones/" target="_blank" rel="noopener noreferrer">View source</a></li>
+  <li><em>IMA mineral list – RRUFF – comprehensive database of mineral data.</em> (2025). RRUFF. <a href="https://www.rruff.net/ima-mineral-list/" target="_blank" rel="noopener noreferrer">View source</a></li>
+  <li><em>Product catalogue.</em> (2026). Geoscience Australia. <a href="https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search#/metadata/11" target="_blank" rel="noopener noreferrer">View source</a></li>
+  <li><em>South Australian Museum minerals collection.</em> (2016). Data South Australia. <a href="https://data.sa.gov.au/data/dataset/south-australian-museum-minerals-collection" target="_blank" rel="noopener noreferrer">View source</a></li>
+</ol>
+</div>
+<div>
+<h3>How the data was prepared</h3>
+<p>Countries, states and mineral names come from catalogue locality fields; some origins are unknown. Collecting towns were matched to approximate coordinates. Mineral families come from International Mineralogical Association chemistry. Densities divide counts by land area. Distances to 2025 mines are straight-line and illustrative. Museum records were last updated in July 2016.</p>
+<h3>Author: Lee Ying Yik</h3>
+<p>Created for FIT3179 Data Visualisation at Monash University Malaysia, October 2026.</p>
+<h3>Use of artificial intelligence</h3>
+<p>AI assistance was used to revise page structure, explanatory text, visual styling and Vega-Lite code.</p>
+</div>
+</div>
+</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

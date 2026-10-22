@@ -1,0 +1,837 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Small multiple maps comparing where six signature minerals in the collection were found across Australia. Each mineral uses its natural colour; circle size uses one shared scale.",
+  "columns": 3,
+  "concat": [
+    {
+      "title": {
+        "text": "Gold",
+        "subtitle": "Kalgoorlie in the west, Tarcoola and Olary in the south",
+        "fontSize": 16
+      },
+      "width": 300,
+      "height": 250,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0
+        ],
+        "center": [
+          0,
+          -27.8
+        ],
+        "scale": 395,
+        "translate": [
+          150.0,
+          125.0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "sphere": true
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#D3E1DE",
+            "stroke": null,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/australia_states.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "states"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4D3",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.7,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/signature_minerals.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.species == 'Gold'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "opacity": 0.8,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.8,
+            "fill": "#C9A227",
+            "filled": true
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "specimens",
+              "type": "quantitative",
+              "title": "Specimens from each place",
+              "scale": {
+                "type": "sqrt",
+                "domain": [
+                  0,
+                  130
+                ],
+                "range": [
+                  8,
+                  800
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "species",
+                "title": "Mineral"
+              },
+              {
+                "field": "locality",
+                "title": "Place"
+              },
+              {
+                "field": "specimens",
+                "type": "quantitative",
+                "title": "Specimens"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Opal",
+        "subtitle": "Almost all from South Australian fields",
+        "fontSize": 16
+      },
+      "width": 300,
+      "height": 250,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0
+        ],
+        "center": [
+          0,
+          -27.8
+        ],
+        "scale": 395,
+        "translate": [
+          150.0,
+          125.0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "sphere": true
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#D3E1DE",
+            "stroke": null,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/australia_states.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "states"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4D3",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.7,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/signature_minerals.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.species == 'Opal'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "opacity": 0.8,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.8,
+            "fill": "#6FA8C7",
+            "filled": true
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "specimens",
+              "type": "quantitative",
+              "title": "Specimens from each place",
+              "scale": {
+                "type": "sqrt",
+                "domain": [
+                  0,
+                  130
+                ],
+                "range": [
+                  8,
+                  800
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "species",
+                "title": "Mineral"
+              },
+              {
+                "field": "locality",
+                "title": "Place"
+              },
+              {
+                "field": "specimens",
+                "type": "quantitative",
+                "title": "Specimens"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Malachite",
+        "subtitle": "Green copper ore of Burra and the Flinders Ranges",
+        "fontSize": 16
+      },
+      "width": 300,
+      "height": 250,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0
+        ],
+        "center": [
+          0,
+          -27.8
+        ],
+        "scale": 395,
+        "translate": [
+          150.0,
+          125.0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "sphere": true
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#D3E1DE",
+            "stroke": null,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/australia_states.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "states"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4D3",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.7,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/signature_minerals.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.species == 'Malachite'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "opacity": 0.8,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.8,
+            "fill": "#2E8B57",
+            "filled": true
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "specimens",
+              "type": "quantitative",
+              "title": "Specimens from each place",
+              "scale": {
+                "type": "sqrt",
+                "domain": [
+                  0,
+                  130
+                ],
+                "range": [
+                  8,
+                  800
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "species",
+                "title": "Mineral"
+              },
+              {
+                "field": "locality",
+                "title": "Place"
+              },
+              {
+                "field": "specimens",
+                "type": "quantitative",
+                "title": "Specimens"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Cassiterite",
+        "subtitle": "Tin ore from Tasmania and New England",
+        "fontSize": 16
+      },
+      "width": 300,
+      "height": 250,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0
+        ],
+        "center": [
+          0,
+          -27.8
+        ],
+        "scale": 395,
+        "translate": [
+          150.0,
+          125.0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "sphere": true
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#D3E1DE",
+            "stroke": null,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/australia_states.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "states"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4D3",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.7,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/signature_minerals.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.species == 'Cassiterite'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "opacity": 0.8,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.8,
+            "fill": "#7A4E2D",
+            "filled": true
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "specimens",
+              "type": "quantitative",
+              "title": "Specimens from each place",
+              "scale": {
+                "type": "sqrt",
+                "domain": [
+                  0,
+                  130
+                ],
+                "range": [
+                  8,
+                  800
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "species",
+                "title": "Mineral"
+              },
+              {
+                "field": "locality",
+                "title": "Place"
+              },
+              {
+                "field": "specimens",
+                "type": "quantitative",
+                "title": "Specimens"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Galena",
+        "subtitle": "Lead ore, dominated by Broken Hill",
+        "fontSize": 16
+      },
+      "width": 300,
+      "height": 250,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0
+        ],
+        "center": [
+          0,
+          -27.8
+        ],
+        "scale": 395,
+        "translate": [
+          150.0,
+          125.0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "sphere": true
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#D3E1DE",
+            "stroke": null,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/australia_states.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "states"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4D3",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.7,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/signature_minerals.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.species == 'Galena'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "opacity": 0.8,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.8,
+            "fill": "#5F6B73",
+            "filled": true
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "specimens",
+              "type": "quantitative",
+              "title": "Specimens from each place",
+              "scale": {
+                "type": "sqrt",
+                "domain": [
+                  0,
+                  130
+                ],
+                "range": [
+                  8,
+                  800
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "species",
+                "title": "Mineral"
+              },
+              {
+                "field": "locality",
+                "title": "Place"
+              },
+              {
+                "field": "specimens",
+                "type": "quantitative",
+                "title": "Specimens"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Quartz",
+        "subtitle": "The everywhere mineral",
+        "fontSize": 16
+      },
+      "width": 300,
+      "height": 250,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0
+        ],
+        "center": [
+          0,
+          -27.8
+        ],
+        "scale": 395,
+        "translate": [
+          150.0,
+          125.0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "sphere": true
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#D3E1DE",
+            "stroke": null,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/australia_states.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "states"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#E9E4D3",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.7,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/signature_minerals.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.species == 'Quartz'"
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "opacity": 0.8,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 0.8,
+            "fill": "#B9A88A",
+            "filled": true
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "specimens",
+              "type": "quantitative",
+              "title": "Specimens from each place",
+              "scale": {
+                "type": "sqrt",
+                "domain": [
+                  0,
+                  130
+                ],
+                "range": [
+                  8,
+                  800
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "species",
+                "title": "Mineral"
+              },
+              {
+                "field": "locality",
+                "title": "Place"
+              },
+              {
+                "field": "specimens",
+                "type": "quantitative",
+                "title": "Specimens"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": 300,
+      "height": 1,
+      "data": {
+        "values": [
+          {
+            "specimens": 5
+          },
+          {
+            "specimens": 25
+          },
+          {
+            "specimens": 60
+          },
+          {
+            "specimens": 120
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "fill": "#9AA3A0",
+        "filled": true,
+        "opacity": 0
+      },
+      "encoding": {
+        "size": {
+          "field": "specimens",
+          "type": "quantitative",
+          "title": "Specimens from each place",
+          "scale": {
+            "type": "sqrt",
+            "domain": [
+              0,
+              130
+            ],
+            "range": [
+              8,
+              800
+            ]
+          },
+          "legend": {
+            "values": [
+              5,
+              25,
+              60,
+              120
+            ],
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolOpacity": 1,
+            "symbolFillColor": "#9AA3A0",
+            "symbolStrokeColor": "#FFFFFF",
+            "offset": 0
+          }
+        }
+      }
+    }
+  ],
+  "spacing": {
+    "row": 26,
+    "column": 24
+  },
+  "resolve": {
+    "scale": {
+      "size": "shared"
+    },
+    "legend": {
+      "size": "independent"
+    }
+  },
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelColor": "#394f47",
+      "titleColor": "#263b33",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#1c352e",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#66766e",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+state,specimens,species_count,top_mineral,area_km2,per_100k_km2,share_of_australian,lon,lat
+Australian Capital Territory,5,3,Linarite,2358.0,212.0,0.0,149.001,-35.489
+New South Wales,3703,337,Cerussite,800798.0,462.4,24.8,147.018,-32.16
+Northern Territory,670,121,Malachite,1348135.0,49.7,4.5,133.354,-19.345
+Queensland,659,134,Quartz,1730173.0,38.1,4.4,144.458,-22.503
+South Australia,7833,416,Quartz,984229.0,795.9,52.5,135.763,-30.078
+Tasmania,447,95,Cassiterite,68018.0,657.2,3.0,146.592,-41.937
+Victoria,467,110,Gold,227496.0,205.3,3.1,144.28,-36.854
+Western Australia,1134,217,Gold,2526633.0,44.9,7.6,122.284,-25.333

@@ -1,0 +1,443 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Flow map: lines join each source country to Adelaide, home of the South Australian Museum. Line width and dot size show the number of specimens. Lines start at country centres and show origin, not the route travelled. Source: South Australian Museum Minerals Collection.",
+  "width": 960,
+  "height": 410,
+  "params": [
+    {
+      "name": "min_specimens",
+      "value": 20,
+      "bind": {
+        "input": "range",
+        "min": 1,
+        "max": 300,
+        "step": 1,
+        "name": "Show countries with at least this many specimens: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "equalEarth",
+    "rotate": [
+      -150,
+      0,
+      0
+    ],
+    "scale": 172,
+    "translate": [
+      480,
+      228
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#D3E1DE",
+        "stroke": null,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            20,
+            20
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#F5F7F1",
+        "strokeWidth": 0.8,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/world_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.name != 'Antarctica'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E6E0CD",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.6,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/specimen_journeys.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.specimens >= min_specimens"
+        }
+      ],
+      "params": [
+        {
+          "name": "hover_route",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "country"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "dest_lon"
+        },
+        "latitude2": {
+          "field": "dest_lat"
+        },
+        "strokeWidth": {
+          "field": "specimens",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "range": [
+              0.6,
+              9
+            ],
+            "domain": [
+              1,
+              1921
+            ]
+          },
+          "legend": {
+            "title": "Specimens sent to Adelaide",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "values": [
+              10,
+              100,
+              500,
+              1500
+            ],
+            "labelExpr": "format(datum.value, ',d')",
+            "symbolType": "circle",
+            "symbolFillColor": "#647A9A",
+            "symbolStrokeColor": "#FFFFFF",
+            "symbolOpacity": 0.9,
+            "offset": 12
+          },
+          "title": "Specimens sent to Adelaide"
+        },
+        "color": {
+          "value": "#B07A35"
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover_route",
+            "empty": false,
+            "value": 0.95
+          },
+          "value": 0.45
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "From"
+          },
+          {
+            "field": "specimens",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Specimens"
+          },
+          {
+            "field": "species_count",
+            "type": "quantitative",
+            "title": "Different mineral species"
+          },
+          {
+            "field": "top_mineral",
+            "title": "Most common mineral"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/specimen_journeys.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.specimens >= min_specimens"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "color": "#647A9A",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.8,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "specimens",
+          "type": "quantitative",
+          "title": "Specimens sent to Adelaide",
+          "scale": {
+            "type": "sqrt",
+            "range": [
+              10,
+              260
+            ],
+            "domain": [
+              1,
+              1921
+            ]
+          },
+          "legend": {
+            "title": "Specimens sent to Adelaide",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "values": [
+              10,
+              100,
+              500,
+              1500
+            ],
+            "labelExpr": "format(datum.value, ',d')",
+            "symbolType": "circle",
+            "symbolFillColor": "#647A9A",
+            "symbolStrokeColor": "#FFFFFF",
+            "symbolOpacity": 0.9,
+            "offset": 12
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "From"
+          },
+          {
+            "field": "specimens",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Specimens"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/specimen_journeys.csv"
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United States of America",
+              "Germany",
+              "United Kingdom",
+              "Canada",
+              "Mexico"
+            ]
+          }
+        },
+        {
+          "filter": "datum.specimens >= min_specimens"
+        },
+        {
+          "calculate": "datum.country == 'United States of America' ? 'United States' : datum.country",
+          "as": "name"
+        },
+        {
+          "calculate": "datum.country == 'United Kingdom' ? 'right' : datum.country == 'Germany' ? 'left' : 'center'",
+          "as": "al"
+        },
+        {
+          "calculate": "datum.country == 'United Kingdom' ? -9 : datum.country == 'Germany' ? 9 : 0",
+          "as": "ox"
+        },
+        {
+          "calculate": "datum.country == 'United Kingdom' || datum.country == 'Germany' ? 0 : -13",
+          "as": "oy"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11.5,
+        "fontWeight": 700,
+        "color": "#2F2A22",
+        "align": {
+          "expr": "datum.al"
+        },
+        "dx": {
+          "expr": "datum.ox"
+        },
+        "dy": {
+          "expr": "datum.oy"
+        }
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "name"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 138.6,
+            "lat": -34.93
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "shape": "diamond",
+        "size": 160,
+        "filled": true,
+        "color": "#2F2A22",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 138.6,
+            "lat": -34.93,
+            "t": "Adelaide"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "dy": 12,
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#2F2A22"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Work Sans",
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#5E574A",
+      "titleColor": "#2F2A22",
+      "domainColor": "#B9B19D",
+      "tickColor": "#B9B19D",
+      "gridColor": "#DEDACB",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10
+    },
+    "legend": {
+      "labelColor": "#4A4438",
+      "titleColor": "#2F2A22",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "fillColor": "#FFFEFA",
+      "strokeColor": "#D9D6C8",
+      "padding": 12,
+      "cornerRadius": 6
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#2F2A22",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#5E574A",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  }
+}

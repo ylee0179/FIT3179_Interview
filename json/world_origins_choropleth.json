@@ -1,0 +1,447 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth map of specimens per million square kilometres of land, by country of origin.",
+  "width": "container",
+  "height": 430,
+  "params": [
+    {
+      "name": "region",
+      "value": "World",
+      "bind": {
+        "input": "select",
+        "options": [
+          "World",
+          "Europe",
+          "Asia and Oceania",
+          "Americas",
+          "Africa"
+        ],
+        "name": "Zoom to region: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "equalEarth",
+    "scale": {
+      "expr": "(region == 'World' ? 0.168 : region == 'Europe' ? 0.9 : region == 'Asia and Oceania' ? 0.36 : region == 'Americas' ? 0.3 : region == 'Africa' ? 0.44 : 0.168) * width"
+    },
+    "center": {
+      "expr": "region == 'World' ? [0, 6] : region == 'Europe' ? [12, 50] : region == 'Asia and Oceania' ? [120, -5] : region == 'Americas' ? [-80, 10] : region == 'Africa' ? [20, 0] : [0, 6]"
+    },
+    "translate": {
+      "expr": "[width / 2, height / 2]"
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#D3E1DE",
+        "stroke": null,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            20,
+            20
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#F5F7F1",
+        "strokeWidth": 0.8,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/world_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.name != 'Antarctica'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E9E4D3",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.6,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/world_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "data/country_origins.csv"
+            },
+            "key": "country",
+            "fields": [
+              "specimens",
+              "per_million_km2",
+              "species_count",
+              "top_mineral",
+              "share_percent"
+            ]
+          }
+        },
+        {
+          "filter": "isValid(datum.specimens)"
+        },
+        {
+          "filter": "datum.properties.name != 'Antarctica'"
+        },
+        {
+          "calculate": "datum.per_million_km2 < 10 ? 'Fewer than 10' : datum.per_million_km2 < 50 ? '10 to 49' : datum.per_million_km2 < 250 ? '50 to 249' : datum.per_million_km2 < 1000 ? '250 to 999' : '1,000 or more'",
+          "as": "density_class"
+        }
+      ],
+      "params": [
+        {
+          "name": "hover_country",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "properties.name"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.6,
+        "clip": true
+      },
+      "encoding": {
+        "color": {
+          "field": "density_class",
+          "type": "ordinal",
+          "title": "Specimens per million square kilometres",
+          "scale": {
+            "domain": [
+              "Fewer than 10",
+              "10 to 49",
+              "50 to 249",
+              "250 to 999",
+              "1,000 or more"
+            ],
+            "range": [
+              "#E3EEE8",
+              "#BCD8CB",
+              "#86B8A3",
+              "#4F8F79",
+              "#2A5E4D"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 5,
+            "symbolType": "square",
+            "symbolSize": 200,
+            "symbolStrokeWidth": 0,
+            "titleLimit": 420,
+            "labelLimit": 160,
+            "offset": 14,
+            "padding": 8
+          }
+        },
+        "stroke": {
+          "condition": {
+            "param": "hover_country",
+            "empty": false,
+            "value": "#2F2A22"
+          },
+          "value": "#FFFFFF"
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "hover_country",
+            "empty": false,
+            "value": 1.8
+          },
+          "value": 0.6
+        },
+        "tooltip": [
+          {
+            "field": "properties.name",
+            "title": "Country"
+          },
+          {
+            "field": "specimens",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Specimens in the museum"
+          },
+          {
+            "field": "per_million_km2",
+            "type": "quantitative",
+            "format": ",.1f",
+            "title": "Per million square kilometres"
+          },
+          {
+            "field": "species_count",
+            "type": "quantitative",
+            "title": "Different mineral species"
+          },
+          {
+            "field": "top_mineral",
+            "title": "Most common mineral"
+          },
+          {
+            "field": "share_percent",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Percent of whole collection"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 8.2,
+            "lat": 46.8,
+            "lon2": -14,
+            "lat2": 38
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "region == 'World'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#2F2A22",
+        "strokeWidth": 0.9
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "lon2"
+        },
+        "latitude2": {
+          "field": "lat2"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 8.2,
+            "lat": 46.8
+          },
+          {
+            "lon": -98,
+            "lat": 40
+          },
+          {
+            "lon": 101.5,
+            "lat": 3.8
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "region == 'World'"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 26,
+        "color": "#2F2A22",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 128,
+            "lat": -45,
+            "t": [
+              "Australia: about 1,950 per million"
+            ],
+            "a": "center",
+            "dx": 0,
+            "dy": 0
+          },
+          {
+            "lon": -14,
+            "lat": 38,
+            "t": [
+              "Switzerland: 3,800",
+              "per million square kilometres"
+            ],
+            "a": "right",
+            "dx": -4,
+            "dy": 4
+          },
+          {
+            "lon": -98,
+            "lat": 40,
+            "t": [
+              "United States: 1,921 specimens,",
+              "but only 202 per million"
+            ],
+            "a": "right",
+            "dx": -58,
+            "dy": -6
+          },
+          {
+            "lon": 101.5,
+            "lat": 3.8,
+            "t": [
+              "Malaysia: 16 specimens,",
+              "mostly tin ore"
+            ],
+            "a": "right",
+            "dx": -10,
+            "dy": 8
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "region == 'World'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": {
+          "expr": "datum.a"
+        },
+        "dx": {
+          "expr": "datum.dx"
+        },
+        "dy": {
+          "expr": "datum.dy"
+        },
+        "fontSize": 11.5,
+        "fontWeight": 600,
+        "lineHeight": 14,
+        "color": "#2F2A22"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelColor": "#394f47",
+      "titleColor": "#263b33",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans",
+      "fillColor": "#FFFEFA",
+      "strokeColor": "#D9D6C8",
+      "padding": 12,
+      "cornerRadius": 6
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#1c352e",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#66766e",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  }
+}

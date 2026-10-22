@@ -1,0 +1,292 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Back-to-back bar chart: each state's share of the museum's Australian specimens (left) against its share of Australia's 2025 mines (right).",
+  "width": 560,
+  "height": 300,
+  "data": {
+    "url": "data/state_then_now.csv"
+  },
+  "transform": [
+    {
+      "calculate": "format(datum.percent,'.0f') + '%'",
+      "as": "lbl"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": [
+        "South Australia",
+        "New South Wales",
+        "Western Australia",
+        "Northern Territory",
+        "Queensland",
+        "Victoria",
+        "Tasmania"
+      ],
+      "title": null,
+      "axis": {
+        "ticks": false,
+        "domain": false,
+        "labelFontSize": 12,
+        "labelColor": "#2F2A22",
+        "labelPadding": 8
+      }
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover_state",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "state"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "height": {
+          "band": 0.62
+        },
+        "cornerRadius": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "signed",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -70,
+              70
+            ]
+          },
+          "title": "Percent of the Australian total",
+          "axis": {
+            "values": [
+              -60,
+              -40,
+              -20,
+              0,
+              20,
+              40,
+              60
+            ],
+            "labelExpr": "abs(datum.value)",
+            "grid": true,
+            "orient": "bottom",
+            "titlePadding": 8
+          }
+        },
+        "color": {
+          "field": "measure",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Museum's Australian specimens",
+              "Mines in 2025"
+            ],
+            "range": [
+              "#8DB8D6",
+              "#9CCAA4"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover_state",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.3
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "measure",
+            "title": "Measure"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Percent of Australian total"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Count"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 11.5,
+        "fontWeight": 600,
+        "align": {
+          "expr": "datum.side < 0 ? 'right' : 'left'"
+        },
+        "dx": {
+          "expr": "datum.side < 0 ? -5 : 5"
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "signed",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "lbl"
+        },
+        "color": {
+          "field": "measure",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Museum's Australian specimens",
+              "Mines in 2025"
+            ],
+            "range": [
+              "#3F6E8F",
+              "#4A7D54"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#2F2A22",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "value": 0
+        },
+        "y2": {
+          "value": 300
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": -35,
+            "t": "\u25c0  Museum's specimens",
+            "c": "#3F6E8F"
+          },
+          {
+            "x": 35,
+            "t": "Mines in 2025  \u25b6",
+            "c": "#4A7D54"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "y": -14,
+        "fontSize": 13,
+        "fontWeight": 700
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        },
+        "color": {
+          "field": "c",
+          "type": "nominal",
+          "scale": null
+        },
+        "y": null
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    }
+  },
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelColor": "#394f47",
+      "titleColor": "#263b33",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#1c352e",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#66766e",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  }
+}

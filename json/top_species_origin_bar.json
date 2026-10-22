@@ -1,0 +1,236 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "100 percent stacked bar chart: for each of the twelve most collected minerals, the share found in Australia and overseas.",
+  "width": 470,
+  "height": 360,
+  "data": {
+    "url": "data/top_species.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.origin == 'Australia' ? datum.specimens : 0",
+      "as": "aus_part"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "specimens",
+          "as": "total"
+        },
+        {
+          "op": "sum",
+          "field": "aus_part",
+          "as": "aus_total"
+        }
+      ],
+      "groupby": [
+        "species"
+      ]
+    },
+    {
+      "calculate": "datum.aus_total / datum.total * 100",
+      "as": "aus_pct"
+    },
+    {
+      "calculate": "datum.specimens / datum.total",
+      "as": "share"
+    },
+    {
+      "calculate": "format(datum.share * 100, '.0f') + '%'",
+      "as": "share_text"
+    }
+  ],
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelColor": "#394f47",
+      "titleColor": "#263b33",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#1c352e",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#66766e",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "origin_hl",
+          "select": {
+            "type": "point",
+            "fields": [
+              "origin"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "height": {
+          "band": 0.72
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "species",
+          "type": "nominal",
+          "sort": {
+            "field": "aus_pct",
+            "op": "max",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "ticks": false,
+            "domain": false,
+            "labelFontSize": 12,
+            "labelColor": "#2F2A22",
+            "titleFontSize": 11,
+            "titleColor": "#66766e",
+            "titleFontWeight": 500
+          }
+        },
+        "x": {
+          "field": "specimens",
+          "type": "quantitative",
+          "stack": "normalize",
+          "title": "Share of the mineral's specimens",
+          "axis": {
+            "format": ".0%",
+            "values": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "grid": true
+          }
+        },
+        "color": {
+          "field": "origin",
+          "type": "nominal",
+          "title": "Collected in",
+          "scale": {
+            "domain": [
+              "Australia",
+              "Overseas"
+            ],
+            "range": [
+              "#4E5A9E",
+              "#D6D1C6"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal"
+          }
+        },
+        "order": {
+          "field": "origin",
+          "sort": "ascending"
+        },
+        "opacity": {
+          "condition": {
+            "param": "origin_hl",
+            "value": 1
+          },
+          "value": 0.25
+        },
+        "tooltip": [
+          {
+            "field": "species",
+            "title": "Mineral"
+          },
+          {
+            "field": "origin",
+            "title": "Collected in"
+          },
+          {
+            "field": "specimens",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Specimens"
+          },
+          {
+            "field": "share_text",
+            "title": "Share of this mineral"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.origin == 'Australia'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "x": 0,
+        "fontSize": 11,
+        "fontWeight": 700,
+        "color": "#FFFFFF"
+      },
+      "encoding": {
+        "y": {
+          "field": "species",
+          "type": "nominal",
+          "sort": {
+            "field": "aus_pct",
+            "op": "max",
+            "order": "descending"
+          }
+        },
+        "text": {
+          "field": "share_text"
+        }
+      }
+    }
+  ]
+}

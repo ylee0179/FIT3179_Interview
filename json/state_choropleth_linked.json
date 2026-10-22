@@ -1,0 +1,421 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth of specimens per 100,000 square kilometres for each Australian state and territory. Click a state to list its most collected minerals.",
+  "hconcat": [
+    {
+      "width": 520,
+      "height": 440,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0
+        ],
+        "center": [
+          0,
+          -27.5
+        ],
+        "scale": 575,
+        "translate": [
+          260,
+          220
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "sphere": true
+          },
+          "mark": {
+            "type": "geoshape", 
+            "fill": "#D3E1DE",
+            "stroke": null,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "graticule": {
+              "step": [
+                10,
+                10
+              ]
+            }
+          },
+          "mark": {
+            "type": "geoshape", 
+            "fill": null,
+            "stroke": "#F5F7F1",
+            "strokeWidth": 0.8,
+            "clip": true
+          }
+        },
+        {
+          "data": {
+            "url": "data/australia_states.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "states"
+            }
+          },
+          "transform": [
+            {
+              "calculate": "datum.properties.state",
+              "as": "state"
+            },
+            {
+              "lookup": "state", 
+              "from": {
+                "data": {
+                  "url": "data/state_specimens.csv"
+                },
+                "key": "state",
+                "fields": [
+                  "specimens",
+                  "per_100k_km2",
+                  "species_count",
+                  "top_mineral",
+                  "share_of_australian"
+                ]
+              }
+            },
+            {
+              "calculate": "datum.specimens < 10 ? 'Too few specimens to compare' : datum.per_100k_km2 < 100 ? 'Fewer than 100' : datum.per_100k_km2 < 300 ? '100 to 299' : datum.per_100k_km2 < 600 ? '300 to 599' : '600 or more'",
+              "as": "density_class"
+            }
+          ],
+          "params": [
+            {
+              "name": "pick_state",
+              "value": [
+                {
+                  "state": "South Australia"
+                }
+              ],
+              "select": {
+                "type": "point",
+                "fields": [
+                  "state"
+                ],
+                "on": "click",
+                "clear": false,
+                "toggle": false
+              }
+            }
+          ],
+          "mark": {
+            "type": "geoshape",
+            "cursor": "pointer",
+            "clip": true
+          },
+          "encoding": {
+            "color": {
+              "field": "density_class",
+              "type": "ordinal",
+              "title": "Specimens per 100,000 square kilometres",
+              "scale": {
+                "domain": [
+                  "Fewer than 100",
+                  "100 to 299",
+                  "300 to 599",
+                  "600 or more",
+                  "Too few specimens to compare"
+                ],
+                "range": [
+                  "#E3EEE8",
+                  "#A9CDBC",
+                  "#5E9A82",
+                  "#2A5E4D",
+                  "#D6D1C2"
+                ]
+              },
+              "legend": {
+                "orient": "bottom",
+                "direction": "horizontal",
+                "columns": 5,
+                "symbolType": "square",
+                "symbolSize": 200,
+                "symbolStrokeWidth": 0,
+                "titleLimit": 360,
+                "labelLimit": 220,
+                "offset": 12,
+                "columnPadding": 14
+              }
+            },
+            "stroke": {
+              "condition": {
+                "param": "pick_state",
+                "empty": false,
+                "value": "#2F2A22"
+              },
+              "value": "#FFFFFF"
+            },
+            "strokeWidth": {
+              "condition": {
+                "param": "pick_state",
+                "empty": false,
+                "value": 2.2
+              },
+              "value": 0.8
+            },
+            "tooltip": [
+              {
+                "field": "state",
+                "title": "State or territory"
+              },
+              {
+                "field": "density_class",
+                "title": "Class"
+              },
+              {
+                "field": "specimens",
+                "type": "quantitative",
+                "format": ",d",
+                "title": "Specimens"
+              },
+              {
+                "field": "per_100k_km2",
+                "type": "quantitative",
+                "format": ",.1f",
+                "title": "Per 100,000 square kilometres"
+              },
+              {
+                "field": "species_count",
+                "type": "quantitative",
+                "title": "Different mineral species"
+              },
+              {
+                "field": "share_of_australian",
+                "type": "quantitative",
+                "format": ".1f",
+                "title": "Percent of Australian specimens"
+              },
+              {
+                "field": "top_mineral",
+                "title": "Most common mineral"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_specimens.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.state != 'Australian Capital Territory'"
+            },
+            {
+              "calculate": "[datum.state, format(datum.per_100k_km2, ',.0f')]",
+              "as": "label"
+            },
+            {
+              "calculate": "datum.state == 'Tasmania' ? 151.8 : datum.state == 'Victoria' ? 141.0 : datum.state == 'New South Wales' ? 147.6 : datum.lon",
+              "as": "lx"
+            },
+            {
+              "calculate": "datum.state == 'Tasmania' ? -42.0 : datum.state == 'Victoria' ? -39.6 : datum.state == 'New South Wales' ? -32.2 : datum.state == 'South Australia' ? -29.2 : datum.lat",
+              "as": "ly"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "fontSize": 10.5,
+            "lineHeight": 13,
+            "fontWeight": 500
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lx",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "ly",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.state == 'South Australia'",
+                "value": "#FFFFFF"
+              },
+              "value": "#2F2A22"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 300,
+      "height": 380,
+      "title": {
+        "text": {
+          "expr": "'Most collected minerals: ' + (pick_state.state ? pick_state.state[0] : 'South Australia')"
+        },
+        "subtitle": "Click a state or territory on the map to compare",
+        "fontSize": 15
+      },
+      "data": {
+        "url": "data/state_top_minerals.csv"
+      },
+      "transform": [
+        {
+          "filter": {
+            "param": "pick_state"
+          }
+        }
+      ],
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "cornerRadiusEnd": 3,
+            "height": {
+              "band": 0.7
+            },
+            "color": "#8A9590"
+          },
+          "encoding": {
+            "y": {
+              "field": "species",
+              "type": "nominal",
+              "sort": {
+                "field": "specimens",
+                "op": "max",
+                "order": "descending"
+              },
+              "title": null,
+              "axis": {
+                "labelFontSize": 12,
+                "labelColor": "#2F2A22",
+                "ticks": false,
+                "domain": false
+              }
+            },
+            "x": {
+              "field": "specimens",
+              "type": "quantitative",
+              "title": "Specimens",
+              "axis": {
+                "grid": false,
+                "tickCount": 4
+              }
+            },
+            "tooltip": [
+              {
+                "field": "species",
+                "title": "Mineral"
+              },
+              {
+                "field": "specimens",
+                "type": "quantitative",
+                "format": ",d",
+                "title": "Specimens"
+              },
+              {
+                "field": "cls",
+                "title": "Mineral class"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 4,
+            "fontSize": 11,
+            "color": "#5E574A"
+          },
+          "encoding": {
+            "y": {
+              "field": "species",
+              "type": "nominal",
+              "sort": {
+                "field": "specimens",
+                "op": "max",
+                "order": "descending"
+              }
+            },
+            "x": {
+              "field": "specimens",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "specimens",
+              "type": "quantitative",
+              "format": ",d"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "spacing": 30,
+  "resolve": {
+    "legend": {
+      "color": "independent"
+    },
+    "scale": {
+      "color": "independent"
+    }
+  },
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelColor": "#394f47",
+      "titleColor": "#263b33",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#1c352e",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#66766e",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  }
+}

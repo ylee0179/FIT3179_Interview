@@ -1,0 +1,348 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Origin overview and interactive ranking of overseas specimen sources.",
+  "background": null,
+  "padding": {
+    "left": 5,
+    "right": 30,
+    "top": 10,
+    "bottom": 5
+  },
+  "spacing": 25,
+  "params": [
+    {
+      "name": "top_n",
+      "value": 8,
+      "bind": {
+        "input": "select",
+        "options": [
+          5,
+          8,
+          12
+        ],
+        "labels": [
+          "Top 5",
+          "Top 8",
+          "Top 12"
+        ],
+        "name": "Overseas countries shown: "
+      }
+    }
+  ],
+  "vconcat": [
+    {
+      "title": {
+        "text": "How complete are the origin records?",
+        "subtitle": "24,337 species-identified museum specimen records",
+        "anchor": "start",
+        "fontSize": 17,
+        "subtitleFontSize": 11,
+        "offset": 14
+      },
+      "width": 440,
+      "height": 34,
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "stroke": "#FFFEFA",
+            "strokeWidth": 2,
+            "cornerRadius": 2
+          },
+          "encoding": {
+            "x": {
+              "field": "start",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  100
+                ]
+              },
+              "axis": null
+            },
+            "x2": {
+              "field": "end"
+            },
+            "y": {
+              "datum": "All specimens",
+              "type": "nominal",
+              "axis": null
+            },
+            "color": {
+              "field": "category",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Australia",
+                  "Overseas",
+                  "Unassigned"
+                ],
+                "range": [
+                  "#637F9F",
+                  "#C29962",
+                  "#BBB8AB"
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "category",
+                "title": "Recorded origin"
+              },
+              {
+                "field": "count",
+                "type": "quantitative",
+                "title": "Specimens",
+                "format": ",d"
+              },
+              {
+                "field": "percent",
+                "type": "quantitative",
+                "title": "Share (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.category != 'Unassigned'"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "font": "Work Sans",
+            "fontSize": 11,
+            "fontWeight": 600,
+            "color": "#FFFFFF",
+            "baseline": "middle"
+          },
+          "encoding": {
+            "x": {
+              "field": "midpoint",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  100
+                ]
+              },
+              "axis": null
+            },
+            "y": {
+              "datum": "All specimens",
+              "type": "nominal",
+              "axis": null
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ],
+      "data": {
+        "url": "data/origin_summary.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "count": "number",
+            "order": "number",
+            "percent": "number",
+            "start": "number",
+            "end": "number",
+            "midpoint": "number"
+          }
+        }
+      }
+    },
+    {
+      "title": {
+        "text": "Which overseas countries contribute most?",
+        "subtitle": "Ranked by identified museum specimen records",
+        "anchor": "start",
+        "fontSize": 17,
+        "subtitleFontSize": 11,
+        "offset": 12
+      },
+      "width": 440,
+      "height": {
+        "step": 35
+      },
+      "data": {
+        "url": "data/country_origins.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "specimens": "number",
+            "species_count": "number",
+            "share_percent": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.country != 'Australia' && datum.country != 'Unknown' && datum.country != 'Unassigned' && datum.country != 'Not recorded' && isValid(datum.specimens) && datum.specimens > 0"
+        },
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "ranking"
+            }
+          ],
+          "sort": [
+            {
+              "field": "specimens",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.ranking <= top_n"
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "specimens",
+            "op": "max",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelFontSize": 12,
+            "labelLimit": 180,
+            "labelPadding": 10,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "specimens",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              2350
+            ]
+          },
+          "axis": {
+            "title": "Recorded specimens",
+            "tickCount": 5,
+            "format": ",d",
+            "labelFontSize": 11,
+            "grid": true
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "specimens",
+            "type": "quantitative",
+            "title": "Museum specimens",
+            "format": ",d"
+          },
+          {
+            "field": "species_count",
+            "type": "quantitative",
+            "title": "Distinct mineral species",
+            "format": ",d"
+          },
+          {
+            "field": "top_mineral",
+            "title": "Most recorded mineral"
+          },
+          {
+            "field": "share_percent",
+            "type": "quantitative",
+            "title": "Share of collection (%)",
+            "format": ".2f"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "size": 3,
+            "color": "#C9D2D8",
+            "cornerRadiusEnd": 2
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "size": 125,
+            "filled": true,
+            "color": "#B78C54",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 1.2
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 12,
+            "fontWeight": 600,
+            "fontSize": 12,
+            "color": "#355268"
+          },
+          "encoding": {
+            "text": {
+              "field": "specimens",
+              "type": "quantitative",
+              "format": ",d"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "x": "independent",
+      "y": "independent",
+      "color": "independent"
+    }
+  },
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "gridColor": "#E6EAE7",
+      "gridOpacity": 0.8,
+      "domainColor": "#AEBDBD",
+      "tickColor": "#AEBDBD",
+      "labelColor": "#3A5155",
+      "titleColor": "#315368",
+      "titleFont": "Work Sans",
+      "labelFont": "Work Sans",
+      "titleFontSize": 12,
+      "titleFontWeight": 600
+    },
+    "legend": {
+      "labelFont": "Work Sans",
+      "labelFontSize": 11,
+      "labelColor": "#3A5155"
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontWeight": 600,
+      "color": "#2C3332",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#687876"
+    }
+  }
+}

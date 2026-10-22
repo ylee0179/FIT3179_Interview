@@ -1,0 +1,13 @@
+system,group,percent,count
+Cubic,All known minerals,9.1,515
+Cubic,Museum specimens,17.5,3079
+Tetragonal,All known minerals,6.7,381
+Tetragonal,Museum specimens,8.0,1408
+Hexagonal,All known minerals,19.2,1091
+Hexagonal,Museum specimens,31.4,5509
+Orthorhombic,All known minerals,19.6,1112
+Orthorhombic,Museum specimens,16.8,2942
+Monoclinic,All known minerals,34.5,1959
+Monoclinic,Museum specimens,21.8,3833
+Triclinic,All known minerals,11.0,624
+Triclinic,Museum specimens,4.4,781

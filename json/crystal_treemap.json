@@ -1,0 +1,227 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Strip treemap: each rectangle area is proportional to IMA mineral species count. Rectangle coordinates were prepared from crystal_treemap.csv.",
+  "width": 860,
+  "height": 360,
+  "data": {
+    "url": "data/crystal_treemap_layout.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "count": "number",
+        "percent": "number",
+        "x0": "number",
+        "x1": "number",
+        "y0": "number",
+        "y1": "number",
+        "label_x": "number",
+        "label_y": "number",
+        "detail_y": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 4,
+        "stroke": "#FFFEFA",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              860
+            ]
+          },
+          "axis": null
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              360,
+              0
+            ]
+          },
+          "axis": null
+        },
+        "y2": {
+          "field": "y1"
+        },
+        "color": {
+          "field": "system",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Monoclinic",
+              "Orthorhombic",
+              "Hexagonal",
+              "Triclinic",
+              "Cubic",
+              "Tetragonal"
+            ],
+            "range": [
+              "#BFD1D1",
+              "#CADBC2",
+              "#9DCCD9",
+              "#D7CBE0",
+              "#E5C2B8",
+              "#E9D2B4"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "condition": {
+            "param": "focus_crystal",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.32
+        },
+        "tooltip": [
+          {
+            "field": "system",
+            "title": "Crystal system"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Mineral species",
+            "format": ",d"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "title": "Share (%)",
+            "format": ".1f"
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "focus_crystal",
+          "select": {
+            "type": "point",
+            "fields": [
+              "system"
+            ],
+            "on": "click",
+            "clear": "dblclick"
+          }
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "font": "Work Sans",
+        "fontWeight": 700,
+        "fontSize": 17,
+        "color": "#2F2A22"
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              860
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              360,
+              0
+            ]
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "system"
+        },
+        "opacity": {
+          "condition": {
+            "param": "focus_crystal",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.34
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "font": "Work Sans",
+        "fontWeight": 500,
+        "fontSize": 12,
+        "color": "#3D4A45"
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              860
+            ]
+          },
+          "axis": null
+        },
+        "y": {
+          "field": "detail_y",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              360,
+              0
+            ]
+          },
+          "axis": null
+        },
+        "text": {
+          "field": "detail_text"
+        },
+        "opacity": {
+          "condition": {
+            "param": "focus_crystal",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.34
+        }
+      },
+      "transform": [
+        {
+          "calculate": "format(datum.count, ',') + ' species, ' + format(datum.percent, '.1f') + '%'",
+          "as": "detail_text"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": null
+  }
+}

@@ -1,0 +1,452 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Proportional symbol map: each circle is a collecting place; circle area shows the number of specimens and colour shows the most common mineral family.",
+  "width": 640,
+  "height": 500,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -134,
+      0
+    ],
+    "center": [
+      0,
+      -27
+    ],
+    "scale": 690,
+    "translate": [
+      320,
+      250
+    ]
+  },
+  "params": [
+    {
+      "name": "class_pick",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Native elements",
+          "Sulfides",
+          "Oxides",
+          "Carbonates",
+          "Silicates",
+          "Salts",
+          "Other classes"
+        ],
+        "labels": [
+          "Show every family",
+          "Native elements",
+          "Sulfides",
+          "Oxides",
+          "Carbonates",
+          "Silicates",
+          "Salts",
+          "Other classes"
+        ],
+        "name": "Highlight a mineral family: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#D3E1DE",
+        "stroke": null,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            10,
+            10
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#F5F7F1",
+        "strokeWidth": 0.8,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/australia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E9E4D3",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/australian_localities.csv"
+      },
+      "transform": [
+        {
+          "calculate": "datum.main_class == 'Native elements' ? 'Native elements' : datum.main_class == 'Sulfides and sulfosalts' ? 'Sulfides' : datum.main_class == 'Oxides and hydroxides' ? 'Oxides' : datum.main_class == 'Carbonates' ? 'Carbonates' : datum.main_class == 'Silicates' ? 'Silicates' : (datum.main_class == 'Halides' || datum.main_class == 'Sulfates') ? 'Salts' : 'Other classes'",
+          "as": "class_group"
+        }
+      ],
+      "params": [
+        {
+          "name": "hover_loc",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "locality"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.1
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "specimens",
+          "type": "quantitative",
+          "title": "Specimens from the place",
+          "scale": {
+            "type": "sqrt",
+            "range": [
+              15,
+              2200
+            ],
+            "domain": [
+              0,
+              2400
+            ]
+          },
+          "legend": {
+            "orient": "top-right",
+            "direction": "vertical",
+            "values": [
+              50,
+              500,
+              2000
+            ],
+            "labelExpr": "format(datum.value, ',d')",
+            "symbolFillColor": "#B8B09A",
+            "symbolStrokeColor": "#FFFFFF",
+            "fillColor": "#FFFEFA",
+            "strokeColor": "#D9D6C8",
+            "padding": 6,
+            "rowPadding": 2,
+            "titleFontSize": 11,
+            "labelFontSize": 10,
+            "titlePadding": 4,
+            "cornerRadius": 6,
+            "offset": 8
+          }
+        },
+        "color": {
+          "field": "class_group",
+          "type": "nominal",
+          "title": "Most common mineral family",
+          "scale": {
+            "domain": [
+              "Native elements",
+              "Sulfides",
+              "Oxides",
+              "Carbonates",
+              "Silicates",
+              "Salts",
+              "Other classes"
+            ],
+            "range": [
+              "#C9A227",
+              "#4F5B66",
+              "#8E6FB0",
+              "#3E9AA5",
+              "#9C8A64",
+              "#D99A7E",
+              "#BDB6A8"
+            ]
+          },
+          "legend": {
+            "orient": "bottom-left",
+            "direction": "vertical",
+            "columns": 2,
+            "symbolSize": 100,
+            "labelLimit": 130,
+            "columnPadding": 12,
+            "fillColor": "#FFFEFA",
+            "strokeColor": "#D9D6C8",
+            "padding": 10,
+            "cornerRadius": 6,
+            "offset": 8
+          }
+        },
+        "opacity": {
+          "condition": {
+            "test": "class_pick == null || datum.class_group == class_pick",
+            "value": 0.6
+          },
+          "value": 0.08
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "hover_loc",
+            "empty": false,
+            "value": 2.2
+          },
+          "value": 0.9
+        },
+        "order": {
+          "field": "specimens",
+          "sort": "descending"
+        },
+        "tooltip": [
+          {
+            "field": "locality",
+            "title": "Place"
+          },
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "specimens",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Specimens"
+          },
+          {
+            "field": "species_count",
+            "type": "quantitative",
+            "title": "Different mineral species"
+          },
+          {
+            "field": "top_mineral",
+            "title": "Most common mineral"
+          },
+          {
+            "field": "class_group",
+            "title": "Mineral family"
+          },
+          {
+            "field": "main_class",
+            "title": "Detailed class"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/australian_localities.csv"
+      },
+      "transform": [
+        {
+          "calculate": "datum.main_class == 'Native elements' ? 'Native elements' : datum.main_class == 'Sulfides and sulfosalts' ? 'Sulfides' : datum.main_class == 'Oxides and hydroxides' ? 'Oxides' : datum.main_class == 'Carbonates' ? 'Carbonates' : datum.main_class == 'Silicates' ? 'Silicates' : (datum.main_class == 'Halides' || datum.main_class == 'Sulfates') ? 'Salts' : 'Other classes'",
+          "as": "class_group"
+        },
+        {
+          "lookup": "locality",
+          "from": {
+            "data": {
+              "values": [
+                {
+                  "locality": "Broken Hill",
+                  "t": [
+                    "Broken Hill",
+                    "2,329 specimens"
+                  ],
+                  "dx": 24,
+                  "dy": 34,
+                  "al": "left"
+                },
+                {
+                  "locality": "Iron Knob and Middleback Ranges",
+                  "t": [
+                    "Iron Knob"
+                  ],
+                  "dx": -14,
+                  "dy": -12,
+                  "al": "right"
+                },
+                {
+                  "locality": "Moonta",
+                  "t": [
+                    "Moonta and Wallaroo"
+                  ],
+                  "dx": -16,
+                  "dy": 10,
+                  "al": "right"
+                },
+                {
+                  "locality": "Coober Pedy",
+                  "t": [
+                    "Coober Pedy"
+                  ],
+                  "dx": -14,
+                  "dy": -4,
+                  "al": "right"
+                },
+                {
+                  "locality": "Kalgoorlie and Eastern Goldfields",
+                  "t": [
+                    "Kalgoorlie"
+                  ],
+                  "dx": -16,
+                  "dy": -10,
+                  "al": "right"
+                },
+                {
+                  "locality": "Mount Isa",
+                  "t": [
+                    "Mount Isa"
+                  ],
+                  "dx": 12,
+                  "dy": 0,
+                  "al": "left"
+                },
+                {
+                  "locality": "Dundas and Zeehan",
+                  "t": [
+                    "Dundas"
+                  ],
+                  "dx": -14,
+                  "dy": 4,
+                  "al": "right"
+                }
+              ]
+            },
+            "key": "locality",
+            "fields": [
+              "t",
+              "dx",
+              "dy",
+              "al"
+            ]
+          }
+        },
+        {
+          "filter": "isValid(datum.t)"
+        },
+        {
+          "filter": "class_pick == null || datum.class_group == class_pick"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "lineHeight": 13,
+        "color": "#2F2A22",
+        "align": {
+          "expr": "datum.al"
+        },
+        "dx": {
+          "expr": "datum.dx"
+        },
+        "dy": {
+          "expr": "datum.dy"
+        }
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "legend": {
+      "size": "independent",
+      "color": "independent"
+    }
+  },
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelColor": "#394f47",
+      "titleColor": "#263b33",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#1c352e",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#66766e",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  }
+}

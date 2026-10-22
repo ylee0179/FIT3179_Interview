@@ -1,0 +1,239 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Slope chart: change in share of each crystal system between all known minerals and the museum's specimens.",
+  "width": 380,
+  "height": 340,
+  "data": {
+    "url": "data/crystal_systems.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "group",
+      "type": "nominal",
+      "sort": [
+        "All known minerals",
+        "Museum specimens"
+      ],
+      "title": null,
+      "scale": {
+        "padding": 0.35
+      },
+      "axis": {
+        "orient": "top",
+        "labelAngle": 0,
+        "labelFontSize": 12.5,
+        "labelColor": "#2F2A22",
+        "ticks": false,
+        "domain": false,
+        "labelFontWeight": 600
+      }
+    },
+    "y": {
+      "field": "percent",
+      "type": "quantitative",
+      "title": "Percent",
+      "scale": {
+        "domain": [
+          0,
+          36
+        ]
+      },
+      "axis": {
+        "tickCount": 4,
+        "grid": true,
+        "titleAngle": 0,
+        "titleAlign": "left",
+        "titleY": -14,
+        "titleX": -30
+      }
+    },
+    "color": {
+      "field": "system",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Cubic",
+          "Tetragonal",
+          "Hexagonal",
+          "Orthorhombic",
+          "Monoclinic",
+          "Triclinic"
+        ],
+        "range": [
+          "#B5604A",
+          "#9A7A5C",
+          "#2F7FB0",
+          "#6E9461",
+          "#4F7F80",
+          "#7E6A9E"
+        ]
+      },
+      "legend": null
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "slope_hover",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "system"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "point": {
+          "filled": true,
+          "size": 60
+        }
+      },
+      "encoding": {
+        "detail": {
+          "field": "system"
+        },
+        "opacity": {
+          "condition": {
+            "param": "slope_hover",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.15
+        },
+        "tooltip": [
+          {
+            "field": "system",
+            "title": "Crystal system"
+          },
+          {
+            "field": "group",
+            "title": "Group"
+          },
+          {
+            "field": "percent",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Percent"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.group == 'Museum specimens'"
+        },
+        {
+          "calculate": "datum.system + '  ' + format(datum.percent,'.0f') + ' percent'",
+          "as": "lbl"
+        },
+        {
+          "calculate": "datum.system == 'Cubic' ? -7 : datum.system == 'Orthorhombic' ? 7 : 0",
+          "as": "nudge"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "fontSize": 11.5,
+        "fontWeight": 600,
+        "dy": {
+          "expr": "datum.nudge"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "lbl"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.group == 'All known minerals'"
+        },
+        {
+          "calculate": "format(datum.percent,'.0f')",
+          "as": "lbl"
+        },
+        {
+          "calculate": "datum.system == 'Orthorhombic' ? -6 : datum.system == 'Hexagonal' ? 6 : datum.system == 'Triclinic' ? -4 : datum.system == 'Cubic' ? 4 : 0",
+          "as": "nudge"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -10,
+        "fontSize": 11.5,
+        "dy": {
+          "expr": "datum.nudge"
+        }
+      },
+      "encoding": {
+        "text": {
+          "field": "lbl"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelColor": "#394f47",
+      "titleColor": "#263b33",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#1c352e",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#66766e",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  }
+}

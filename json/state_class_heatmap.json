@@ -1,0 +1,237 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Heatmap: share of each state's specimens in each mineral class. Each column adds to 100 percent, so states of different sizes can be compared.",
+  "width": 700,
+  "height": 345,
+  "data": {
+    "url": "data/state_mineral_classes.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.state != 'Australian Capital Territory'"
+    },
+    {
+      "filter": "datum.cls != 'Borates'"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "state",
+      "type": "nominal",
+      "sort": [
+        "South Australia",
+        "New South Wales",
+        "Western Australia",
+        "Northern Territory",
+        "Queensland",
+        "Victoria",
+        "Tasmania"
+      ],
+      "title": null,
+      "axis": {
+        "orient": "top",
+        "labelAngle": 0,
+        "labelExpr": "datum.label == 'New South Wales' ? ['New South', 'Wales'] : split(datum.label,' ')",
+        "labelBaseline": "bottom",
+        "labelFontSize": 11.5,
+        "labelColor": "#2F2A22",
+        "ticks": false,
+        "domain": false,
+        "labelPadding": 14
+      }
+    },
+    "y": {
+      "field": "cls",
+      "type": "nominal",
+      "sort": [
+        "Native elements",
+        "Sulfides and sulfosalts",
+        "Halides",
+        "Oxides and hydroxides",
+        "Carbonates",
+        "Sulfates",
+        "Phosphates, arsenates and vanadates",
+        "Silicates",
+        "Other classes"
+      ],
+      "title": null,
+      "axis": {
+        "ticks": false,
+        "domain": false,
+        "labelFontSize": 11.5,
+        "labelColor": "#2F2A22",
+        "labelLimit": 240
+      }
+    }
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover_cell",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "clear": "pointerout",
+            "fields": [
+              "cls"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 3,
+        "stroke": "#F4F5EC",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "color": {
+          "field": "percent_of_state",
+          "type": "quantitative",
+          "title": "Percent of the state's specimens",
+          "scale": {
+            "range": [
+              "#F2F4F7",
+              "#CBD6E2",
+              "#93AECB",
+              "#567FA8",
+              "#2B4C72"
+            ],
+            "domain": [
+              0,
+              40
+            ],
+            "clamp": true
+          },
+          "legend": {
+            "orient": "bottom",
+            "gradientLength": 300,
+            "direction": "horizontal",
+            "values": [
+              0,
+              10,
+              20,
+              30,
+              40
+            ],
+            "offset": 8
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover_cell",
+            "empty": true,
+            "value": 1
+          },
+          "value": 0.45
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "cls",
+            "title": "Mineral class"
+          },
+          {
+            "field": "specimens",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Specimens"
+          },
+          {
+            "field": "percent_of_state",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Percent of the state's specimens"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "fontWeight": 500
+      },
+      "encoding": {
+        "text": {
+          "field": "cell_label"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.percent_of_state > 21",
+            "value": "#FFFFFF"
+          },
+          "value": "#2F2A22"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.percent_of_state > 0 && datum.percent_of_state < 0.5 ? '<1' : format(datum.percent_of_state, '.0f')",
+          "as": "cell_label"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "font": "Work Sans",
+    "background": null,
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelColor": "#53605b",
+      "titleColor": "#263b33",
+      "domainColor": "#cbd2c8",
+      "tickColor": "#cbd2c8",
+      "gridColor": "#e7e7df",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titlePadding": 10,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "legend": {
+      "labelColor": "#394f47",
+      "titleColor": "#263b33",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": 600,
+      "titleLimit": 340,
+      "labelLimit": 280,
+      "symbolStrokeWidth": 0.6,
+      "labelFont": "Work Sans",
+      "titleFont": "Work Sans"
+    },
+    "title": {
+      "font": "Rokkitt",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "color": "#1c352e",
+      "anchor": "start",
+      "subtitleFont": "Work Sans",
+      "subtitleColor": "#66766e",
+      "subtitleFontSize": 12
+    },
+    "header": {
+      "labelFont": "Rokkitt",
+      "labelFontSize": 16,
+      "labelColor": "#2F2A22",
+      "titleFontSize": 0
+    },
+    "text": {
+      "font": "Work Sans",
+      "color": "#2F2A22"
+    }
+  },
+  "padding": {
+    "top": 5,
+    "left": 5,
+    "right": 5,
+    "bottom": 0
+  }
+}

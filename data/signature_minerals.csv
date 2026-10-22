@@ -1,0 +1,130 @@
+species,locality,lon,lat,specimens
+Cassiterite,Broken Hill,141.47,-31.95,4
+Cassiterite,Burra,138.93,-33.68,1
+Cassiterite,Emmaville,151.6,-29.44,28
+Cassiterite,Glen Innes,151.74,-29.74,2
+Cassiterite,Greenbushes,116.06,-33.85,12
+Cassiterite,Mount Bischoff,145.53,-41.44,30
+Cassiterite,Norseman,121.78,-32.2,2
+Cassiterite,Renison Bell,145.43,-41.8,2
+Cassiterite,Tarcoola,134.57,-30.7,5
+Cassiterite,Tingha,151.21,-29.95,25
+Cassiterite,Torrington,151.69,-29.32,3
+Galena,Broken Hill,141.47,-31.95,83
+Galena,Chillagoe,144.52,-17.15,1
+Galena,Cloncurry,140.51,-20.71,1
+Galena,Cowell jade field,136.92,-33.68,2
+Galena,Dundas and Zeehan,145.42,-41.89,5
+Galena,Glen Innes,151.74,-29.74,1
+Galena,Iron Knob and Middleback Ranges,137.15,-32.73,3
+Galena,Kangaroo Island,137.25,-35.8,1
+Galena,Kanmantoo and Callington,139.0,-35.08,3
+Galena,Mount Bischoff,145.53,-41.44,2
+Galena,Mount Gunson,137.25,-31.45,3
+Galena,Mount Isa,139.49,-20.73,6
+Galena,Mount Lyell,145.55,-42.08,3
+Galena,Olary district,140.32,-32.28,6
+Galena,Renison Bell,145.43,-41.8,1
+Galena,Rum Jungle,131.0,-13.02,1
+Galena,Tarcoola,134.57,-30.7,3
+Galena,Wallaroo Mines and Kadina,137.71,-33.96,22
+Gold,Ballarat,143.85,-37.56,8
+Gold,Bendigo,144.28,-36.76,2
+Gold,Burra,138.93,-33.68,13
+Gold,Comet Vale,121.12,-29.95,1
+Gold,Dundas and Zeehan,145.42,-41.89,1
+Gold,Hillgrove,151.9,-30.57,3
+Gold,Iron Knob and Middleback Ranges,137.15,-32.73,1
+Gold,Kalgoorlie and Eastern Goldfields,121.47,-30.75,58
+Gold,Kangaroo Island,137.25,-35.8,1
+Gold,Kanmantoo and Callington,139.0,-35.08,1
+Gold,Kapunda,138.92,-34.34,1
+Gold,Leigh Creek,138.4,-30.59,1
+Gold,Moonta,137.59,-34.07,6
+Gold,Mount Painter and Arkaroola,139.35,-30.23,2
+Gold,Norseman,121.78,-32.2,12
+Gold,Nundle,151.13,-31.47,1
+Gold,Olary district,140.32,-32.28,31
+Gold,Olympic Dam and Roxby Downs,136.88,-30.44,1
+Gold,Pine Creek,131.84,-13.82,3
+Gold,Rum Jungle,131.0,-13.02,1
+Gold,Tarcoola,134.57,-30.7,20
+Gold,Tennant Creek,134.19,-19.65,6
+Gold,Wallaroo Mines and Kadina,137.71,-33.96,1
+Gold,Westonia,118.69,-31.3,12
+Gold,Williamstown,138.88,-34.67,7
+Gold,Yudnamutana,139.3,-30.17,3
+Malachite,Blinman,138.68,-31.1,6
+Malachite,Broken Hill,141.47,-31.95,22
+Malachite,Burra,138.93,-33.68,123
+Malachite,Chillagoe,144.52,-17.15,7
+Malachite,Cloncurry,140.51,-20.71,1
+Malachite,Cobar,145.84,-31.5,8
+Malachite,Girilambone,146.9,-31.25,8
+Malachite,Iron Knob and Middleback Ranges,137.15,-32.73,19
+Malachite,Kanmantoo and Callington,139.0,-35.08,2
+Malachite,Kapunda,138.92,-34.34,9
+Malachite,Leigh Creek,138.4,-30.59,10
+Malachite,Moonta,137.59,-34.07,6
+Malachite,Mount Gunson,137.25,-31.45,4
+Malachite,Mount Isa,139.49,-20.73,1
+Malachite,Mount Painter and Arkaroola,139.35,-30.23,5
+Malachite,Olary district,140.32,-32.28,9
+Malachite,Poona,117.45,-27.15,1
+Malachite,Radium Hill,140.65,-32.38,1
+Malachite,Rum Jungle,131.0,-13.02,46
+Malachite,Tarcoola,134.57,-30.7,1
+Malachite,Wallaroo Mines and Kadina,137.71,-33.96,23
+Malachite,Whim Creek,117.83,-20.84,16
+Malachite,Yudnamutana,139.3,-30.17,44
+Opal,Andamooka,137.17,-30.45,51
+Opal,Broken Hill,141.47,-31.95,2
+Opal,Cloncurry,140.51,-20.71,2
+Opal,Coober Pedy,134.75,-29.01,116
+Opal,Iron Knob and Middleback Ranges,137.15,-32.73,2
+Opal,Kalgoorlie and Eastern Goldfields,121.47,-30.75,1
+Opal,Mintabie,133.3,-27.31,31
+Opal,Mount Painter and Arkaroola,139.35,-30.23,2
+Opal,Norseman,121.78,-32.2,1
+Opal,Poona,117.45,-27.15,2
+Opal,Tennant Creek,134.19,-19.65,1
+Opal,White Cliffs,143.09,-30.85,33
+Opal,Williamstown,138.88,-34.67,1
+Quartz,Agate Creek,143.65,-18.55,53
+Quartz,Andamooka,137.17,-30.45,5
+Quartz,Bendigo,144.28,-36.76,1
+Quartz,Biggenden,152.04,-25.51,12
+Quartz,Broken Hill,141.47,-31.95,37
+Quartz,Burra,138.93,-33.68,12
+Quartz,Cloncurry,140.51,-20.71,1
+Quartz,Comet Vale,121.12,-29.95,2
+Quartz,Coober Pedy,134.75,-29.01,6
+Quartz,Cowell jade field,136.92,-33.68,3
+Quartz,Emmaville,151.6,-29.44,2
+Quartz,Glen Innes,151.74,-29.74,2
+Quartz,Gunnedah,150.25,-30.98,11
+Quartz,Harts Range,134.92,-23.1,3
+Quartz,Hillgrove,151.9,-30.57,1
+Quartz,Iron Knob and Middleback Ranges,137.15,-32.73,73
+Quartz,Kalgoorlie and Eastern Goldfields,121.47,-30.75,3
+Quartz,Kangaroo Island,137.25,-35.8,10
+Quartz,Kanmantoo and Callington,139.0,-35.08,1
+Quartz,Kapunda,138.92,-34.34,1
+Quartz,Kingsgate,151.48,-29.75,9
+Quartz,Moculta,139.12,-34.47,3
+Quartz,Moonta,137.59,-34.07,25
+Quartz,Mount Gunson,137.25,-31.45,2
+Quartz,Mount Isa,139.49,-20.73,8
+Quartz,Mount Painter and Arkaroola,139.35,-30.23,33
+Quartz,Norseman,121.78,-32.2,10
+Quartz,Nundle,151.13,-31.47,12
+Quartz,Olary district,140.32,-32.28,13
+Quartz,Radium Hill,140.65,-32.38,2
+Quartz,Renison Bell,145.43,-41.8,3
+Quartz,Tennant Creek,134.19,-19.65,2
+Quartz,Tingha,151.21,-29.95,2
+Quartz,Torrington,151.69,-29.32,6
+Quartz,Wallaroo Mines and Kadina,137.71,-33.96,72
+Quartz,White Rock Quarry,138.7,-34.93,35
+Quartz,Williamstown,138.88,-34.67,2
+Quartz,Yudnamutana,139.3,-30.17,1

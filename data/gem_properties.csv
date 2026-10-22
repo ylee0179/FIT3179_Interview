@@ -1,0 +1,61 @@
+name,species,family,crystal_system,mohs_min,mohs_max,mohs_mid,ri_min,ri_max,sg_min,sg_max,colors,swatch,museum_specimens,australian_specimens,matched_on,found_in_australia
+Diamond,Diamond,Diamond,cubic,10.0,10.0,10.0,2.42,2.42,3.51,3.53,colorless to yellow or brown; fancy colors,#E8E4D8,49,14,Parent mineral (diamond),Held from Australia
+Carbonado,Diamond,Diamond,cubic (polycrystalline),10.0,10.0,10.0,,,2.8,3.45,"black, opaque",#2B2B2B,49,14,Parent mineral (diamond),Held from Australia
+Ruby,Corundum,Corundum,trigonal,9.0,9.0,9.0,1.762,1.77,3.95,4.05,orangy red to purplish red,#B0172E,24,11,Gem variety (ruby),Held from Australia
+Blue sapphire,Corundum,Corundum,trigonal,9.0,9.0,9.0,1.762,1.77,3.95,4.05,light to dark blue,#1F3F8F,21,9,Gem variety (blue sapphire),Held from Australia
+Padparadscha sapphire,Corundum,Corundum,trigonal,9.0,9.0,9.0,1.762,1.77,3.95,4.05,pinkish orange to orangy pink,#F29A7E,171,90,Parent mineral (corundum),Held from Australia
+Fancy sapphire,Corundum,Corundum,trigonal,9.0,9.0,9.0,1.762,1.77,3.95,4.05,"violet, green, yellow, orange, pink, purple, parti-colored",#C8A2C8,171,90,Parent mineral (corundum),Held from Australia
+Emerald,Beryl,Beryl,hexagonal,7.5,8.0,7.75,1.577,1.583,2.72,2.72,green to bluish green,#127A4A,17,8,Gem variety (emerald),Held from Australia
+Aquamarine,Beryl,Beryl,hexagonal,7.5,8.0,7.75,1.577,1.583,2.72,2.72,"greenish blue, light in tone",#7FC7D9,41,9,Gem variety (aquamarine),Held from Australia
+Morganite,Beryl,Beryl,hexagonal,7.5,8.0,7.75,1.583,1.59,2.8,2.91,pink to orange-pink,#F1B7A8,6,1,Gem variety (morganite),Held from Australia
+Red beryl,Beryl,Beryl,hexagonal,7.5,8.0,7.75,1.56,1.572,2.65,2.72,raspberry to purplish red,#A8264A,228,136,Parent mineral (beryl),Held from Australia
+Alexandrite,Chrysoberyl,Chrysoberyl,orthorhombic,8.5,8.5,8.5,1.746,1.755,3.73,3.73,"bluish green in daylight, purplish red in incandescent light",#3E8C7B,26,1,Parent mineral (chrysoberyl),Held from Australia
+Pyrope,Pyrope,Garnet,cubic,6.5,7.5,7.0,1.714,1.742,3.582,3.582,"red, purplish red, orange-red",#8B1A1A,11,2,Parent mineral (pyrope),Held from Australia
+Almandine,Almandine,Garnet,cubic,6.5,7.5,7.0,1.785,1.83,4.318,4.318,"deep red, brownish red, violet red",#6E1423,75,58,Parent mineral (almandine),Held from Australia
+Spessartine,Spessartine,Garnet,cubic,6.5,7.5,7.0,1.78,1.81,4.19,4.19,light orange to reddish brown,#E0782F,62,55,Parent mineral (spessartine),Held from Australia
+Tsavorite,Grossular,Garnet,cubic,7.0,7.0,7.0,1.739,1.744,3.57,3.65,light to intense green,#3FA34D,41,13,Parent mineral (grossular),Held from Australia
+Hessonite,Grossular,Garnet,cubic,7.0,7.0,7.0,1.731,1.76,3.4,3.78,orange to cinnamon brown,#C26A2E,41,13,Parent mineral (grossular),Held from Australia
+Demantoid,Andradite,Garnet,cubic,6.5,6.5,6.5,1.88,1.889,3.8,3.88,yellowish green to green,#7BB33A,56,21,Parent mineral (andradite),Held from Australia
+Rubellite,Elbaite,Tourmaline,trigonal,7.0,7.5,7.25,1.624,1.644,3.0,3.26,"pink, red, purplish red, orangy red, brownish red",#C2185B,5,0,Gem variety (rubellite),Not held from Australia
+Indicolite,Elbaite,Tourmaline,trigonal,7.0,7.5,7.25,1.624,1.644,3.0,3.26,"dark violetish blue, blue, greenish blue",#1E5A8C,149,38,Parent mineral (elbaite),Held from Australia
+Paraíba tourmaline,Elbaite,Tourmaline,trigonal,7.0,7.5,7.25,1.624,1.644,3.0,3.26,"intense violetish blue, greenish blue, blue",#1FC9C9,149,38,Parent mineral (elbaite),Held from Australia
+Red spinel,Spinel,Spinel,cubic,8.0,8.0,8.0,1.718,1.718,3.6,3.6,red to pink (chromium),#D2263F,49,9,Parent mineral (spinel),Held from Australia
+Cobalt blue spinel,Spinel,Spinel,cubic,8.0,8.0,8.0,1.718,1.718,3.6,3.6,saturated blue (cobalt),#2340B5,49,9,Parent mineral (spinel),Held from Australia
+Amethyst,Quartz,Quartz,trigonal,7.0,7.0,7.0,1.544,1.553,2.64,2.69,"light lilac to deep purple, often zoned",#7E4FA3,130,64,Gem variety (amethyst),Held from Australia
+Citrine,Quartz,Quartz,trigonal,7.0,7.0,7.0,1.544,1.553,2.64,2.69,yellow to orange to orangy red,#E8A93A,8,4,Gem variety (citrine),Held from Australia
+Rose quartz,Quartz,Quartz,trigonal,7.0,7.0,7.0,1.544,1.553,2.64,2.69,very light to medium-dark pink,#EFB8C4,24,8,Gem variety (rose quartz),Held from Australia
+Smoky quartz,Quartz,Quartz,trigonal,7.0,7.0,7.0,1.544,1.553,2.64,2.69,light brown to black,#6B5646,81,56,Gem variety (smoky quartz),Held from Australia
+Agate,Quartz (chalcedony),Quartz,trigonal (microcrystalline),6.5,7.0,6.75,1.535,1.539,2.6,2.6,"banded, many colors",#B98A6A,182,82,Gem variety (agate),Held from Australia
+Chrysoprase,Quartz (chalcedony),Quartz,trigonal (microcrystalline),6.5,7.0,6.75,1.535,1.539,2.6,2.6,apple green,#7FC28A,36,30,Gem variety (chrysoprase),Held from Australia
+Precious opal,Opal,Opal,amorphous,5.0,6.5,5.75,1.37,1.47,1.25,2.23,"white, gray or black body with play-of-color",#CFE3E8,435,340,Parent mineral (opal),Held from Australia
+Jadeite,Jadeite,Jade,monoclinic (aggregate),6.5,7.0,6.75,1.666,1.68,3.34,3.34,"green, white, yellow, reddish orange, lavender, gray, black",#4F9A5E,6,0,Parent mineral (jadeite),Not held from Australia
+Nephrite,Actinolite-tremolite,Jade,monoclinic (aggregate),6.0,6.5,6.25,1.606,1.632,2.95,2.95,"light to dark green, yellow, brown, black, gray, white",#5E7A4A,62,28,Gem variety (nephrite),Held from Australia
+Tanzanite,Zoisite,Other gems,orthorhombic,6.0,7.0,6.5,1.691,1.7,3.35,3.35,violet blue to bluish violet to violet purple,#4B4FA6,22,4,Parent mineral (zoisite),Held from Australia
+Topaz,Topaz,Other gems,orthorhombic,8.0,8.0,8.0,1.619,1.627,3.53,3.53,"yellow, orange, brown, pink to red to purple, blue, colorless",#E9B65C,107,49,Parent mineral (topaz),Held from Australia
+Zircon,Zircon,Other gems,tetragonal,6.0,7.5,6.75,1.81,1.984,3.9,4.73,"blue, red, yellow, orange, brown, green",#5FA3C9,70,31,Parent mineral (zircon),Held from Australia
+Peridot,Olivine,Other gems,orthorhombic,6.5,7.0,6.75,1.65,1.69,3.34,3.34,brown-green to yellowish green to pure green,#9DBB3A,5,1,Parent mineral (forsterite),Held from Australia
+Iolite,Cordierite,Other gems,orthorhombic,7.0,7.5,7.25,1.542,1.551,2.61,2.61,violetish blue (pleochroic to colorless-yellow),#5A64A8,34,18,Parent mineral (cordierite),Held from Australia
+Kunzite,Spodumene,Other gems,monoclinic,6.5,7.0,6.75,1.66,1.676,3.18,3.18,pink to violetish purple,#D59AC6,40,10,Parent mineral (spodumene),Held from Australia
+Turquoise,Turquoise,Other gems,triclinic,5.0,6.0,5.5,1.61,1.65,2.4,2.9,blue to green,#3FB8AF,83,63,Parent mineral (turquoise),Held from Australia
+Lapis lazuli,"Rock (lazurite, calcite, pyrite)",Other gems,rock (lazurite cubic),5.0,6.0,5.5,1.5,1.67,2.5,3.0,"greenish blue to violetish blue, with calcite and pyrite",#26478F,5,0,Gem variety (lapis lazuli),Not held from Australia
+Malachite,Malachite,Other gems,monoclinic,3.5,4.5,4.0,1.655,1.909,3.6,4.05,"light to dark green, banded",#1E8A5A,539,474,Parent mineral (malachite),Held from Australia
+Moonstone,Orthoclase,Other gems,monoclinic,6.0,6.5,6.25,1.518,1.526,2.58,2.58,"colorless to white, gray, green, peach, brown; blue sheen",#DCE3EA,108,51,Parent mineral (orthoclase),Held from Australia
+Labradorite,Plagioclase,Other gems,triclinic,6.0,6.5,6.25,1.559,1.568,2.7,2.7,"gray to dark with blue, green, gold flash",#5C6E7A,14,8,Parent mineral (oligoclase),Held from Australia
+Sunstone (oligoclase),Plagioclase,Other gems,triclinic,6.0,6.5,6.25,1.537,1.547,2.65,2.65,"yellow, green, red, red-brown, colorless, with glitter",#D9823B,14,8,Parent mineral (oligoclase),Held from Australia
+Apatite,Apatite,Other gems,hexagonal,5.0,5.0,5.0,1.628,1.649,3.1,3.35,"blue-green, green, yellow, violet, pink",#4FB3A4,240,160,Parent mineral (fluorapatite),Held from Australia
+Sphene,Titanite,Other gems,monoclinic,5.0,5.5,5.25,1.843,2.11,3.45,3.55,"yellow, green, brown",#B9B23A,57,36,Parent mineral (titanite),Held from Australia
+Andalusite,Andalusite,Other gems,orthorhombic,6.5,7.5,7.0,1.627,1.649,3.13,3.17,green to reddish brown (pleochroic),#8A7A3A,72,57,Parent mineral (andalusite),Held from Australia
+Kyanite,Kyanite,Other gems,triclinic,5.5,7.0,6.25,1.71,1.734,3.53,3.68,"blue, blue-green, green, orange",#3A6FB0,82,47,Parent mineral (kyanite),Held from Australia
+Chrome diopside,Diopside,Other gems,monoclinic,5.5,6.5,6.0,1.664,1.73,3.22,3.38,intense green,#1F7A3A,49,12,Parent mineral (diopside),Held from Australia
+Fluorite,Fluorite,Other gems,cubic,4.0,4.0,4.0,1.432,1.434,3.18,3.18,"purple, green, blue, yellow, colorless",#8F6FB8,307,127,Parent mineral (fluorite),Held from Australia
+Painite,Painite,Rare gems,hexagonal,7.5,8.0,7.75,1.787,1.816,4.01,4.01,"red, brownish red, orange-red",#9E3B2B,0,0,Parent mineral (painite),Not held from Australia
+Taaffeite,Taaffeite,Rare gems,hexagonal,8.0,8.5,8.25,1.716,1.728,3.61,3.67,"mauve to purple, purplish red, grayish violet, colorless",#A8789E,0,0,Parent mineral (taaffeite),Not held from Australia
+Grandidierite,Grandidierite,Rare gems,orthorhombic,7.0,7.5,7.25,1.583,1.622,2.94,2.98,greenish blue to blue-green,#5EB5A8,0,0,Parent mineral (grandidierite),Not held from Australia
+Benitoite,Benitoite,Rare gems,hexagonal,6.0,6.5,6.25,1.757,1.805,3.65,3.68,"violetish blue, colorless, rarely pink",#3F5FC9,5,0,Parent mineral (benitoite),Not held from Australia
+Jeremejevite,Jeremejevite,Rare gems,hexagonal,6.5,7.5,7.0,1.637,1.653,3.28,3.31,"colorless, pale blue, blue, yellow",#A7CBE0,0,0,Parent mineral (jeremejevite),Not held from Australia
+Poudretteite,Poudretteite,Rare gems,hexagonal,5.0,5.0,5.0,1.511,1.532,2.51,2.53,"colorless to pale pink, purple-pink",#E3B8D0,0,0,Parent mineral (poudretteite),Not held from Australia
+Serendibite,Serendibite,Rare gems,triclinic,6.5,7.0,6.75,1.701,1.706,3.42,3.52,"grayish blue, blue-green, black",#3D4A5C,1,0,Parent mineral (serendibite),Not held from Australia
+Pearl,Nacre (calcium carbonate),Organic gems,organic,2.5,3.0,2.75,1.52,1.69,2.6,2.85,"white, black, gray, yellow, orange, pink, lavender, green, blue",#EDE6DA,0,0,Parent mineral (nacre (calcium carbonate)),Not held from Australia
+Amber,Fossil resin,Organic gems,organic,2.0,2.5,2.25,1.54,1.54,1.08,1.08,"yellow, orange, brown; rarely blue or green",#D98A1E,0,0,Parent mineral (fossil resin),Not held from Australia
+Precious coral,Coralliidae skeleton,Organic gems,organic,3.5,3.5,3.5,1.486,1.658,2.8,2.8,"white, pink, salmon, red",#E06A5A,0,0,Parent mineral (coralliidae skeleton),Not held from Australia
+Jet,Lignite,Organic gems,organic,2.5,4.0,3.25,1.66,1.66,1.19,1.35,black to dark brown,#1F1B18,0,0,Parent mineral (lignite),Not held from Australia
