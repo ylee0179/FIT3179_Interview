@@ -13,7 +13,7 @@
     {
       "name": "top_n",
       "value": 8,
-      "bind": {
+      "bind": { //uses dropdown menu
         "input": "select",
         "options": [
           5,
@@ -29,7 +29,7 @@
       }
     }
   ],
-  "vconcat": [
+  "vconcat": [ //arange vertically
     {
       "title": {
         "text": "How complete are the origin records?",
@@ -44,13 +44,13 @@
       "layer": [
         {
           "mark": {
-            "type": "bar",
+            "type": "bar", //draw the stacked bar chart
             "stroke": "#FFFEFA",
             "strokeWidth": 2,
             "cornerRadius": 2
           },
           "encoding": {
-            "x": {
+            "x": { //start position of origin segments
               "field": "start",
               "type": "quantitative",
               "scale": {
@@ -61,7 +61,7 @@
               },
               "axis": null
             },
-            "x2": {
+            "x2": { //end position 
               "field": "end"
             },
             "y": {
@@ -187,7 +187,7 @@
           "filter": "datum.country != 'Australia' && datum.country != 'Unknown' && datum.country != 'Unassigned' && datum.country != 'Not recorded' && isValid(datum.specimens) && datum.specimens > 0"
         },
         {
-          "window": [
+          "window": [ //ranks overseas countries by specimen counts
             {
               "op": "row_number",
               "as": "ranking"
@@ -279,7 +279,7 @@
         },
         {
           "mark": {
-            "type": "circle",
+            "type": "circle", //add circles at the end of lollipop
             "size": 125,
             "filled": true,
             "color": "#B78C54",
