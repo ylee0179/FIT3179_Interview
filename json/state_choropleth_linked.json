@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Choropleth of specimens per 100,000 square kilometres for each Australian state and territory. Click a state to list its most collected minerals.",
-  "hconcat": [
+  "hconcat": [ //used it to arrange state map and bar chart horizontally
     {
       "width": 520,
       "height": 440,
@@ -267,13 +267,13 @@
       "transform": [
         {
           "filter": {
-            "param": "pick_state"
+            "param": "pick_state" //a point selection to click a state 
           }
         }
       ],
       "layer": [
         {
-          "mark": {
+          "mark": { //how bars are display
             "type": "bar",
             "cornerRadiusEnd": 3,
             "height": {
