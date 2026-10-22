@@ -92,7 +92,7 @@
       },
       "transform": [
         {
-          "lookup": "properties.name",
+          "lookup": "properties.name", //draw the geographic shapes
           "from": {
             "data": {
               "url": "data/country_origins.csv"
@@ -138,7 +138,7 @@
         "clip": true
       },
       "encoding": {
-        "color": {
+        "color": { //join the country statistics to the map
           "field": "density_class",
           "type": "ordinal",
           "title": "Specimens per million square kilometres",
@@ -150,7 +150,7 @@
               "250 to 999",
               "1,000 or more"
             ],
-            "range": [
+            "range": [ //the legend colour range
               "#E3EEE8",
               "#BCD8CB",
               "#86B8A3",
@@ -354,7 +354,7 @@
         }
       ],
       "mark": {
-        "type": "text",
+        "type": "text",//display the state name and numeric value
         "align": {
           "expr": "datum.a"
         },
