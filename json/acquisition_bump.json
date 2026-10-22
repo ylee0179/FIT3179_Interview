@@ -21,7 +21,7 @@
       }
     }
   },
-  "encoding": {
+  "encoding": { //set x axis and y axis
     "x": {
       "field": "year",
       "type": "quantitative",
@@ -72,7 +72,7 @@
         "labelExpr": "['', 'First', 'Second', 'Third', 'Fourth'][datum.value]"
       }
     },
-    "color": {
+    "color": { //seperate the line using colours
       "field": "method",
       "type": "nominal",
       "scale": {
@@ -114,7 +114,7 @@
         }
       ],
       "mark": {
-        "type": "line",
+        "type": "line", //draw the lines
         "strokeWidth": 3.2,
         "invalid": "break-paths-filter-domains"
       },
@@ -132,7 +132,7 @@
         }
       ],
       "mark": {
-        "type": "circle",
+        "type": "circle", //add dots and missing values
         "opacity": 1,
         "stroke": "#FFFFFF",
         "strokeWidth": 1.2
