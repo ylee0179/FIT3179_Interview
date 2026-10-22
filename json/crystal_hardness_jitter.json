@@ -40,7 +40,7 @@
     },
     {
       "mark": {
-        "type": "circle",
+        "type": "circle", //shows individual minerals as dots.
         "opacity": 0.55,
         "size": 56,
         "stroke": "#fffefa",
@@ -73,7 +73,7 @@
           }
         },
         "y": {
-          "field": "hardness",
+          "field": "hardness",//Displays Mohs hardness.
           "type": "quantitative",
           "scale": {
             "domain": [
@@ -86,7 +86,7 @@
             "tickMinStep": 1
           }
         },
-        "color": {
+        "color": { //Distinguishes crystal systems.
           "field": "system",
           "type": "nominal",
           "scale": {
@@ -134,7 +134,7 @@
           "filter": "system_focus == 'All' || datum.system == system_focus"
         },
         {
-          "window": [
+          "window": [ //Assigns a row number to calculate jitter.
             {
               "op": "row_number",
               "as": "row"
@@ -147,7 +147,7 @@
         },
         {
           "calculate": "indexof(['Cubic','Hexagonal','Tetragonal','Orthorhombic','Monoclinic','Triclinic'],datum.system) + datum.jitter",
-          "as": "jitterX"
+          "as": "jitterX" //Adds small horizontal offsets to reduce overlapping dots.
         }
       ]
     }
@@ -156,7 +156,7 @@
     {
       "name": "system_focus",
       "value": "All",
-      "bind": {
+      "bind": { //dropdown selection
         "input": "select",
         "options": [
           "All",
