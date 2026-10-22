@@ -11,14 +11,14 @@
   "transform": [
     {
       "calculate": "(toNumber(datum.sg_min) + toNumber(datum.sg_max)) / 2",
-      "as": "sg_mid"
+      "as": "sg_mid" //calculates the linear trend line
     }
   ],
   "params": [
     {
       "name": "gem_pick",
       "value": "Diamond",
-      "bind": {
+      "bind": { //dropdown selection
         "input": "select",
         "name": "Highlight gemstone: ",
         "options": [
@@ -38,7 +38,7 @@
     }
   ],
   "encoding": {
-    "x": {
+    "x": { //display hardness
       "field": "mohs_mid",
       "type": "quantitative",
       "title": "Mohs hardness",
@@ -52,7 +52,7 @@
         "grid": true
       }
     },
-    "y": {
+    "y": { //dsiplay specific gravity
       "field": "sg_mid",
       "type": "quantitative",
       "title": "Specific gravity",
@@ -69,7 +69,7 @@
   "layer": [
     {
       "mark": {
-        "type": "circle",
+        "type": "circle", //used to represent the gemstone w a dot
         "size": 85,
         "color": "#8B9D9B",
         "stroke": "#FFFFFF",
