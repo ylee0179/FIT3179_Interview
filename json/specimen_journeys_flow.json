@@ -17,7 +17,7 @@
     }
   ],
   "projection": {
-    "type": "equalEarth",
+    "type": "equalEarth", //controls the geographic projection
     "rotate": [
       -150,
       0,
