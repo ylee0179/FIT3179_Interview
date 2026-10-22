@@ -13,7 +13,7 @@
     }
   ],
   "encoding": {
-    "y": {
+    "y": { //displayed states as row
       "field": "state",
       "type": "nominal",
       "sort": [
@@ -39,7 +39,7 @@
     {
       "params": [
         {
-          "name": "hover_state",
+          "name": "hover_state", //uses hover selection
           "select": {
             "type": "point",
             "on": "pointerover",
@@ -50,7 +50,7 @@
           }
         }
       ],
-      "mark": {
+      "mark": { //draws bar on both sides of the centre
         "type": "bar",
         "height": {
           "band": 0.62
@@ -85,7 +85,7 @@
           }
         },
         "color": {
-          "field": "measure",
+          "field": "measure", //distinguishes museum specimens from mine sites.
           "type": "nominal",
           "scale": {
             "domain": [
@@ -144,7 +144,7 @@
         }
       },
       "encoding": {
-        "x": {
+        "x": { // Positions museum and mining percentages on opposite sides.
           "field": "signed",
           "type": "quantitative"
         },
@@ -177,7 +177,7 @@
         ]
       },
       "mark": {
-        "type": "rule",
+        "type": "rule", //used to draw the central dividing line
         "color": "#2F2A22",
         "strokeWidth": 1.2
       },
