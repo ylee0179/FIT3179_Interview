@@ -14,7 +14,7 @@
       "filter": "datum.cls != 'Borates'"
     }
   ],
-  "encoding": {
+  "encoding": { //places states along x-axis
     "x": {
       "field": "state",
       "type": "nominal",
@@ -40,7 +40,7 @@
         "labelPadding": 14
       }
     },
-    "y": {
+    "y": { //places the mineral families along y-axis
       "field": "cls",
       "type": "nominal",
       "sort": [
@@ -68,7 +68,7 @@
     {
       "params": [
         {
-          "name": "hover_cell",
+          "name": "hover_cell", //hover selection
           "select": {
             "type": "point",
             "on": "pointerover",
@@ -80,14 +80,14 @@
         }
       ],
       "mark": {
-        "type": "rect",
+        "type": "rect", //creates the heatmap cells
         "cornerRadius": 3,
         "stroke": "#F4F5EC",
         "strokeWidth": 2
       },
       "encoding": {
         "color": {
-          "field": "percent_of_state",
+          "field": "percent_of_state", //uses colour intensity to represent percentages
           "type": "quantitative",
           "title": "Percent of the state's specimens",
           "scale": {
@@ -152,7 +152,7 @@
     },
     {
       "mark": {
-        "type": "text",
+        "type": "text", //displayed numerical values within cells
         "fontSize": 10.5,
         "fontWeight": 500
       },
