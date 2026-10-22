@@ -92,7 +92,7 @@
       },
       "transform": [
         {
-          "lookup": "properties.name", //draw the geographic shapes
+          "lookup": "properties.name", // joins the country stats from csv to topojson
           "from": {
             "data": {
               "url": "data/country_origins.csv"
