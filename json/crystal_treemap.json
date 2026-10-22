@@ -23,13 +23,13 @@
   "layer": [
     {
       "mark": {
-        "type": "rect",
+        "type": "rect", //draws rectangular block
         "cornerRadius": 4,
         "stroke": "#FFFEFA",
         "strokeWidth": 2
       },
       "encoding": {
-        "x": {
+        "x": { //define boundaries for each rectangle
           "field": "x0",
           "type": "quantitative",
           "scale": {
@@ -80,7 +80,7 @@
           },
           "legend": null
         },
-        "opacity": {
+        "opacity": { //Fades rectangles that are not selected.
           "condition": {
             "param": "focus_crystal",
             "empty": true,
@@ -107,10 +107,10 @@
           }
         ]
       },
-      "params": [
+      "params": [ 
         {
           "name": "focus_crystal",
-          "select": {
+          "select": { //uses click selection
             "type": "point",
             "fields": [
               "system"
