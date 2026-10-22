@@ -7,7 +7,7 @@
     {
       "name": "min_specimens",
       "value": 20,
-      "bind": {
+      "bind": { //uses slider for range
         "input": "range",
         "min": 1,
         "max": 300,
@@ -34,7 +34,7 @@
       "data": {
         "sphere": true
       },
-      "mark": {
+      "mark": { //draws the world map using topojson
         "type": "geoshape",
         "fill": "#D3E1DE",
         "stroke": null,
@@ -68,7 +68,7 @@
       },
       "transform": [
         {
-          "filter": "datum.properties.name != 'Antarctica'"
+          "filter": "datum.properties.name != 'Antarctica'" //uses hover selection
         }
       ],
       "mark": {
@@ -120,7 +120,7 @@
         "latitude2": {
           "field": "dest_lat"
         },
-        "strokeWidth": {
+        "strokeWidth": { //thicker lines to represent more specimens
           "field": "specimens",
           "type": "quantitative",
           "scale": {
@@ -212,7 +212,7 @@
           "field": "lat",
           "type": "quantitative"
         },
-        "size": {
+        "size": { //larger circle indicates more specimens
           "field": "specimens",
           "type": "quantitative",
           "title": "Specimens sent to Adelaide",
