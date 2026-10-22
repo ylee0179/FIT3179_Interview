@@ -68,7 +68,7 @@
               "as": "state"
             },
             {
-              "lookup": "state", 
+              "lookup": "state",  //joins state specimen stats to the topojson map
               "from": {
                 "data": {
                   "url": "data/state_specimens.csv"
