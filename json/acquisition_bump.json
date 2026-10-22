@@ -22,7 +22,7 @@
     }
   },
   "encoding": { //set x axis and y axis
-    "x": {
+    "x": { 
       "field": "year",
       "type": "quantitative",
       "scale": {
@@ -98,7 +98,7 @@
   },
   "layer": [
     {
-      "transform": [
+      "transform": [ //Separates acquisition methods by colour and handles missing decades.
         {
           "impute": "rank",
           "key": "year",
