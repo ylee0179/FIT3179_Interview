@@ -13,11 +13,11 @@
       }
     }
   },
-  "params": [
+  "params": [ 
     {
       "name": "museum_only",
       "value": false,
-      "bind": {
+      "bind": { //uses checkbox
         "input": "checkbox",
         "name": "Keep only minerals the museum holds "
       }
@@ -143,7 +143,7 @@
     },
     {
       "mark": {
-        "type": "boxplot",
+        "type": "boxplot", //Displays quartiles, medians and the range.
         "extent": "min-max",
         "size": 40,
         "box": {
@@ -191,7 +191,7 @@
     {
       "params": [
         {
-          "name": "dot_hover",
+          "name": "dot_hover", //hover selection
           "select": {
             "type": "point",
             "on": "pointerover",
@@ -284,7 +284,7 @@
         }
       ],
       "mark": {
-        "type": "circle",
+        "type": "circle",//Adds individual mineral observations.
         "size": 60,
         "fill": null,
         "stroke": "#2F2A22",
@@ -295,7 +295,7 @@
           "field": "hardness",
           "type": "quantitative"
         },
-        "xOffset": {
+        "xOffset": { //Spreads the dots horizontally to reduce overlap.
           "field": "jitter",
           "type": "quantitative",
           "scale": {
