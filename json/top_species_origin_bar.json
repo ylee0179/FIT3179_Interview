@@ -104,11 +104,11 @@
               "origin"
             ]
           },
-          "bind": "legend"
+          "bind": "legend" //uses legend click selection
         }
       ],
       "mark": {
-        "type": "bar",
+        "type": "bar", //draws horizontal stacked bars
         "height": {
           "band": 0.72
         }
@@ -136,7 +136,7 @@
         "x": {
           "field": "specimens",
           "type": "quantitative",
-          "stack": "normalize",
+          "stack": "normalize", //used to convert each bar into percentages in total 100%
           "title": "Share of the mineral's specimens",
           "axis": {
             "format": ".0%",
@@ -218,7 +218,7 @@
         "color": "#FFFFFF"
       },
       "encoding": {
-        "y": {
+        "y": { //display 12 minerals
           "field": "species",
           "type": "nominal",
           "sort": {
