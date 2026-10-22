@@ -7,7 +7,7 @@
     {
       "name": "region",
       "value": "World",
-      "bind": {
+      "bind": { //uses dropdown selection
         "input": "select",
         "options": [
           "World",
@@ -21,7 +21,7 @@
     }
   ],
   "projection": {
-    "type": "equalEarth",
+    "type": "equalEarth", //geographic projection
     "scale": {
       "expr": "(region == 'World' ? 0.168 : region == 'Europe' ? 0.9 : region == 'Asia and Oceania' ? 0.36 : region == 'Americas' ? 0.3 : region == 'Africa' ? 0.44 : 0.168) * width"
     },
@@ -71,7 +71,7 @@
       },
       "transform": [
         {
-          "filter": "datum.properties.name != 'Antarctica'"
+          "filter": "datum.properties.name != 'Antarctica'" //uses hover seletion
         }
       ],
       "mark": {
