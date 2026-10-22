@@ -101,7 +101,7 @@
           }
         }
       ],
-      "mark": {
+      "mark": { //this creates the connecting lines
         "type": "rule",
         "strokeCap": "round"
       },
@@ -193,7 +193,7 @@
       },
       "transform": [
         {
-          "filter": "datum.specimens >= min_specimens"
+          "filter": "datum.specimens >= min_specimens" //uses a range slicer
         }
       ],
       "mark": {
