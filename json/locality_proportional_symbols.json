@@ -27,7 +27,7 @@
     {
       "name": "class_pick",
       "value": null,
-      "bind": {
+      "bind": { //dropdown selection
         "input": "select",
         "options": [
           null,
@@ -59,7 +59,7 @@
         "sphere": true
       },
       "mark": {
-        "type": "geoshape",
+        "type": "geoshape", //draws the state
         "fill": "#D3E1DE",
         "stroke": null,
         "clip": true
@@ -121,12 +121,12 @@
           }
         }
       ],
-      "mark": {
+      "mark": { //places symbols at collecting locations
         "type": "circle",
         "stroke": "#FFFFFF",
         "strokeWidth": 1.1
       },
-      "encoding": {
+      "encoding": { used to position the circles geographically
         "longitude": {
           "field": "lon",
           "type": "quantitative"
@@ -173,7 +173,7 @@
           }
         },
         "color": {
-          "field": "class_group",
+          "field": "class_group", //distinguishes the mineral families
           "type": "nominal",
           "title": "Most common mineral family",
           "scale": {
@@ -186,7 +186,7 @@
               "Salts",
               "Other classes"
             ],
-            "range": [
+            "range": [ //uses this colour range for the legend
               "#C9A227",
               "#4F5B66",
               "#8E6FB0",
@@ -354,7 +354,7 @@
           }
         },
         {
-          "filter": "isValid(datum.t)"
+          "filter": "isValid(datum.t)" //hover selection
         },
         {
           "filter": "class_pick == null || datum.class_group == class_pick"
